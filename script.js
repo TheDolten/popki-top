@@ -19,9 +19,13 @@ function render(){
   const meta = DATA.meta || {};
   document.title = meta.title || "🫦 Топ попок";
   const sourceEl = document.querySelector("#source");
+  const sourceText = meta.source || "Источник";
   const sourceUrl = meta.source_url || (meta.source && String(meta.source).startsWith("http") ? meta.source : "");
+
   if (sourceUrl) {
-    sourceEl.innerHTML = `Источник: <a href="${esc(sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(meta.source || sourceUrl)}</a>`;
+    // Текст ссылки берётся из meta.source, а адрес — из meta.source_url.
+    // Например: source="Стрим Lilanei 15 мая", source_url="https://www.twitch.tv/videos/..."
+    sourceEl.innerHTML = `Источник: <a href="${esc(sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(sourceText)}</a>`;
   } else if ((meta.source_urls || []).length) {
     sourceEl.innerHTML = `Источники: ${(meta.source_urls || []).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">VOD ${i + 1}</a>`).join(" · ")}`;
   } else {
