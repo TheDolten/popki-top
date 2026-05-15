@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "title": "🫦 Топ попок",
+    "source": "Пример данных",
+    "total": 6,
+    "groups": 3,
+    "sort": "По количеству"
+  },
+  "top_chosen": [
+    {
+      "user": "SomeNickname",
+      "count": 3
+    },
+    {
+      "user": "AnotherUser",
+      "count": 2
+    },
+    {
+      "user": "ThirdUser",
+      "count": 1
+    }
+  ],
+  "popki": [
+    {
+      "title": "Красивая попка",
+      "count": 3,
+      "chosen_users": [
+        {
+          "user": "SomeNickname",
+          "count": 2
+        },
+        {
+          "user": "AnotherUser",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "00:01:12",
+          "chooser": "User1",
+          "chosen_user": "SomeNickname",
+          "command": "!кусь красивую попу",
+          "bot_reply": "SomeNickname ( . Y . ) стали больше!"
+        },
+        {
+          "time": "00:04:21",
+          "chooser": "User2",
+          "chosen_user": "AnotherUser",
+          "command": "!кусь красивую попочку",
+          "bot_reply": "AnotherUser ( . Y . ) стали больше!"
+        },
+        {
+          "time": "00:10:05",
+          "chooser": "User3",
+          "chosen_user": "SomeNickname",
+          "command": "!кусь красивой попе",
+          "bot_reply": "SomeNickname ( . Y . ) стали больше!"
+        }
+      ]
+    },
+    {
+      "title": "Большая попка",
+      "count": 2,
+      "chosen_users": [
+        {
+          "user": "AnotherUser",
+          "count": 1
+        },
+        {
+          "user": "ThirdUser",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "00:15:12",
+          "chooser": "User4",
+          "chosen_user": "ThirdUser",
+          "command": "!кусь большую попу",
+          "bot_reply": "ThirdUser ( . Y . ) стали больше!"
+        },
+        {
+          "time": "00:19:44",
+          "chooser": "User5",
+          "chosen_user": "AnotherUser",
+          "command": "!кусь большую попку",
+          "bot_reply": "AnotherUser ( . Y . ) стали больше!"
+        }
+      ]
+    },
+    {
+      "title": "Милая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "SomeNickname",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "00:22:10",
+          "chooser": "User6",
+          "chosen_user": "SomeNickname",
+          "command": "!кусь милую попу",
+          "bot_reply": "SomeNickname ( . Y . ) стали больше!"
+        }
+      ]
+    }
+  ]
+}
