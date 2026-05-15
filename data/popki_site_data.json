@@ -1,90 +1,366 @@
 {
   "meta": {
     "title": "🫦 Топ попок",
-    "source": "Пример данных",
-    "total": 6,
-    "groups": 3,
+    "source": "https://www.twitch.tv/videos/2772658347",
+    "total": 20,
+    "groups": 19,
     "sort": "По количеству"
   },
   "top_chosen": [
     {
-      "user": "SomeNickname",
-      "count": 3
-    },
-    {
-      "user": "AnotherUser",
+      "user": "linmie",
       "count": 2
     },
     {
-      "user": "ThirdUser",
+      "user": "Pon4ikOFF",
+      "count": 2
+    },
+    {
+      "user": "shlinki1",
+      "count": 2
+    },
+    {
+      "user": "amonyash_",
+      "count": 1
+    },
+    {
+      "user": "fenrirherel",
+      "count": 1
+    },
+    {
+      "user": "Gossha",
+      "count": 1
+    },
+    {
+      "user": "korean_money",
+      "count": 1
+    },
+    {
+      "user": "lilanei",
+      "count": 1
+    },
+    {
+      "user": "MeowGPT",
+      "count": 1
+    },
+    {
+      "user": "plitka_shokoladki",
+      "count": 1
+    },
+    {
+      "user": "sherilova",
+      "count": 1
+    },
+    {
+      "user": "Soba_Ken",
+      "count": 1
+    },
+    {
+      "user": "Toka_Tuxo",
+      "count": 1
+    },
+    {
+      "user": "valkiria_z3",
+      "count": 1
+    },
+    {
+      "user": "vsratbrok",
+      "count": 1
+    },
+    {
+      "user": "Xyseinr",
       "count": 1
     }
   ],
   "popki": [
     {
-      "title": "Красивая попка",
-      "count": 3,
+      "title": "Богатая попка",
+      "count": 2,
       "chosen_users": [
         {
-          "user": "SomeNickname",
-          "count": 2
+          "user": "amonyash_",
+          "count": 1
         },
         {
-          "user": "AnotherUser",
+          "user": "Xyseinr",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "00:01:12",
-          "chooser": "User1",
-          "chosen_user": "SomeNickname",
-          "command": "!кусь красивую попу",
-          "bot_reply": "SomeNickname ( . Y . ) стали больше!"
+          "time": "0:19:18",
+          "seconds": 1158,
+          "chooser": "risele",
+          "chosen_user": "Xyseinr",
+          "command": "!кусь богатую попу",
+          "bot_time": "0:19:18",
+          "bot_reply": "КУСЬ и у Xyseinr ( . Y . ) стали больше!",
+          "adjective": "богатую",
+          "popka_form": "попу"
         },
         {
-          "time": "00:04:21",
-          "chooser": "User2",
-          "chosen_user": "AnotherUser",
-          "command": "!кусь красивую попочку",
-          "bot_reply": "AnotherUser ( . Y . ) стали больше!"
-        },
-        {
-          "time": "00:10:05",
-          "chooser": "User3",
-          "chosen_user": "SomeNickname",
-          "command": "!кусь красивой попе",
-          "bot_reply": "SomeNickname ( . Y . ) стали больше!"
+          "time": "3:42:18",
+          "seconds": 13338,
+          "chooser": "TheDolten",
+          "chosen_user": "amonyash_",
+          "command": "!кусь богатую попку thedol14Wine",
+          "bot_time": "3:42:19",
+          "bot_reply": "КУСЬ и у amonyash_ ( . Y . ) стали больше!",
+          "adjective": "богатую",
+          "popka_form": "попку"
         }
       ]
     },
     {
-      "title": "Большая попка",
-      "count": 2,
+      "title": "Безумная попка",
+      "count": 1,
       "chosen_users": [
         {
-          "user": "AnotherUser",
-          "count": 1
-        },
-        {
-          "user": "ThirdUser",
+          "user": "plitka_shokoladki",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "00:15:12",
-          "chooser": "User4",
-          "chosen_user": "ThirdUser",
-          "command": "!кусь большую попу",
-          "bot_reply": "ThirdUser ( . Y . ) стали больше!"
-        },
+          "time": "4:34:51",
+          "seconds": 16491,
+          "chooser": "TheDolten",
+          "chosen_user": "plitka_shokoladki",
+          "command": "!кусь безумную попку",
+          "bot_time": "4:34:52",
+          "bot_reply": "КУСЬ и у plitka_shokoladki ( . Y . ) стали больше!",
+          "adjective": "безумную",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Больная попка",
+      "count": 1,
+      "chosen_users": [
         {
-          "time": "00:19:44",
-          "chooser": "User5",
-          "chosen_user": "AnotherUser",
-          "command": "!кусь большую попку",
-          "bot_reply": "AnotherUser ( . Y . ) стали больше!"
+          "user": "linmie",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:22:28",
+          "seconds": 15748,
+          "chooser": "TheDolten",
+          "chosen_user": "linmie",
+          "command": "!кусь больную попку",
+          "bot_time": "4:22:28",
+          "bot_reply": "КУСЬ и у linmie ( . Y . ) стали больше!",
+          "adjective": "больную",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Важная попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "MeowGPT",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:38:16",
+          "seconds": 9496,
+          "chooser": "risele",
+          "chosen_user": "MeowGPT",
+          "command": "!кусь важную попу",
+          "bot_time": "2:38:16",
+          "bot_reply": "КУСЬ и у MeowGPT ( . Y . ) стали больше!",
+          "adjective": "важную",
+          "popka_form": "попу"
+        }
+      ]
+    },
+    {
+      "title": "Весёлая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "valkiria_z3",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:43:17",
+          "seconds": 13397,
+          "chooser": "TheDolten",
+          "chosen_user": "valkiria_z3",
+          "command": "!кусь весёлую попку thedol14Wine",
+          "bot_time": "3:43:17",
+          "bot_reply": "КУСЬ и у valkiria_z3 ( . Y . ) стали больше!",
+          "adjective": "весёлую",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Горькая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Soba_Ken",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:46:34",
+          "seconds": 13594,
+          "chooser": "PLunanei",
+          "chosen_user": "Soba_Ken",
+          "command": "!кусь горькую попку",
+          "bot_time": "3:46:35",
+          "bot_reply": "КУСЬ и у Soba_Ken ( . Y . ) стали больше!",
+          "adjective": "горькую",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Жадная попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Pon4ikOFF",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:44:38",
+          "seconds": 13478,
+          "chooser": "TheDolten",
+          "chosen_user": "Pon4ikOFF",
+          "command": "!кусь жадную попку thedol14Wine",
+          "bot_time": "3:44:38",
+          "bot_reply": "КУСЬ и у Pon4ikOFF ( . Y . ) стали больше!",
+          "adjective": "жадную",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "За спортивная попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "fenrirherel",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:44:06",
+          "seconds": 13446,
+          "chooser": "shlinki1",
+          "chosen_user": "fenrirherel",
+          "command": "!кусь за спортивную попку",
+          "bot_time": "3:44:07",
+          "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
+          "adjective": "за спортивную",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Красивая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "shlinki1",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:35:24",
+          "seconds": 12924,
+          "chooser": "TheDolten",
+          "chosen_user": "shlinki1",
+          "command": "!кусь красивую попку thedol14WIGGLE",
+          "bot_time": "3:35:25",
+          "bot_reply": "КУСЬ и у shlinki1 ( . Y . ) стали больше!",
+          "adjective": "красивую",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Лучшая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "shlinki1",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:24:09",
+          "seconds": 8649,
+          "chooser": "l3uga",
+          "chosen_user": "shlinki1",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:24:10",
+          "bot_reply": "КУСЬ и у shlinki1 ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу"
+        }
+      ]
+    },
+    {
+      "title": "Любимая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Pon4ikOFF",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:11:40",
+          "seconds": 15100,
+          "chooser": "TheDolten",
+          "chosen_user": "Pon4ikOFF",
+          "command": "!кусь любимую попку",
+          "bot_time": "4:11:41",
+          "bot_reply": "КУСЬ и у Pon4ikOFF ( . Y . ) стали больше!",
+          "adjective": "любимую",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Любителя кусать за попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "не определено",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:36:11",
+          "seconds": 12971,
+          "chooser": "haska_6977",
+          "chosen_user": "не определено",
+          "command": "!кусь любителя кусать за попу",
+          "bot_time": "3:36:11",
+          "bot_reply": "КУСЬ и у Mara_Nei ( . Y . ) стали больше!",
+          "adjective": "любителя кусать за",
+          "popka_form": "попу"
         }
       ]
     },
@@ -93,17 +369,159 @@
       "count": 1,
       "chosen_users": [
         {
-          "user": "SomeNickname",
+          "user": "lilanei",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "00:22:10",
-          "chooser": "User6",
-          "chosen_user": "SomeNickname",
-          "command": "!кусь милую попу",
-          "bot_reply": "SomeNickname ( . Y . ) стали больше!"
+          "time": "3:40:29",
+          "seconds": 13229,
+          "chooser": "TheDolten",
+          "chosen_user": "lilanei",
+          "command": "!кусь милую попку thedol14Wine",
+          "bot_time": "3:40:29",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "милую",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Мытая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "linmie",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:15:58",
+          "seconds": 15358,
+          "chooser": "TheDolten",
+          "chosen_user": "linmie",
+          "command": "!кусь мытую попку",
+          "bot_time": "4:15:58",
+          "bot_reply": "КУСЬ и у linmie ( . Y . ) стали больше!",
+          "adjective": "мытую",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Не мытая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "vsratbrok",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:17:52",
+          "seconds": 15472,
+          "chooser": "TheDolten",
+          "chosen_user": "vsratbrok",
+          "command": "!кусь не мытую попку",
+          "bot_time": "4:17:53",
+          "bot_reply": "КУСЬ и у vsratbrok ( . Y . ) стали больше!",
+          "adjective": "не мытую",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Сладкая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Toka_Tuxo",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:46:05",
+          "seconds": 13565,
+          "chooser": "TheDolten",
+          "chosen_user": "Toka_Tuxo",
+          "command": "!кусь сладкую попку thedol14Wine",
+          "bot_time": "3:46:05",
+          "bot_reply": "КУСЬ и у Toka_Tuxo ( . Y . ) стали больше!",
+          "adjective": "сладкую",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Сонная попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Gossha",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:38:20",
+          "seconds": 16700,
+          "chooser": "TheDolten",
+          "chosen_user": "Gossha",
+          "command": "!кусь сонную попку",
+          "bot_time": "4:38:20",
+          "bot_reply": "КУСЬ и у Gossha ( . Y . ) стали больше!",
+          "adjective": "сонную",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Стервозная попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "korean_money",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:41:11",
+          "seconds": 13271,
+          "chooser": "TheDolten",
+          "chosen_user": "korean_money",
+          "command": "!кусь стервозную попку",
+          "bot_time": "3:41:12",
+          "bot_reply": "КУСЬ и у korean_money ( . Y . ) стали больше!",
+          "adjective": "стервозную",
+          "popka_form": "попку"
+        }
+      ]
+    },
+    {
+      "title": "Упругая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "sherilova",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:36:51",
+          "seconds": 13011,
+          "chooser": "TheDolten",
+          "chosen_user": "sherilova",
+          "command": "!кусь упругую попку thedol14Wine",
+          "bot_time": "3:36:51",
+          "bot_reply": "КУСЬ и у sherilova ( . Y . ) стали больше!",
+          "adjective": "упругую",
+          "popka_form": "попку"
         }
       ]
     }
