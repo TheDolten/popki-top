@@ -18,7 +18,15 @@ function render(){
 
   const meta = DATA.meta || {};
   document.title = meta.title || "🫦 Топ попок";
-  document.querySelector("#source").textContent = meta.source ? `Источник: ${meta.source}` : "Статистика из Twitch-чата";
+  const sourceEl = document.querySelector("#source");
+  const sourceUrl = meta.source_url || (meta.source && String(meta.source).startsWith("http") ? meta.source : "");
+  if (sourceUrl) {
+    sourceEl.innerHTML = `Источник: <a href="${esc(sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(meta.source || sourceUrl)}</a>`;
+  } else if ((meta.source_urls || []).length) {
+    sourceEl.innerHTML = `Источники: ${(meta.source_urls || []).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">VOD ${i + 1}</a>`).join(" · ")}`;
+  } else {
+    sourceEl.textContent = meta.source ? `Источник: ${meta.source}` : "Статистика из Twitch-чата";
+  }
   document.querySelector("#total").textContent = meta.total ?? 0;
   document.querySelector("#groups").textContent = meta.groups ?? (DATA.popki || []).length;
   document.querySelector("#leaders").textContent = (DATA.top_chosen || []).length;

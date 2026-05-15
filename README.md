@@ -25,3 +25,14 @@ Save
 ```
 
 Главный файл сайта — `index.html`.
+
+## Кликабельный источник
+
+В `data/popki_site_data.json` можно указать:
+
+```json
+"source": "https://www.twitch.tv/videos/123456789",
+"source_url": "https://www.twitch.tv/videos/123456789"
+```
+
+Тогда источник сверху сайта будет ссылкой.
