@@ -3,13 +3,41 @@
     "title": "🫦 Топ попок",
     "source": "lilanei",
     "source_url": "https://www.twitch.tv/lilanei",
-    "total": 20,
-    "groups": 19,
+    "total": 48,
+    "groups": 42,
     "sort": "По количеству"
   },
   "top_chosen": [
     {
+      "user": "timmaadm",
+      "count": 4
+    },
+    {
+      "user": "DarKSiR666",
+      "count": 3
+    },
+    {
       "user": "linmie",
+      "count": 3
+    },
+    {
+      "user": "TheDolten",
+      "count": 3
+    },
+    {
+      "user": "conroy0001",
+      "count": 2
+    },
+    {
+      "user": "fenrirherel",
+      "count": 2
+    },
+    {
+      "user": "haska_6977",
+      "count": 2
+    },
+    {
+      "user": "lilanei",
       "count": 2
     },
     {
@@ -17,7 +45,15 @@
       "count": 2
     },
     {
+      "user": "sherilova",
+      "count": 2
+    },
+    {
       "user": "shlinki1",
+      "count": 2
+    },
+    {
+      "user": "TheKuraSaKI",
       "count": 2
     },
     {
@@ -25,11 +61,11 @@
       "count": 1
     },
     {
-      "user": "fenrirherel",
+      "user": "Gossha",
       "count": 1
     },
     {
-      "user": "Gossha",
+      "user": "kihpopay",
       "count": 1
     },
     {
@@ -37,7 +73,11 @@
       "count": 1
     },
     {
-      "user": "lilanei",
+      "user": "l3uga",
+      "count": 1
+    },
+    {
+      "user": "Mara_Nei",
       "count": 1
     },
     {
@@ -49,7 +89,11 @@
       "count": 1
     },
     {
-      "user": "sherilova",
+      "user": "risele",
+      "count": 1
+    },
+    {
+      "user": "shinokko",
       "count": 1
     },
     {
@@ -75,6 +119,62 @@
   ],
   "popki": [
     {
+      "title": "Попа",
+      "count": 3,
+      "chosen_users": [
+        {
+          "user": "DarKSiR666",
+          "count": 1
+        },
+        {
+          "user": "TheKuraSaKI",
+          "count": 1
+        },
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:37:41",
+          "seconds": 13061,
+          "chooser": "risele",
+          "chosen_user": "TheKuraSaKI",
+          "command": "!кусь попи леона",
+          "bot_time": "3:37:41",
+          "bot_reply": "КУСЬ и у TheKuraSaKI ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "попи",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        },
+        {
+          "time": "3:38:27",
+          "seconds": 13107,
+          "chooser": "linmie",
+          "chosen_user": "timmaadm",
+          "command": "!кусь попи duckass",
+          "bot_time": "3:38:27",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "попи",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        },
+        {
+          "time": "4:19:15",
+          "seconds": 15555,
+          "chooser": "l3uga",
+          "chosen_user": "DarKSiR666",
+          "command": "!кусь попу ради которой проснулся",
+          "bot_time": "4:19:15",
+          "bot_reply": "КУСЬ и у DarKSiR666 ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
       "title": "Богатая попка",
       "count": 2,
       "chosen_users": [
@@ -97,7 +197,8 @@
           "bot_time": "0:19:18",
           "bot_reply": "КУСЬ и у Xyseinr ( . Y . ) стали больше!",
           "adjective": "богатую",
-          "popka_form": "попу"
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2775862699"
         },
         {
           "time": "3:42:18",
@@ -108,7 +209,128 @@
           "bot_time": "3:42:19",
           "bot_reply": "КУСЬ и у amonyash_ ( . Y . ) стали больше!",
           "adjective": "богатую",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Сладкая попка",
+      "count": 2,
+      "chosen_users": [
+        {
+          "user": "risele",
+          "count": 1
+        },
+        {
+          "user": "Toka_Tuxo",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:23:02",
+          "seconds": 4982,
+          "chooser": "TheDolten",
+          "chosen_user": "risele",
+          "command": "!кусь сладкую попку",
+          "bot_time": "1:23:02",
+          "bot_reply": "КУСЬ и у risele ( . Y . ) стали больше!",
+          "adjective": "сладкую",
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        },
+        {
+          "time": "3:46:05",
+          "seconds": 13565,
+          "chooser": "TheDolten",
+          "chosen_user": "Toka_Tuxo",
+          "command": "!кусь сладкую попку thedol14Wine",
+          "bot_time": "3:46:05",
+          "bot_reply": "КУСЬ и у Toka_Tuxo ( . Y . ) стали больше!",
+          "adjective": "сладкую",
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Сонная попка",
+      "count": 2,
+      "chosen_users": [
+        {
+          "user": "Gossha",
+          "count": 1
+        },
+        {
+          "user": "l3uga",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:16:40",
+          "seconds": 15400,
+          "chooser": "TheDolten",
+          "chosen_user": "l3uga",
+          "command": "!кусь сонную попку",
+          "bot_time": "4:16:41",
+          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
+          "adjective": "сонную",
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        },
+        {
+          "time": "4:38:20",
+          "seconds": 16700,
+          "chooser": "TheDolten",
+          "chosen_user": "Gossha",
+          "command": "!кусь сонную попку",
+          "bot_time": "4:38:20",
+          "bot_reply": "КУСЬ и у Gossha ( . Y . ) стали больше!",
+          "adjective": "сонную",
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Упругая жопка",
+      "count": 2,
+      "chosen_users": [
+        {
+          "user": "fenrirherel",
+          "count": 1
+        },
+        {
+          "user": "shinokko",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:46:26",
+          "seconds": 13586,
+          "chooser": "TheDolten",
+          "chosen_user": "shinokko",
+          "command": "!кусь упругую жопку",
+          "bot_time": "3:46:27",
+          "bot_reply": "КУСЬ и у shinokko ( . Y . ) стали больше!",
+          "adjective": "упругую",
+          "popka_form": "жопку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        },
+        {
+          "time": "3:53:22",
+          "seconds": 14002,
+          "chooser": "TheDolten",
+          "chosen_user": "fenrirherel",
+          "command": "!кусь упругую жопку",
+          "bot_time": "3:53:22",
+          "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
+          "adjective": "упругую",
+          "popka_form": "жопку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -131,7 +353,8 @@
           "bot_time": "4:34:52",
           "bot_reply": "КУСЬ и у plitka_shokoladki ( . Y . ) стали больше!",
           "adjective": "безумную",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -154,7 +377,8 @@
           "bot_time": "4:22:28",
           "bot_reply": "КУСЬ и у linmie ( . Y . ) стали больше!",
           "adjective": "больную",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -177,7 +401,8 @@
           "bot_time": "2:38:16",
           "bot_reply": "КУСЬ и у MeowGPT ( . Y . ) стали больше!",
           "adjective": "важную",
-          "popka_form": "попу"
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -200,7 +425,8 @@
           "bot_time": "3:43:17",
           "bot_reply": "КУСЬ и у valkiria_z3 ( . Y . ) стали больше!",
           "adjective": "весёлую",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -223,7 +449,56 @@
           "bot_time": "3:46:35",
           "bot_reply": "КУСЬ и у Soba_Ken ( . Y . ) стали больше!",
           "adjective": "горькую",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Девачку за попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "не определено",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:39:01",
+          "seconds": 13141,
+          "chooser": "risele",
+          "chosen_user": "не определено",
+          "command": "!кусь девачку за попи",
+          "bot_time": "3:39:01",
+          "bot_reply": "КУСЬ и у 1337BROKEN1337 ( . Y . ) стали больше!",
+          "adjective": "девачку за",
+          "popka_form": "попи",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Дорогая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "не определено",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:06:00",
+          "seconds": 14760,
+          "chooser": "TheDolten",
+          "chosen_user": "не определено",
+          "command": "!кусь дорогую попку",
+          "bot_time": "4:06:00",
+          "bot_reply": "КУСЬ и у 1BeeBeer ( . Y . ) стали больше!",
+          "adjective": "дорогую",
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -246,7 +521,104 @@
           "bot_time": "3:44:38",
           "bot_reply": "КУСЬ и у Pon4ikOFF ( . Y . ) стали больше!",
           "adjective": "жадную",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Жирная попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "haska_6977",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:47:19",
+          "seconds": 13639,
+          "chooser": "TheDolten",
+          "chosen_user": "haska_6977",
+          "command": "!кусь жирную попку",
+          "bot_time": "3:47:20",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "жирную",
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Жопенька",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "TheKuraSaKI",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:24:40",
+          "seconds": 12280,
+          "chooser": "TheDolten",
+          "chosen_user": "TheKuraSaKI",
+          "command": "!кусь жопеньку",
+          "bot_time": "3:24:40",
+          "bot_reply": "КУСЬ и у TheKuraSaKI ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "жопеньку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Жэпа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "haska_6977",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:14:01",
+          "seconds": 11641,
+          "chooser": "TheDolten",
+          "chosen_user": "haska_6977",
+          "command": "!кусь жэпу",
+          "bot_time": "3:14:02",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "жэпу",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "За мягкая попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "DarKSiR666",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:18:01",
+          "seconds": 4681,
+          "chooser": "risele",
+          "chosen_user": "DarKSiR666",
+          "command": "!кусь за мягкую попи",
+          "bot_time": "1:18:01",
+          "bot_reply": "КУСЬ и у DarKSiR666 ( . Y . ) стали больше!",
+          "adjective": "за мягкую",
+          "popka_form": "попи",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -269,7 +641,56 @@
           "bot_time": "3:44:07",
           "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
           "adjective": "за спортивную",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Злая попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "conroy0001",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:41:45",
+          "seconds": 13305,
+          "chooser": "TheDolten",
+          "chosen_user": "conroy0001",
+          "command": "!кусь злую попи",
+          "bot_time": "3:41:47",
+          "bot_reply": "КУСЬ и у conroy0001 ( . Y . ) стали больше!",
+          "adjective": "злую",
+          "popka_form": "попи",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Игривая жопка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "kihpopay",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:59:31",
+          "seconds": 10771,
+          "chooser": "TheDolten",
+          "chosen_user": "kihpopay",
+          "command": "!кусь игривую жопку",
+          "bot_time": "2:59:31",
+          "bot_reply": "КУСЬ и у kihpopay ( . Y . ) стали больше!",
+          "adjective": "игривую",
+          "popka_form": "жопку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -292,7 +713,80 @@
           "bot_time": "3:35:25",
           "bot_reply": "КУСЬ и у shlinki1 ( . Y . ) стали больше!",
           "adjective": "красивую",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Кусателя попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:54:02",
+          "seconds": 14042,
+          "chooser": "linmie",
+          "chosen_user": "timmaadm",
+          "command": "!кусь кусателя поп AREYOUAMOMMY",
+          "bot_time": "3:54:02",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "кусателя",
+          "popka_form": "поп",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Ленивая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "TheDolten",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:00:26",
+          "seconds": 14426,
+          "chooser": "TheDolten",
+          "chosen_user": "TheDolten",
+          "command": "!кусь ленивую попку",
+          "bot_time": "4:00:26",
+          "bot_reply": "КУСЬ и у TheDolten ( . Y . ) стали больше!",
+          "adjective": "ленивую",
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Лучшая попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "conroy0001",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:55:50",
+          "seconds": 10550,
+          "chooser": "l3uga",
+          "chosen_user": "conroy0001",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:55:50",
+          "bot_reply": "КУСЬ и у conroy0001 ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -315,7 +809,8 @@
           "bot_time": "2:24:10",
           "bot_reply": "КУСЬ и у shlinki1 ( . Y . ) стали больше!",
           "adjective": "лучшую",
-          "popka_form": "попу"
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -338,7 +833,8 @@
           "bot_time": "4:11:41",
           "bot_reply": "КУСЬ и у Pon4ikOFF ( . Y . ) стали больше!",
           "adjective": "любимую",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -361,7 +857,8 @@
           "bot_time": "3:36:11",
           "bot_reply": "КУСЬ и у Mara_Nei ( . Y . ) стали больше!",
           "adjective": "любителя кусать за",
-          "popka_form": "попу"
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -384,7 +881,8 @@
           "bot_time": "3:40:29",
           "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
           "adjective": "милую",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -407,7 +905,8 @@
           "bot_time": "4:15:58",
           "bot_reply": "КУСЬ и у linmie ( . Y . ) стали больше!",
           "adjective": "мытую",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -430,53 +929,200 @@
           "bot_time": "4:17:53",
           "bot_reply": "КУСЬ и у vsratbrok ( . Y . ) стали больше!",
           "adjective": "не мытую",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
     {
-      "title": "Сладкая попка",
+      "title": "Неаккуратная попка",
       "count": 1,
       "chosen_users": [
         {
-          "user": "Toka_Tuxo",
+          "user": "не определено",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "3:46:05",
-          "seconds": 13565,
+          "time": "4:28:50",
+          "seconds": 16130,
           "chooser": "TheDolten",
-          "chosen_user": "Toka_Tuxo",
-          "command": "!кусь сладкую попку thedol14Wine",
-          "bot_time": "3:46:05",
-          "bot_reply": "КУСЬ и у Toka_Tuxo ( . Y . ) стали больше!",
-          "adjective": "сладкую",
-          "popka_form": "попку"
+          "chosen_user": "не определено",
+          "command": "!кусь неаккуратную попку",
+          "bot_time": "4:28:51",
+          "bot_reply": "КУСЬ и у 1BeeBeer ( . Y . ) стали больше!",
+          "adjective": "неаккуратную",
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
     {
-      "title": "Сонная попка",
+      "title": "Невероятная жэпка",
       "count": 1,
       "chosen_users": [
         {
-          "user": "Gossha",
+          "user": "TheDolten",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "4:38:20",
-          "seconds": 16700,
+          "time": "2:59:05",
+          "seconds": 10745,
           "chooser": "TheDolten",
-          "chosen_user": "Gossha",
-          "command": "!кусь сонную попку",
-          "bot_time": "4:38:20",
-          "bot_reply": "КУСЬ и у Gossha ( . Y . ) стали больше!",
-          "adjective": "сонную",
-          "popka_form": "попку"
+          "chosen_user": "TheDolten",
+          "command": "!кусь невероятную жэпку",
+          "bot_time": "2:59:06",
+          "bot_reply": "КУСЬ и у TheDolten ( . Y . ) стали больше!",
+          "adjective": "невероятную",
+          "popka_form": "жэпку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Номер один жопка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:43:50",
+          "seconds": 13430,
+          "chooser": "TheDolten",
+          "chosen_user": "timmaadm",
+          "command": "!кусь номер один жопку",
+          "bot_time": "3:43:50",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "номер один",
+          "popka_form": "жопку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Отжаренная попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:50:21",
+          "seconds": 13821,
+          "chooser": "TheDolten",
+          "chosen_user": "timmaadm",
+          "command": "!кусь отжаренную попку",
+          "bot_time": "3:50:22",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "отжаренную",
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Привитая жопка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "linmie",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:13:05",
+          "seconds": 11585,
+          "chooser": "TheDolten",
+          "chosen_user": "linmie",
+          "command": "!кусь привитую жопку",
+          "bot_time": "3:13:06",
+          "bot_reply": "КУСЬ и у linmie ( . Y . ) стали больше!",
+          "adjective": "привитую",
+          "popka_form": "жопку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Самую лучшая попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "lilanei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:28:25",
+          "seconds": 12505,
+          "chooser": "TheDolten",
+          "chosen_user": "lilanei",
+          "command": "!кусь самую лучшую попи",
+          "bot_time": "3:28:26",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "самую лучшую",
+          "popka_form": "попи",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Собачью попочка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Mara_Nei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:50:43",
+          "seconds": 13843,
+          "chooser": "TheDolten",
+          "chosen_user": "Mara_Nei",
+          "command": "!кусь собачью попочку",
+          "bot_time": "3:50:43",
+          "bot_reply": "КУСЬ и у Mara_Nei ( . Y . ) стали больше!",
+          "adjective": "собачью",
+          "popka_form": "попочку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Сочная попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "DarKSiR666",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:24:25",
+          "seconds": 15865,
+          "chooser": "timmaadm",
+          "chosen_user": "DarKSiR666",
+          "command": "!кусь сочную попку",
+          "bot_time": "4:24:25",
+          "bot_reply": "КУСЬ и у DarKSiR666 ( . Y . ) стали больше!",
+          "adjective": "сочную",
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -499,7 +1145,56 @@
           "bot_time": "3:41:12",
           "bot_reply": "КУСЬ и у korean_money ( . Y . ) стали больше!",
           "adjective": "стервозную",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Счастливая попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "TheDolten",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:42:12",
+          "seconds": 13332,
+          "chooser": "haska_6977",
+          "chosen_user": "TheDolten",
+          "command": "!кусь счастливую попи",
+          "bot_time": "3:42:13",
+          "bot_reply": "КУСЬ и у TheDolten ( . Y . ) стали больше!",
+          "adjective": "счастливую",
+          "popka_form": "попи",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Съеденная жопка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "sherilova",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:22:41",
+          "seconds": 15761,
+          "chooser": "TheDolten",
+          "chosen_user": "sherilova",
+          "command": "!кусь съеденную жопку",
+          "bot_time": "4:22:41",
+          "bot_reply": "КУСЬ и у sherilova ( . Y . ) стали больше!",
+          "adjective": "съеденную",
+          "popka_form": "жопку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     },
@@ -522,7 +1217,8 @@
           "bot_time": "3:36:51",
           "bot_reply": "КУСЬ и у sherilova ( . Y . ) стали больше!",
           "adjective": "упругую",
-          "popka_form": "попку"
+          "popka_form": "попку",
+          "source": "https://www.twitch.tv/videos/2775862699"
         }
       ]
     }
