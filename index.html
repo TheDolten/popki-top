@@ -10,29 +10,75 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-page="kus" data-file="data/kus_site_data.json" data-active="all">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
   <main class="wrap">
     <header class="hero">
-      <div class="badge">Twitch chat stats</div>
-      <h1>🫦 Статистика кусей</h1>
-      <p class="sub">Главная страница: все команды <b>!кусь</b></p>
-      <nav class="nav">
-        <a class="active" href="index.html">Все куси</a>
-        <a href="popki.html">Попки</a>
-      </nav>
-      <p id="source">Загрузка данных...</p>
+      <div class="hero-topline">
+        <span class="eyebrow">Twitch chat stats</span>
+        <nav class="nav" aria-label="Навигация по сайту">
+          <a class="active" href="index.html">Все куси</a>
+          <a href="popki.html">Попки</a>
+        </nav>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-icon">🫦</div>
+        <div class="hero-copy">
+          <h1>Статистика кусей</h1>
+          <p class="sub">Главная страница со <b>всеми</b> командами <b>!кусь</b>. Здесь видно общую активность, топы и подробные группы.</p>
+          <div class="hero-tags">
+            <span class="tag">Все команды</span>
+            <span class="tag">Поиск по нику</span>
+            <span class="tag">Подробная статистика</span>
+          </div>
+        </div>
+      </div>
     </header>
 
+    <section class="meta-grid">
+      <article class="meta-card">
+        <span class="meta-label">Источник</span>
+        <div class="meta-value" id="sourceName">Загрузка...</div>
+      </article>
+      <article class="meta-card">
+        <span class="meta-label">Источник URL</span>
+        <div class="meta-value" id="sourceUrl">Загрузка...</div>
+      </article>
+      <article class="meta-card">
+        <span class="meta-label">Файл данных</span>
+        <div class="meta-value"><code id="dataFile">data/kus_site_data.json</code></div>
+      </article>
+    </section>
+
     <section class="stats">
-      <div class="stat"><b id="total">0</b><span>всего кусей</span></div>
-      <div class="stat"><b id="groups">0</b><span>групп кусей</span></div>
-      <div class="stat"><b id="leaders">0</b><span>кого выбирало</span></div>
+      <div class="stat">
+        <span class="stat-kicker">Всего</span>
+        <b id="total">0</b>
+        <span>всего кусей</span>
+      </div>
+      <div class="stat">
+        <span class="stat-kicker">Группы</span>
+        <b id="groups">0</b>
+        <span>групп кусей</span>
+      </div>
+      <div class="stat">
+        <span class="stat-kicker">Выборы</span>
+        <b id="leaders">0</b>
+        <span>уникальных выбранных</span>
+      </div>
     </section>
 
     <section class="panel controls-panel">
       <div class="panel-head controls-head">
-        <h2>🔎 Поиск и сортировка</h2>
+        <div>
+          <h2>🔎 Поиск и сортировка</h2>
+          <p class="panel-sub">Можно искать по названию группы, команде, тому кто кусал, и тому кого выбрало.</p>
+        </div>
         <div class="controls">
-          <input id="search" placeholder="поиск по нику, команде или группе..." />
+          <input id="search" placeholder="поиск по нику, команде, группе..." />
           <select id="sort">
             <option value="count">По количеству</option>
             <option value="name">По названию</option>
@@ -44,22 +90,29 @@
       </div>
     </section>
 
-    <section class="panel">
-      <div class="panel-head">
-        <h2>🏆 Кого чаще выбирало</h2>
-      </div>
-      <div id="top" class="top-list"></div>
+    <section class="content-grid">
+      <section class="panel panel-side">
+        <div class="panel-head compact">
+          <h2>🏆 Топ выбранных</h2>
+        </div>
+        <div id="top" class="top-list"></div>
+      </section>
+
+      <section class="panel panel-main">
+        <div class="panel-head compact">
+          <h2>📚 Группы кусей</h2>
+          <span class="mini-note">Нажми на карточку для раскрытия</span>
+        </div>
+        <div id="message"></div>
+        <div id="items" class="grid"></div>
+      </section>
     </section>
 
-    <section class="panel">
-      <div class="panel-head">
-        <h2>📚 Группы кусей</h2>
-      </div>
-      <div id="items" class="grid"></div>
-      <div id="message"></div>
-    </section>
-
-    <footer class="footer">Файл данных: <code>data/kus_site_data.json</code></footer>
+    <footer class="footer">
+      <span>Сайт для GitHub Pages</span>
+      <span class="footer-dot">•</span>
+      <span>Файл данных: <code>data/kus_site_data.json</code></span>
+    </footer>
   </main>
 
   <script src="script.js"></script>
