@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🫦 Статистика кусей</title>
+  <title>🫦 Топ попок</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-<body data-page="kus" data-file="data/kus_site_data.json" data-active="all">
+<body data-page="popki" data-file="data/popki_site_data.json" data-active="popki">
   <main class="wrap">
     <header class="hero">
       <div class="badge">Twitch chat stats</div>
-      <h1>🫦 Статистика кусей</h1>
-      <p class="sub">Главная страница: все команды <b>!кусь</b></p>
+      <h1>🍑 Топ попок</h1>
+      <p class="sub">Отдельная страница: только попки/жопки из <b>!кусь</b></p>
       <nav class="nav">
-        <a class="active" href="index.html">Все куси</a>
-        <a href="popki.html">Попки</a>
+        <a href="index.html">Все куси</a>
+        <a class="active" href="popki.html">Попки</a>
       </nav>
       <p id="source">Загрузка данных...</p>
     </header>
 
     <section class="stats">
-      <div class="stat"><b id="total">0</b><span>всего кусей</span></div>
-      <div class="stat"><b id="groups">0</b><span>групп кусей</span></div>
+      <div class="stat"><b id="total">0</b><span>кусей попки</span></div>
+      <div class="stat"><b id="groups">0</b><span>видов попок</span></div>
       <div class="stat"><b id="leaders">0</b><span>кого выбирало</span></div>
     </section>
 
@@ -32,7 +32,7 @@
       <div class="panel-head controls-head">
         <h2>🔎 Поиск и сортировка</h2>
         <div class="controls">
-          <input id="search" placeholder="поиск по нику, команде или группе..." />
+          <input id="search" placeholder="поиск по нику, команде или попке..." />
           <select id="sort">
             <option value="count">По количеству</option>
             <option value="name">По названию</option>
@@ -53,13 +53,13 @@
 
     <section class="panel">
       <div class="panel-head">
-        <h2>📚 Группы кусей</h2>
+        <h2>🍑 Какие попки есть</h2>
       </div>
       <div id="items" class="grid"></div>
       <div id="message"></div>
     </section>
 
-    <footer class="footer">Файл данных: <code>data/kus_site_data.json</code></footer>
+    <footer class="footer">Файл данных: <code>data/popki_site_data.json</code></footer>
   </main>
 
   <script src="script.js"></script>
