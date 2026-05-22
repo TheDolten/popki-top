@@ -23,6 +23,8 @@ h1{
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
 }
 .hero p{color:var(--muted)}
+.hint{font-size:12px;margin-top:8px}
+.hint code{color:#ff9dd3;background:#ffffff0a;border:1px solid #ffffff14;border-radius:8px;padding:2px 6px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
 .stat,.panel,.card,.leader{
   background:linear-gradient(180deg,#1a1a31,#121220);

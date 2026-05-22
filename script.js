@@ -1,42 +1,79 @@
-const DATA_URL = "data/popki_site_data.json";
+const DATA_URL = "data/kus_site_data.json";
+const FALLBACK_DATA_URL = "data/popki_site_data.json";
 let DATA = null;
+let USED_DATA_URL = DATA_URL;
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, m => ({
   "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
 }[m]));
 
+async function fetchJson(url){
+  const res = await fetch(url, {cache:"no-store"});
+  if(!res.ok) throw new Error("Не смог загрузить " + url);
+  return await res.json();
+}
+
 async function loadData(){
-  const res = await fetch(DATA_URL, {cache:"no-store"});
-  if(!res.ok) throw new Error("Не смог загрузить " + DATA_URL);
-  DATA = await res.json();
+  try{
+    DATA = await fetchJson(DATA_URL);
+    USED_DATA_URL = DATA_URL;
+  }catch(err){
+    DATA = await fetchJson(FALLBACK_DATA_URL);
+    USED_DATA_URL = FALLBACK_DATA_URL;
+  }
   render();
+}
+
+function getGroups(){
+  return DATA.kusi || DATA.kus || DATA.items || DATA.popki || [];
+}
+
+function getGroupTitle(group){
+  return group.title || group.name || group.command || "Неизвестный кусь";
+}
+
+function getChosenUsers(group){
+  return group.chosen_users || group.users || [];
+}
+
+function getChooser(item){
+  return item.chooser || item.user || item.author || "???";
+}
+
+function getChosen(item){
+  return item.chosen_user || item.chosen || "не определено";
+}
+
+function getCommand(item){
+  return item.command || item.text || item.message || "";
 }
 
 function render(){
   const q = document.querySelector("#search").value.trim().toLowerCase();
   const sort = document.querySelector("#sort").value;
 
+  const groups = getGroups();
   const meta = DATA.meta || {};
-  document.title = meta.title || "🫦 Топ попок";
+  document.title = meta.title || "🫦 Статистика кусей";
+
   const sourceEl = document.querySelector("#source");
-  const sourceText = meta.source || "Источник";
   const sourceUrl = meta.source_url || (meta.source && String(meta.source).startsWith("http") ? meta.source : "");
+  const fallbackNote = USED_DATA_URL === FALLBACK_DATA_URL ? " · показан старый файл popki_site_data.json, потому что kus_site_data.json не найден" : "";
 
   if (sourceUrl) {
-    // Текст ссылки берётся из meta.source, а адрес — из meta.source_url.
-    // Например: source="Стрим Lilanei 15 мая", source_url="https://www.twitch.tv/videos/..."
-    sourceEl.innerHTML = `Источник: <a href="${esc(sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(sourceText)}</a>`;
+    sourceEl.innerHTML = `Источник: <a href="${esc(sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(meta.source || sourceUrl)}</a>${fallbackNote}`;
   } else if ((meta.source_urls || []).length) {
-    sourceEl.innerHTML = `Источники: ${(meta.source_urls || []).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">VOD ${i + 1}</a>`).join(" · ")}`;
+    sourceEl.innerHTML = `Источники: ${(meta.source_urls || []).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">VOD ${i + 1}</a>`).join(" · ")}${fallbackNote}`;
   } else {
-    sourceEl.textContent = meta.source ? `Источник: ${meta.source}` : "Статистика из Twitch-чата";
+    sourceEl.textContent = `${meta.source ? `Источник: ${meta.source}` : "Статистика из Twitch-чата"}${fallbackNote}`;
   }
-  document.querySelector("#total").textContent = meta.total ?? 0;
-  document.querySelector("#groups").textContent = meta.groups ?? (DATA.popki || []).length;
+
+  document.querySelector("#total").textContent = meta.total ?? groups.reduce((sum, g) => sum + Number(g.count || (g.items || []).length || 0), 0);
+  document.querySelector("#groups").textContent = meta.groups ?? groups.length;
   document.querySelector("#leaders").textContent = (DATA.top_chosen || []).length;
 
   renderTop(q);
-  renderPopki(q, sort);
+  renderKusi(q, sort);
 }
 
 function renderTop(q){
@@ -52,35 +89,43 @@ function renderTop(q){
   `).join("") || `<div class="item">Ничего не найдено</div>`;
 }
 
-function renderPopki(q, sort){
-  let popki = [...(DATA.popki || [])];
+function renderKusi(q, sort){
+  let groups = [...getGroups()];
 
   if(q){
-    popki = popki.filter(p =>
-      String(p.title).toLowerCase().includes(q) ||
-      (p.chosen_users || []).some(u => String(u.user).toLowerCase().includes(q))
-    );
+    groups = groups.filter(g => {
+      const title = getGroupTitle(g).toLowerCase();
+      const chosen = getChosenUsers(g).some(u => String(u.user).toLowerCase().includes(q));
+      const items = (g.items || []).some(it =>
+        getCommand(it).toLowerCase().includes(q) ||
+        getChooser(it).toLowerCase().includes(q) ||
+        getChosen(it).toLowerCase().includes(q)
+      );
+      return title.includes(q) || chosen || items;
+    });
   }
 
-  if(sort === "name") popki.sort((a,b) => String(a.title).localeCompare(String(b.title), "ru"));
-  else if(sort === "chosen") popki.sort((a,b) => ((b.chosen_users||[]).length - (a.chosen_users||[]).length));
-  else popki.sort((a,b) => (b.count || 0) - (a.count || 0));
+  if(sort === "name") groups.sort((a,b) => getGroupTitle(a).localeCompare(getGroupTitle(b), "ru"));
+  else if(sort === "chosen") groups.sort((a,b) => (getChosenUsers(b).length - getChosenUsers(a).length));
+  else groups.sort((a,b) => (Number(b.count || 0) - Number(a.count || 0)) || getGroupTitle(a).localeCompare(getGroupTitle(b), "ru"));
 
-  document.querySelector("#popki").innerHTML = popki.map(p => {
-    const users = (p.chosen_users || []).slice(0, 12).map(u =>
+  document.querySelector("#kusi").innerHTML = groups.map(g => {
+    const title = getGroupTitle(g);
+    const count = g.count ?? (g.items || []).length;
+    const users = getChosenUsers(g).slice(0, 12).map(u =>
       `<span>${esc(u.user)}${u.count > 1 ? ` x${u.count}` : ""}</span>`
     ).join(" · ");
 
-    const items = (p.items || []).slice(0, 20).map(it => `
+    const items = (g.items || []).slice(0, 25).map(it => `
       <div class="item">
-        <div><span class="time">[${esc(it.time)}]</span> ${esc(it.chooser)} → <b>${esc(it.chosen_user)}</b></div>
-        <div>${esc(it.command)}</div>
+        <div><span class="time">[${esc(it.time)}]</span> ${esc(getChooser(it))} → <b>${esc(getChosen(it))}</b></div>
+        <div>${esc(getCommand(it))}</div>
       </div>
     `).join("");
 
     return `
       <article class="card">
-        <h3>${esc(p.title)}: ${p.count}</h3>
+        <h3>${esc(title)}: ${esc(count)}</h3>
         <div class="users"><b>Кого выбрало:</b><br>${users || "—"}</div>
         <div class="details">
           <details>
