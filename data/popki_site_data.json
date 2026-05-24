@@ -4,8 +4,8 @@
     "mode": "popki",
     "source": "lilanei",
     "source_url": "https://www.twitch.tv/lilanei",
-    "total": 86,
-    "groups": 68,
+    "total": 88,
+    "groups": 69,
     "sort": "По количеству"
   },
   "top_chosen": [
@@ -62,6 +62,10 @@
       "count": 2
     },
     {
+      "user": "MeowGPT",
+      "count": 2
+    },
+    {
       "user": "Pon4ikOFF",
       "count": 2
     },
@@ -80,6 +84,10 @@
     {
       "user": "vsratbrok",
       "count": 2
+    },
+    {
+      "user": "alekstaurus",
+      "count": 1
     },
     {
       "user": "amonyash_",
@@ -111,10 +119,6 @@
     },
     {
       "user": "lozarit",
-      "count": 1
-    },
-    {
-      "user": "MeowGPT",
       "count": 1
     },
     {
@@ -175,6 +179,102 @@
     }
   ],
   "popki": [
+    {
+      "title": "За попа",
+      "count": 5,
+      "chosen_users": [
+        {
+          "user": "alekstaurus",
+          "count": 1
+        },
+        {
+          "user": "milkypinqvi",
+          "count": 1
+        },
+        {
+          "user": "MIN0NA",
+          "count": 1
+        },
+        {
+          "user": "PLunanei",
+          "count": 1
+        },
+        {
+          "user": "vsratbrok",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:57:57",
+          "seconds": 17877,
+          "chooser": "l3uga",
+          "chosen_user": "PLunanei",
+          "command": "!кусь за попу",
+          "bot_time": "4:57:57",
+          "bot_reply": "КУСЬ и у PLunanei ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2776665031"
+        },
+        {
+          "time": "1:12:58",
+          "seconds": 4378,
+          "chooser": "l3uga",
+          "chosen_user": "milkypinqvi",
+          "command": "!кусь за попу",
+          "bot_time": "1:12:58",
+          "bot_reply": "КУСЬ и у milkypinqvi ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "попу",
+          "kus_text": "за попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "1:14:17",
+          "seconds": 4457,
+          "chooser": "haska_6977",
+          "chosen_user": "MIN0NA",
+          "command": "!кусь за попу",
+          "bot_time": "1:14:17",
+          "bot_reply": "КУСЬ и у MIN0NA ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "попу",
+          "kus_text": "за попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "1:14:43",
+          "seconds": 4483,
+          "chooser": "linmie",
+          "chosen_user": "vsratbrok",
+          "command": "!кусь за попу",
+          "bot_time": "1:14:44",
+          "bot_reply": "КУСЬ и у vsratbrok ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "попу",
+          "kus_text": "за попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "1:58:39",
+          "seconds": 7119,
+          "chooser": "l3uga",
+          "chosen_user": "alekstaurus",
+          "command": "!кусь за попу",
+          "bot_time": "1:58:40",
+          "bot_reply": "КУСЬ и у alekstaurus ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "попу",
+          "kus_text": "за попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2779025707"
+        }
+      ]
+    },
     {
       "title": "Лучшая попа",
       "count": 5,
@@ -260,84 +360,6 @@
           "adjective": "лучшую",
           "popka_form": "попу",
           "kus_text": "лучшую попу",
-          "mode": "popki",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        }
-      ]
-    },
-    {
-      "title": "За попа",
-      "count": 4,
-      "chosen_users": [
-        {
-          "user": "milkypinqvi",
-          "count": 1
-        },
-        {
-          "user": "MIN0NA",
-          "count": 1
-        },
-        {
-          "user": "PLunanei",
-          "count": 1
-        },
-        {
-          "user": "vsratbrok",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "4:57:57",
-          "seconds": 17877,
-          "chooser": "l3uga",
-          "chosen_user": "PLunanei",
-          "command": "!кусь за попу",
-          "bot_time": "4:57:57",
-          "bot_reply": "КУСЬ и у PLunanei ( . Y . ) стали больше!",
-          "adjective": "за",
-          "popka_form": "попу",
-          "source": "https://www.twitch.tv/videos/2776665031"
-        },
-        {
-          "time": "1:12:58",
-          "seconds": 4378,
-          "chooser": "l3uga",
-          "chosen_user": "milkypinqvi",
-          "command": "!кусь за попу",
-          "bot_time": "1:12:58",
-          "bot_reply": "КУСЬ и у milkypinqvi ( . Y . ) стали больше!",
-          "adjective": "за",
-          "popka_form": "попу",
-          "kus_text": "за попу",
-          "mode": "popki",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "1:14:17",
-          "seconds": 4457,
-          "chooser": "haska_6977",
-          "chosen_user": "MIN0NA",
-          "command": "!кусь за попу",
-          "bot_time": "1:14:17",
-          "bot_reply": "КУСЬ и у MIN0NA ( . Y . ) стали больше!",
-          "adjective": "за",
-          "popka_form": "попу",
-          "kus_text": "за попу",
-          "mode": "popki",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "1:14:43",
-          "seconds": 4483,
-          "chooser": "linmie",
-          "chosen_user": "vsratbrok",
-          "command": "!кусь за попу",
-          "bot_time": "1:14:44",
-          "bot_reply": "КУСЬ и у vsratbrok ( . Y . ) стали больше!",
-          "adjective": "за",
-          "popka_form": "попу",
-          "kus_text": "за попу",
           "mode": "popki",
           "source": "https://www.twitch.tv/videos/2778186232"
         }
@@ -1220,6 +1242,32 @@
           "adjective": "за мягкую",
           "popka_form": "попи",
           "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "За родинку на попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "MeowGPT",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:49:25",
+          "seconds": 17365,
+          "chooser": "l3uga",
+          "chosen_user": "MeowGPT",
+          "command": "!кусь за родинку на попе",
+          "bot_time": "4:49:25",
+          "bot_reply": "КУСЬ и у MeowGPT ( . Y . ) стали больше!",
+          "adjective": "за родинку на",
+          "popka_form": "попе",
+          "kus_text": "за родинку на попе",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2779025707"
         }
       ]
     },
