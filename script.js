@@ -4,12 +4,12 @@ const PAGE = body?.dataset?.page || "kus";
 let DATA = null;
 let DETAILS_OPEN = false;
 
-// 1) Создай приложение Twitch тут: https://dev.twitch.tv/console/apps
-// 2) В OAuth Redirect URLs добавь адрес своего GitHub Pages сайта, например:
+// 1) Создай приложение Twitch: https://dev.twitch.tv/console/apps
+// 2) В OAuth Redirect URLs добавь адрес главной GitHub Pages страницы, например:
 //    https://anicreek.github.io/REPO_NAME/
-// 3) Вставь Client ID ниже. Client Secret на GitHub Pages НЕ нужен и его нельзя сюда вставлять.
-const TWITCH_CLIENT_ID = "lrvv741h9kzldosuxd5aw0k6jir7hv";
-const TWITCH_SCOPES = "user:read:email";
+// 3) Вставь сюда "Идентификатор клиента". Client Secret сюда НЕ вставлять.
+const TWITCH_CLIENT_ID = "PASTE_TWITCH_CLIENT_ID_HERE";
+const TWITCH_SCOPES = ""; // для получения ника права не нужны
 let AUTH_USER = null;
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, m => ({
@@ -42,7 +42,6 @@ function firstSeconds(group) {
   return Number(group.first_seconds || 0);
 }
 
-
 function getSavedUser() {
   try {
     const raw = localStorage.getItem("twitch_user");
@@ -58,17 +57,35 @@ function saveUser(user) {
   else localStorage.removeItem("twitch_user");
 }
 
-function currentRedirectUri() {
-  return window.location.origin + window.location.pathname;
+function baseRedirectUri() {
+  // Для GitHub Pages удобнее всегда возвращаться на главную папку репозитория.
+  // Поэтому в Twitch Redirect URLs добавляй именно URL с / на конце.
+  const path = window.location.pathname.replace(/\/(index|popki)\.html$/i, "/");
+  return window.location.origin + path;
+}
+
+function currentPageFile() {
+  const last = window.location.pathname.split("/").pop();
+  if (!last || !last.endsWith(".html")) return PAGE === "popki" ? "popki.html" : "index.html";
+  return last;
+}
+
+function makeState() {
+  const state = crypto?.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
+  localStorage.setItem("twitch_oauth_state", state);
+  localStorage.setItem("twitch_return_page", currentPageFile());
+  return state;
 }
 
 function twitchLoginUrl() {
   const params = new URLSearchParams({
-    client_id: TWITCH_CLIENT_ID,
-    redirect_uri: currentRedirectUri(),
+    client_id: TWITCH_CLIENT_ID.trim(),
+    redirect_uri: baseRedirectUri(),
     response_type: "token",
-    scope: TWITCH_SCOPES,
+    state: makeState(),
+    force_verify: "false",
   });
+  if (TWITCH_SCOPES.trim()) params.set("scope", TWITCH_SCOPES.trim());
   return "https://id.twitch.tv/oauth2/authorize?" + params.toString();
 }
 
@@ -76,10 +93,10 @@ async function fetchTwitchUser(token) {
   const res = await fetch("https://api.twitch.tv/helix/users", {
     headers: {
       "Authorization": "Bearer " + token,
-      "Client-Id": TWITCH_CLIENT_ID,
+      "Client-Id": TWITCH_CLIENT_ID.trim(),
     }
   });
-  if (!res.ok) throw new Error("Twitch не отдал профиль пользователя");
+  if (!res.ok) throw new Error("Twitch не отдал профиль пользователя. Проверь Client ID и Redirect URL.");
   const json = await res.json();
   const user = json?.data?.[0];
   if (!user?.login) throw new Error("Не смог получить Twitch login");
@@ -91,13 +108,41 @@ async function fetchTwitchUser(token) {
 }
 
 async function handleTwitchCallback() {
-  const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+  const hashText = window.location.hash.replace(/^#/, "");
+  if (!hashText) return;
+  const hash = new URLSearchParams(hashText);
+
+  const error = hash.get("error");
+  if (error) {
+    const desc = hash.get("error_description") || error;
+    window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+    alert("Twitch вход не сработал: " + desc);
+    return;
+  }
+
   const token = hash.get("access_token");
   if (!token) return;
+
+  const expectedState = localStorage.getItem("twitch_oauth_state");
+  const returnedState = hash.get("state");
   window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+
+  if (expectedState && returnedState && expectedState !== returnedState) {
+    alert("Twitch вход отменён: state не совпал. Попробуй войти ещё раз.");
+    return;
+  }
+
   try {
     const user = await fetchTwitchUser(token);
     saveUser(user);
+    localStorage.removeItem("twitch_oauth_state");
+
+    const returnPage = localStorage.getItem("twitch_return_page");
+    localStorage.removeItem("twitch_return_page");
+    if (returnPage && returnPage !== currentPageFile()) {
+      const basePath = window.location.pathname.replace(/[^/]*$/, "");
+      window.location.replace(basePath + returnPage);
+    }
   } catch (err) {
     console.error(err);
     alert("Не получилось войти через Twitch: " + err.message);
@@ -121,8 +166,8 @@ function renderAuth() {
   if (!AUTH_USER) {
     loginBtn.hidden = false;
     logoutBtn.hidden = true;
-    authTitle.textContent = "Войди через Twitch, чтобы найти себя в топе";
-    authStatus.textContent = "После входа сайт подсветит твой ник в общем топе и покажет место.";
+    authTitle.textContent = "Найди себя в топе";
+    authStatus.textContent = "Войди через Twitch — подсвечу твой ник и покажу место.";
     return;
   }
 
@@ -132,7 +177,7 @@ function renderAuth() {
   const rank = findUserRank(AUTH_USER.login);
   authTitle.textContent = `Ты вошёл как ${display}`;
   if (rank) {
-    authStatus.innerHTML = `Ты в топе: <b>#${esc(rank.place)}</b>, тебя выбрало <b>${esc(rank.count)}</b> раз. В общем топе строка подсвечена.`;
+    authStatus.innerHTML = `Ты в топе: <b>#${esc(rank.place)}</b>, тебя выбрало <b>${esc(rank.count)}</b> раз.`;
   } else {
     authStatus.textContent = "Твоего ника пока нет в топе на этой странице.";
   }
@@ -143,7 +188,7 @@ function setupAuthButtons() {
   const logoutBtn = $("logoutTwitch");
   loginBtn?.addEventListener("click", () => {
     if (!TWITCH_CLIENT_ID || TWITCH_CLIENT_ID === "PASTE_TWITCH_CLIENT_ID_HERE") {
-      alert("Сначала вставь Twitch Client ID в script.js в переменную TWITCH_CLIENT_ID.");
+      alert("Сначала вставь Twitch Идентификатор клиента в script.js в переменную TWITCH_CLIENT_ID.");
       return;
     }
     window.location.href = twitchLoginUrl();
@@ -270,7 +315,7 @@ function renderCard(group) {
       <div class="card-head">
         <div>
           <h3>${esc(group.title || "Кусь")}</h3>
-          <div class="card-sub">${itemCount} ${PAGE === "popki" ? "совпадений" : "совпадений"} · ${chosenCount} выбранных</div>
+          <div class="card-sub">${itemCount} совпадений · ${chosenCount} выбранных</div>
         </div>
         <div class="card-count">${esc(itemCount)}</div>
       </div>
@@ -299,12 +344,12 @@ AUTH_USER = getSavedUser();
 setupAuthButtons();
 handleTwitchCallback().finally(() => {
   loadData().catch(err => {
-  setText("sourceName", "Ошибка загрузки данных");
-  setHTML("message", `<div class="error">
-    Не удалось загрузить <b>${esc(DATA_URL)}</b>.<br>
-    ${PAGE === "kus"
-      ? "Для главной страницы нужен файл <code>data/kus_site_data.json</code>. В парсере выключи ползунок “Попки” и сохрани JSON сайта."
-      : "Для страницы попок нужен файл <code>data/popki_site_data.json</code>. В парсере включи ползунок “Попки” и сохрани JSON сайта."}
-  </div>`);
+    setText("sourceName", "Ошибка загрузки данных");
+    setHTML("message", `<div class="error">
+      Не удалось загрузить <b>${esc(DATA_URL)}</b>.<br>
+      ${PAGE === "kus"
+        ? "Для главной страницы нужен файл <code>data/kus_site_data.json</code>. В парсере выключи ползунок “Попки” и сохрани JSON сайта."
+        : "Для страницы попок нужен файл <code>data/popki_site_data.json</code>. В парсере включи ползунок “Попки” и сохрани JSON сайта."}
+    </div>`);
   });
 });
