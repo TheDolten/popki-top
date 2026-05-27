@@ -4,11 +4,21 @@ const PAGE = body?.dataset?.page || "kus";
 let DATA = null;
 let DETAILS_OPEN = false;
 
+// 1) Создай приложение Twitch тут: https://dev.twitch.tv/console/apps
+// 2) В OAuth Redirect URLs добавь адрес своего GitHub Pages сайта, например:
+//    https://anicreek.github.io/REPO_NAME/
+// 3) Вставь Client ID ниже. Client Secret на GitHub Pages НЕ нужен и его нельзя сюда вставлять.
+const TWITCH_CLIENT_ID = "lrvv741h9kzldosuxd5aw0k6jir7hv";
+const TWITCH_SCOPES = "user:read:email";
+let AUTH_USER = null;
+
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, m => ({
   "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
 }[m]));
 const $ = (id) => document.getElementById(id);
 const norm = (s) => String(s ?? "").toLowerCase();
+const cleanLogin = (s) => norm(s).replace(/^@/, "").trim();
+const sameUser = (a, b) => cleanLogin(a) && cleanLogin(a) === cleanLogin(b);
 const setHTML = (id, html) => { const el = $(id); if (el) el.innerHTML = html; };
 const setText = (id, text) => { const el = $(id); if (el) el.textContent = text; };
 
@@ -30,6 +40,118 @@ function firstSeconds(group) {
     .filter(x => Number.isFinite(x));
   if (values.length) return Math.min(...values);
   return Number(group.first_seconds || 0);
+}
+
+
+function getSavedUser() {
+  try {
+    const raw = localStorage.getItem("twitch_user");
+    return raw ? JSON.parse(raw) : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+function saveUser(user) {
+  AUTH_USER = user || null;
+  if (AUTH_USER) localStorage.setItem("twitch_user", JSON.stringify(AUTH_USER));
+  else localStorage.removeItem("twitch_user");
+}
+
+function currentRedirectUri() {
+  return window.location.origin + window.location.pathname;
+}
+
+function twitchLoginUrl() {
+  const params = new URLSearchParams({
+    client_id: TWITCH_CLIENT_ID,
+    redirect_uri: currentRedirectUri(),
+    response_type: "token",
+    scope: TWITCH_SCOPES,
+  });
+  return "https://id.twitch.tv/oauth2/authorize?" + params.toString();
+}
+
+async function fetchTwitchUser(token) {
+  const res = await fetch("https://api.twitch.tv/helix/users", {
+    headers: {
+      "Authorization": "Bearer " + token,
+      "Client-Id": TWITCH_CLIENT_ID,
+    }
+  });
+  if (!res.ok) throw new Error("Twitch не отдал профиль пользователя");
+  const json = await res.json();
+  const user = json?.data?.[0];
+  if (!user?.login) throw new Error("Не смог получить Twitch login");
+  return {
+    login: user.login,
+    display_name: user.display_name || user.login,
+    profile_image_url: user.profile_image_url || "",
+  };
+}
+
+async function handleTwitchCallback() {
+  const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+  const token = hash.get("access_token");
+  if (!token) return;
+  window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+  try {
+    const user = await fetchTwitchUser(token);
+    saveUser(user);
+  } catch (err) {
+    console.error(err);
+    alert("Не получилось войти через Twitch: " + err.message);
+  }
+}
+
+function findUserRank(login) {
+  const list = DATA?.top_chosen || [];
+  const idx = list.findIndex(x => sameUser(x.user, login));
+  if (idx < 0) return null;
+  return { place: idx + 1, count: list[idx].count, user: list[idx].user };
+}
+
+function renderAuth() {
+  const loginBtn = $("loginTwitch");
+  const logoutBtn = $("logoutTwitch");
+  const authTitle = $("authTitle");
+  const authStatus = $("authStatus");
+  if (!loginBtn || !logoutBtn || !authTitle || !authStatus) return;
+
+  if (!AUTH_USER) {
+    loginBtn.hidden = false;
+    logoutBtn.hidden = true;
+    authTitle.textContent = "Войди через Twitch, чтобы найти себя в топе";
+    authStatus.textContent = "После входа сайт подсветит твой ник в общем топе и покажет место.";
+    return;
+  }
+
+  loginBtn.hidden = true;
+  logoutBtn.hidden = false;
+  const display = AUTH_USER.display_name || AUTH_USER.login;
+  const rank = findUserRank(AUTH_USER.login);
+  authTitle.textContent = `Ты вошёл как ${display}`;
+  if (rank) {
+    authStatus.innerHTML = `Ты в топе: <b>#${esc(rank.place)}</b>, тебя выбрало <b>${esc(rank.count)}</b> раз. В общем топе строка подсвечена.`;
+  } else {
+    authStatus.textContent = "Твоего ника пока нет в топе на этой странице.";
+  }
+}
+
+function setupAuthButtons() {
+  const loginBtn = $("loginTwitch");
+  const logoutBtn = $("logoutTwitch");
+  loginBtn?.addEventListener("click", () => {
+    if (!TWITCH_CLIENT_ID || TWITCH_CLIENT_ID === "PASTE_TWITCH_CLIENT_ID_HERE") {
+      alert("Сначала вставь Twitch Client ID в script.js в переменную TWITCH_CLIENT_ID.");
+      return;
+    }
+    window.location.href = twitchLoginUrl();
+  });
+  logoutBtn?.addEventListener("click", () => {
+    saveUser(null);
+    render();
+  });
 }
 
 async function loadData() {
@@ -55,16 +177,6 @@ function renderSource(meta = {}) {
   } else {
     setText("sourceName", "Статистика из Twitch-чата");
   }
-
-  if (sourceUrl) {
-    setHTML("sourceUrl", `<a href="${esc(sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(sourceUrl)}</a>`);
-  } else if (urls.length) {
-    setHTML("sourceUrl", urls.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(u)}</a>`).join("<br>"));
-  } else {
-    setText("sourceUrl", "—");
-  }
-
-  setText("dataFile", DATA_URL);
 }
 
 function render() {
@@ -72,6 +184,7 @@ function render() {
   const meta = DATA?.meta || {};
   document.title = meta.title || (PAGE === "kus" ? "🫦 Статистика кусей" : "🍑 Топ попок");
   renderSource(meta);
+  renderAuth();
 
   setText("total", String(meta.total ?? totalCount(groups)));
   setText("groups", String(meta.groups ?? groups.length));
@@ -88,7 +201,7 @@ function renderTop() {
     .slice(0, 100);
 
   setHTML("top", top.length ? top.map((x, i) => `
-    <div class="leader">
+    <div class="leader ${AUTH_USER && sameUser(x.user, AUTH_USER.login) ? "is-me" : ""}">
       <div class="leader-left">
         <span class="rank">#${i + 1}</span>
         <span class="name">${esc(x.user)}</span>
@@ -134,12 +247,12 @@ function renderGroups(allGroups) {
 
 function renderCard(group) {
   const users = (group.chosen_users || []).slice(0, 12).map(u =>
-    `<span class="user-chip">${esc(u.user)}${Number(u.count) > 1 ? ` <b>x${esc(u.count)}</b>` : ""}</span>`
+    `<span class="user-chip ${AUTH_USER && sameUser(u.user, AUTH_USER.login) ? "is-me" : ""}">${esc(u.user)}${Number(u.count) > 1 ? ` <b>x${esc(u.count)}</b>` : ""}</span>`
   ).join("");
 
   const items = (group.items || []).slice(0, 80).map(it => `
     <div class="item">
-      <div class="item-line"><span class="time">[${esc(it.time)}]</span> <span class="chooser">${esc(it.chooser || it.user || "???")}</span> → <b>${esc(it.chosen_user || "не определено")}</b></div>
+      <div class="item-line"><span class="time">[${esc(it.time)}]</span> <span class="chooser">${esc(it.chooser || it.user || "???")}</span> → <b class="${AUTH_USER && sameUser(it.chosen_user, AUTH_USER.login) ? "is-me-text" : ""}">${esc(it.chosen_user || "не определено")}</b></div>
       <div class="command">${esc(it.command)}</div>
       ${it.bot_reply ? `<div class="bot">Mara_Nei [${esc(it.bot_time || "")}] ${esc(it.bot_reply)}</div>` : ""}
     </div>
@@ -182,13 +295,16 @@ $("toggleDetails")?.addEventListener("click", () => {
   renderGroups(getGroups(DATA || {}));
 });
 
-loadData().catch(err => {
+AUTH_USER = getSavedUser();
+setupAuthButtons();
+handleTwitchCallback().finally(() => {
+  loadData().catch(err => {
   setText("sourceName", "Ошибка загрузки данных");
-  setText("sourceUrl", "—");
   setHTML("message", `<div class="error">
     Не удалось загрузить <b>${esc(DATA_URL)}</b>.<br>
     ${PAGE === "kus"
       ? "Для главной страницы нужен файл <code>data/kus_site_data.json</code>. В парсере выключи ползунок “Попки” и сохрани JSON сайта."
       : "Для страницы попок нужен файл <code>data/popki_site_data.json</code>. В парсере включи ползунок “Попки” и сохрани JSON сайта."}
   </div>`);
+  });
 });
