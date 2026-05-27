@@ -4,21 +4,37 @@
     "mode": "all_kus",
     "source": "lilanei",
     "source_url": "https://www.twitch.tv/lilanei",
-    "total": 218,
-    "groups": 172,
+    "total": 241,
+    "groups": 189,
     "sort": "По количеству"
   },
   "top_chosen": [
     {
       "user": "lilanei",
-      "count": 10
+      "count": 11
     },
     {
       "user": "Mara_Nei",
+      "count": 11
+    },
+    {
+      "user": "fenrirherel",
       "count": 10
     },
     {
       "user": "l3uga",
+      "count": 9
+    },
+    {
+      "user": "timmaadm",
+      "count": 9
+    },
+    {
+      "user": "haska_6977",
+      "count": 8
+    },
+    {
+      "user": "risele",
       "count": 8
     },
     {
@@ -26,27 +42,11 @@
       "count": 7
     },
     {
-      "user": "fenrirherel",
-      "count": 7
-    },
-    {
-      "user": "haska_6977",
-      "count": 7
-    },
-    {
       "user": "PLunanei",
       "count": 7
     },
     {
-      "user": "risele",
-      "count": 7
-    },
-    {
       "user": "TheKuraSaKI",
-      "count": 6
-    },
-    {
-      "user": "timmaadm",
       "count": 6
     },
     {
@@ -63,6 +63,10 @@
     },
     {
       "user": "Soba_Ken",
+      "count": 4
+    },
+    {
+      "user": "Toka_Tuxo",
       "count": 4
     },
     {
@@ -87,6 +91,10 @@
     },
     {
       "user": "kapitanpiton",
+      "count": 3
+    },
+    {
+      "user": "mishanya_zritel",
       "count": 3
     },
     {
@@ -126,6 +134,14 @@
       "count": 2
     },
     {
+      "user": "ging33rr",
+      "count": 2
+    },
+    {
+      "user": "Gossha",
+      "count": 2
+    },
+    {
       "user": "Hordegalger",
       "count": 2
     },
@@ -134,15 +150,15 @@
       "count": 2
     },
     {
-      "user": "mishanya_zritel",
-      "count": 2
-    },
-    {
       "user": "podpivasgosha",
       "count": 2
     },
     {
-      "user": "Toka_Tuxo",
+      "user": "sherilova",
+      "count": 2
+    },
+    {
+      "user": "Skeleton41k",
       "count": 2
     },
     {
@@ -214,6 +230,10 @@
       "count": 1
     },
     {
+      "user": "dms_tj_mike",
+      "count": 1
+    },
+    {
       "user": "DRAGON_SLAYERSSS",
       "count": 1
     },
@@ -231,14 +251,6 @@
     },
     {
       "user": "freal29",
-      "count": 1
-    },
-    {
-      "user": "ging33rr",
-      "count": 1
-    },
-    {
-      "user": "Gossha",
       "count": 1
     },
     {
@@ -338,10 +350,6 @@
       "count": 1
     },
     {
-      "user": "sherilova",
-      "count": 1
-    },
-    {
       "user": "slaw244",
       "count": 1
     },
@@ -358,7 +366,15 @@
       "count": 1
     },
     {
+      "user": "tutivo",
+      "count": 1
+    },
+    {
       "user": "VOROD",
+      "count": 1
+    },
+    {
+      "user": "WitnessTheFallacy",
       "count": 1
     },
     {
@@ -377,7 +393,7 @@
   "kusy": [
     {
       "title": "Кусь",
-      "count": 14,
+      "count": 17,
       "chosen_users": [
         {
           "user": "risele",
@@ -412,11 +428,23 @@
           "count": 1
         },
         {
+          "user": "Skeleton41k",
+          "count": 1
+        },
+        {
           "user": "Soba_Ken",
           "count": 1
         },
         {
           "user": "TheDolten",
+          "count": 1
+        },
+        {
+          "user": "timmaadm",
+          "count": 1
+        },
+        {
+          "user": "tutivo",
           "count": 1
         },
         {
@@ -628,6 +656,48 @@
           "kus_text": "",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "0:09:46",
+          "seconds": 586,
+          "chooser": "aleks77378",
+          "chosen_user": "timmaadm",
+          "command": "!кусь",
+          "bot_time": "0:09:47",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "",
+          "kus_text": "",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "0:53:42",
+          "seconds": 3222,
+          "chooser": "aleks77378",
+          "chosen_user": "tutivo",
+          "command": "!кусь",
+          "bot_time": "0:53:42",
+          "bot_reply": "КУСЬ и у tutivo ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "",
+          "kus_text": "",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "1:58:12",
+          "seconds": 7092,
+          "chooser": "whitefoxplayer",
+          "chosen_user": "Skeleton41k",
+          "command": "!Кусь",
+          "bot_time": "1:58:13",
+          "bot_reply": "КУСЬ и у Skeleton41k ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "",
+          "kus_text": "",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -748,6 +818,122 @@
       ]
     },
     {
+      "title": "Лучшую попу чата",
+      "count": 6,
+      "chosen_users": [
+        {
+          "user": "BipolarGluttony",
+          "count": 1
+        },
+        {
+          "user": "Druid_KL",
+          "count": 1
+        },
+        {
+          "user": "hellboundf",
+          "count": 1
+        },
+        {
+          "user": "peoap_rus",
+          "count": 1
+        },
+        {
+          "user": "thegoustbear",
+          "count": 1
+        },
+        {
+          "user": "не определено",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:53:46",
+          "seconds": 10426,
+          "chooser": "l3uga",
+          "chosen_user": "thegoustbear",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:53:47",
+          "bot_reply": "КУСЬ и у thegoustbear ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2777435656"
+        },
+        {
+          "time": "3:15:21",
+          "seconds": 11721,
+          "chooser": "TheDolten",
+          "chosen_user": "peoap_rus",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "3:15:22",
+          "bot_reply": "КУСЬ и у peoap_rus ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2777435656"
+        },
+        {
+          "time": "0:50:11",
+          "seconds": 3011,
+          "chooser": "l3uga",
+          "chosen_user": "BipolarGluttony",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "0:50:11",
+          "bot_reply": "КУСЬ и у BipolarGluttony ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "2:29:54",
+          "seconds": 8994,
+          "chooser": "l3uga",
+          "chosen_user": "Druid_KL",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:29:54",
+          "bot_reply": "КУСЬ и у Druid_KL ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "3:59:09",
+          "seconds": 14349,
+          "chooser": "haska_6977",
+          "chosen_user": "hellboundf",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "3:59:10",
+          "bot_reply": "КУСЬ и у hellboundf ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "2:16:17",
+          "seconds": 8177,
+          "chooser": "l3uga",
+          "chosen_user": "не определено",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:16:17",
+          "bot_reply": "КУСЬ и у 1BeeBeer ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "За попу",
       "count": 5,
       "chosen_users": [
@@ -840,104 +1026,6 @@
           "adjective": "за попу",
           "popka_form": "",
           "kus_text": "за попу",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2781419034"
-        }
-      ]
-    },
-    {
-      "title": "Лучшую попу чата",
-      "count": 5,
-      "chosen_users": [
-        {
-          "user": "BipolarGluttony",
-          "count": 1
-        },
-        {
-          "user": "Druid_KL",
-          "count": 1
-        },
-        {
-          "user": "hellboundf",
-          "count": 1
-        },
-        {
-          "user": "peoap_rus",
-          "count": 1
-        },
-        {
-          "user": "thegoustbear",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "2:53:46",
-          "seconds": 10426,
-          "chooser": "l3uga",
-          "chosen_user": "thegoustbear",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "2:53:47",
-          "bot_reply": "КУСЬ и у thegoustbear ( . Y . ) стали больше!",
-          "adjective": "лучшую попу чата",
-          "popka_form": "",
-          "kus_text": "лучшую попу чата",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2777435656"
-        },
-        {
-          "time": "3:15:21",
-          "seconds": 11721,
-          "chooser": "TheDolten",
-          "chosen_user": "peoap_rus",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "3:15:22",
-          "bot_reply": "КУСЬ и у peoap_rus ( . Y . ) стали больше!",
-          "adjective": "лучшую попу чата",
-          "popka_form": "",
-          "kus_text": "лучшую попу чата",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2777435656"
-        },
-        {
-          "time": "0:50:11",
-          "seconds": 3011,
-          "chooser": "l3uga",
-          "chosen_user": "BipolarGluttony",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "0:50:11",
-          "bot_reply": "КУСЬ и у BipolarGluttony ( . Y . ) стали больше!",
-          "adjective": "лучшую попу чата",
-          "popka_form": "",
-          "kus_text": "лучшую попу чата",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "2:29:54",
-          "seconds": 8994,
-          "chooser": "l3uga",
-          "chosen_user": "Druid_KL",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "2:29:54",
-          "bot_reply": "КУСЬ и у Druid_KL ( . Y . ) стали больше!",
-          "adjective": "лучшую попу чата",
-          "popka_form": "",
-          "kus_text": "лучшую попу чата",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2781419034"
-        },
-        {
-          "time": "3:59:09",
-          "seconds": 14349,
-          "chooser": "haska_6977",
-          "chosen_user": "hellboundf",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "3:59:10",
-          "bot_reply": "КУСЬ и у hellboundf ( . Y . ) стали больше!",
-          "adjective": "лучшую попу чата",
-          "popka_form": "",
-          "kus_text": "лучшую попу чата",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2781419034"
         }
@@ -1374,6 +1462,50 @@
       ]
     },
     {
+      "title": "Бота",
+      "count": 2,
+      "chosen_users": [
+        {
+          "user": "ArxMani9I",
+          "count": 1
+        },
+        {
+          "user": "mishanya_zritel",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:50:38",
+          "seconds": 13838,
+          "chooser": "haska_6977",
+          "chosen_user": "ArxMani9I",
+          "command": "!кусь бота",
+          "bot_time": "3:50:39",
+          "bot_reply": "КУСЬ и у ArxMani9I ( . Y . ) стали больше!",
+          "adjective": "бота",
+          "popka_form": "",
+          "kus_text": "бота",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "3:22:09",
+          "seconds": 12129,
+          "chooser": "haska_6977",
+          "chosen_user": "mishanya_zritel",
+          "command": "!кусь бота",
+          "bot_time": "3:22:09",
+          "bot_reply": "КУСЬ и у mishanya_zritel ( . Y . ) стали больше!",
+          "adjective": "бота",
+          "popka_form": "",
+          "kus_text": "бота",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Друида",
       "count": 2,
       "chosen_users": [
@@ -1414,6 +1546,50 @@
           "kus_text": "друида",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Женщину",
+      "count": 2,
+      "chosen_users": [
+        {
+          "user": "risele",
+          "count": 1
+        },
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:54:41",
+          "seconds": 6881,
+          "chooser": "risele",
+          "chosen_user": "timmaadm",
+          "command": "!кусь женщину",
+          "bot_time": "1:54:41",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "1:57:25",
+          "seconds": 7045,
+          "chooser": "Dark426k",
+          "chosen_user": "risele",
+          "command": "!кусь женщину",
+          "bot_time": "1:57:25",
+          "bot_reply": "КУСЬ и у risele ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -2028,28 +2204,28 @@
       ]
     },
     {
-      "title": "Бота",
+      "title": "Больного",
       "count": 1,
       "chosen_users": [
         {
-          "user": "ArxMani9I",
+          "user": "dms_tj_mike",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "3:50:38",
-          "seconds": 13838,
-          "chooser": "haska_6977",
-          "chosen_user": "ArxMani9I",
-          "command": "!кусь бота",
-          "bot_time": "3:50:39",
-          "bot_reply": "КУСЬ и у ArxMani9I ( . Y . ) стали больше!",
-          "adjective": "бота",
+          "time": "0:15:06",
+          "seconds": 906,
+          "chooser": "timmaadm",
+          "chosen_user": "dms_tj_mike",
+          "command": "!кусь больного",
+          "bot_time": "0:15:06",
+          "bot_reply": "КУСЬ и у dms_tj_mike ( . Y . ) стали больше!",
+          "adjective": "больного",
           "popka_form": "",
-          "kus_text": "бота",
+          "kus_text": "больного",
           "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2781419034"
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -2184,6 +2360,32 @@
       ]
     },
     {
+      "title": "Вифи вора",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Toka_Tuxo",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:26:18",
+          "seconds": 8778,
+          "chooser": "Toka_Tuxo",
+          "chosen_user": "Toka_Tuxo",
+          "command": "!кусь вифи вора",
+          "bot_time": "2:26:19",
+          "bot_reply": "КУСЬ и у Toka_Tuxo ( . Y . ) стали больше!",
+          "adjective": "вифи вора",
+          "popka_form": "",
+          "kus_text": "вифи вора",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Вора",
       "count": 1,
       "chosen_users": [
@@ -2258,6 +2460,32 @@
           "kus_text": "вредную пуську",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2779025707"
+        }
+      ]
+    },
+    {
+      "title": "Втубершу",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Gossha",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:22:07",
+          "seconds": 4927,
+          "chooser": "timmaadm",
+          "chosen_user": "Gossha",
+          "command": "!кусь втубершу",
+          "bot_time": "1:22:08",
+          "bot_reply": "КУСЬ и у Gossha ( . Y . ) стали больше!",
+          "adjective": "втубершу",
+          "popka_form": "",
+          "kus_text": "втубершу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -2388,6 +2616,32 @@
           "kus_text": "грабителя жопку",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Грязного",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "fenrirherel",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:50:37",
+          "seconds": 6637,
+          "chooser": "timmaadm",
+          "chosen_user": "fenrirherel",
+          "command": "!кусь грязного",
+          "bot_time": "1:50:38",
+          "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
+          "adjective": "грязного",
+          "popka_form": "",
+          "kus_text": "грязного",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -2938,6 +3192,32 @@
       ]
     },
     {
+      "title": "За жопу",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "ging33rr",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:03:30",
+          "seconds": 11010,
+          "chooser": "l3uga",
+          "chosen_user": "ging33rr",
+          "command": "!кусь за жопу",
+          "bot_time": "3:03:30",
+          "bot_reply": "КУСЬ и у ging33rr ( . Y . ) стали больше!",
+          "adjective": "за жопу",
+          "popka_form": "",
+          "kus_text": "за жопу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "За звезду смерти",
       "count": 1,
       "chosen_users": [
@@ -3302,6 +3582,32 @@
       ]
     },
     {
+      "title": "Зернышко",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "WitnessTheFallacy",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:29:16",
+          "seconds": 8956,
+          "chooser": "risele",
+          "chosen_user": "WitnessTheFallacy",
+          "command": "!кусь зернышко",
+          "bot_time": "2:29:17",
+          "bot_reply": "КУСЬ и у WitnessTheFallacy ( . Y . ) стали больше!",
+          "adjective": "зернышко",
+          "popka_form": "",
+          "kus_text": "зернышко",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Злого",
       "count": 1,
       "chosen_users": [
@@ -3324,6 +3630,32 @@
           "kus_text": "злого",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Злую попку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Skeleton41k",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:10:46",
+          "seconds": 15046,
+          "chooser": "TheDolten",
+          "chosen_user": "Skeleton41k",
+          "command": "!кусь злую попку",
+          "bot_time": "4:10:47",
+          "bot_reply": "КУСЬ и у Skeleton41k ( . Y . ) стали больше!",
+          "adjective": "злую попку",
+          "popka_form": "",
+          "kus_text": "злую попку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -3402,6 +3734,32 @@
           "kus_text": "играмана",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2781419034"
+        }
+      ]
+    },
+    {
+      "title": "Изменника",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Mara_Nei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:13:02",
+          "seconds": 4382,
+          "chooser": "timmaadm",
+          "chosen_user": "Mara_Nei",
+          "command": "!кусь изменника",
+          "bot_time": "1:13:02",
+          "bot_reply": "КУСЬ и у Mara_Nei ( . Y . ) стали больше!",
+          "adjective": "изменника",
+          "popka_form": "",
+          "kus_text": "изменника",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -4368,6 +4726,32 @@
       ]
     },
     {
+      "title": "Помытого",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "haska_6977",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:50:22",
+          "seconds": 6622,
+          "chooser": "risele",
+          "chosen_user": "haska_6977",
+          "command": "!кусь помытого",
+          "bot_time": "1:50:22",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "помытого",
+          "popka_form": "",
+          "kus_text": "помытого",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Пончика awoo",
       "count": 1,
       "chosen_users": [
@@ -4598,6 +4982,32 @@
           "kus_text": "пчелку JAJAJAJA",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Размытого",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Toka_Tuxo",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:29:26",
+          "seconds": 8966,
+          "chooser": "timmaadm",
+          "chosen_user": "Toka_Tuxo",
+          "command": "!кусь размытого",
+          "bot_time": "2:29:27",
+          "bot_reply": "КУСЬ и у Toka_Tuxo ( . Y . ) стали больше!",
+          "adjective": "размытого",
+          "popka_form": "",
+          "kus_text": "размытого",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -4836,6 +5246,32 @@
       ]
     },
     {
+      "title": "Секретную попку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "fenrirherel",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:11:02",
+          "seconds": 15062,
+          "chooser": "TheDolten",
+          "chosen_user": "fenrirherel",
+          "command": "!кусь секретную попку",
+          "bot_time": "4:11:02",
+          "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
+          "adjective": "секретную попку",
+          "popka_form": "",
+          "kus_text": "секретную попку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Сладенького зрителя",
       "count": 1,
       "chosen_users": [
@@ -4966,6 +5402,32 @@
       ]
     },
     {
+      "title": "Спойлер",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "fenrirherel",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:56:59",
+          "seconds": 7019,
+          "chooser": "Toka_Tuxo",
+          "chosen_user": "fenrirherel",
+          "command": "!кусь спойлер",
+          "bot_time": "1:57:00",
+          "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
+          "adjective": "спойлер",
+          "popka_form": "",
+          "kus_text": "спойлер",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Спорную логику",
       "count": 1,
       "chosen_users": [
@@ -5018,6 +5480,32 @@
       ]
     },
     {
+      "title": "Среднего",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "l3uga",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:59:35",
+          "seconds": 7175,
+          "chooser": "risele",
+          "chosen_user": "l3uga",
+          "command": "!кусь среднего",
+          "bot_time": "1:59:36",
+          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
+          "adjective": "среднего",
+          "popka_form": "",
+          "kus_text": "среднего",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Стрелка",
       "count": 1,
       "chosen_users": [
@@ -5040,6 +5528,58 @@
           "kus_text": "стрелка",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Стрим настроек",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "lilanei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:29:44",
+          "seconds": 8984,
+          "chooser": "Dark426k",
+          "chosen_user": "lilanei",
+          "command": "!кусь стрим настроек",
+          "bot_time": "2:29:44",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "стрим настроек",
+          "popka_form": "",
+          "kus_text": "стрим настроек",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
+      "title": "Стримершу",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:21:09",
+          "seconds": 4869,
+          "chooser": "timmaadm",
+          "chosen_user": "timmaadm",
+          "command": "!кусь стримершу",
+          "bot_time": "1:21:10",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "стримершу",
+          "popka_form": "",
+          "kus_text": "стримершу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -5638,6 +6178,32 @@
           "kus_text": "шерсть ебаную",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2779025707"
+        }
+      ]
+    },
+    {
+      "title": "Шлендателя",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "sherilova",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:24:43",
+          "seconds": 5083,
+          "chooser": "Dark426k",
+          "chosen_user": "sherilova",
+          "command": "!кусь шлендателя",
+          "bot_time": "1:24:44",
+          "bot_reply": "КУСЬ и у sherilova ( . Y . ) стали больше!",
+          "adjective": "шлендателя",
+          "popka_form": "",
+          "kus_text": "шлендателя",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -5671,7 +6237,7 @@
   "popki": [
     {
       "title": "Кусь",
-      "count": 14,
+      "count": 17,
       "chosen_users": [
         {
           "user": "risele",
@@ -5706,11 +6272,23 @@
           "count": 1
         },
         {
+          "user": "Skeleton41k",
+          "count": 1
+        },
+        {
           "user": "Soba_Ken",
           "count": 1
         },
         {
           "user": "TheDolten",
+          "count": 1
+        },
+        {
+          "user": "timmaadm",
+          "count": 1
+        },
+        {
+          "user": "tutivo",
           "count": 1
         },
         {
@@ -5922,6 +6500,48 @@
           "kus_text": "",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "0:09:46",
+          "seconds": 586,
+          "chooser": "aleks77378",
+          "chosen_user": "timmaadm",
+          "command": "!кусь",
+          "bot_time": "0:09:47",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "",
+          "kus_text": "",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "0:53:42",
+          "seconds": 3222,
+          "chooser": "aleks77378",
+          "chosen_user": "tutivo",
+          "command": "!кусь",
+          "bot_time": "0:53:42",
+          "bot_reply": "КУСЬ и у tutivo ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "",
+          "kus_text": "",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "1:58:12",
+          "seconds": 7092,
+          "chooser": "whitefoxplayer",
+          "chosen_user": "Skeleton41k",
+          "command": "!Кусь",
+          "bot_time": "1:58:13",
+          "bot_reply": "КУСЬ и у Skeleton41k ( . Y . ) стали больше!",
+          "adjective": "",
+          "popka_form": "",
+          "kus_text": "",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -6042,6 +6662,122 @@
       ]
     },
     {
+      "title": "Лучшую попу чата",
+      "count": 6,
+      "chosen_users": [
+        {
+          "user": "BipolarGluttony",
+          "count": 1
+        },
+        {
+          "user": "Druid_KL",
+          "count": 1
+        },
+        {
+          "user": "hellboundf",
+          "count": 1
+        },
+        {
+          "user": "peoap_rus",
+          "count": 1
+        },
+        {
+          "user": "thegoustbear",
+          "count": 1
+        },
+        {
+          "user": "не определено",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:53:46",
+          "seconds": 10426,
+          "chooser": "l3uga",
+          "chosen_user": "thegoustbear",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:53:47",
+          "bot_reply": "КУСЬ и у thegoustbear ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2777435656"
+        },
+        {
+          "time": "3:15:21",
+          "seconds": 11721,
+          "chooser": "TheDolten",
+          "chosen_user": "peoap_rus",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "3:15:22",
+          "bot_reply": "КУСЬ и у peoap_rus ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2777435656"
+        },
+        {
+          "time": "0:50:11",
+          "seconds": 3011,
+          "chooser": "l3uga",
+          "chosen_user": "BipolarGluttony",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "0:50:11",
+          "bot_reply": "КУСЬ и у BipolarGluttony ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "2:29:54",
+          "seconds": 8994,
+          "chooser": "l3uga",
+          "chosen_user": "Druid_KL",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:29:54",
+          "bot_reply": "КУСЬ и у Druid_KL ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "3:59:09",
+          "seconds": 14349,
+          "chooser": "haska_6977",
+          "chosen_user": "hellboundf",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "3:59:10",
+          "bot_reply": "КУСЬ и у hellboundf ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "2:16:17",
+          "seconds": 8177,
+          "chooser": "l3uga",
+          "chosen_user": "не определено",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:16:17",
+          "bot_reply": "КУСЬ и у 1BeeBeer ( . Y . ) стали больше!",
+          "adjective": "лучшую попу чата",
+          "popka_form": "",
+          "kus_text": "лучшую попу чата",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "За попу",
       "count": 5,
       "chosen_users": [
@@ -6134,104 +6870,6 @@
           "adjective": "за попу",
           "popka_form": "",
           "kus_text": "за попу",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2781419034"
-        }
-      ]
-    },
-    {
-      "title": "Лучшую попу чата",
-      "count": 5,
-      "chosen_users": [
-        {
-          "user": "BipolarGluttony",
-          "count": 1
-        },
-        {
-          "user": "Druid_KL",
-          "count": 1
-        },
-        {
-          "user": "hellboundf",
-          "count": 1
-        },
-        {
-          "user": "peoap_rus",
-          "count": 1
-        },
-        {
-          "user": "thegoustbear",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "2:53:46",
-          "seconds": 10426,
-          "chooser": "l3uga",
-          "chosen_user": "thegoustbear",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "2:53:47",
-          "bot_reply": "КУСЬ и у thegoustbear ( . Y . ) стали больше!",
-          "adjective": "лучшую попу чата",
-          "popka_form": "",
-          "kus_text": "лучшую попу чата",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2777435656"
-        },
-        {
-          "time": "3:15:21",
-          "seconds": 11721,
-          "chooser": "TheDolten",
-          "chosen_user": "peoap_rus",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "3:15:22",
-          "bot_reply": "КУСЬ и у peoap_rus ( . Y . ) стали больше!",
-          "adjective": "лучшую попу чата",
-          "popka_form": "",
-          "kus_text": "лучшую попу чата",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2777435656"
-        },
-        {
-          "time": "0:50:11",
-          "seconds": 3011,
-          "chooser": "l3uga",
-          "chosen_user": "BipolarGluttony",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "0:50:11",
-          "bot_reply": "КУСЬ и у BipolarGluttony ( . Y . ) стали больше!",
-          "adjective": "лучшую попу чата",
-          "popka_form": "",
-          "kus_text": "лучшую попу чата",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "2:29:54",
-          "seconds": 8994,
-          "chooser": "l3uga",
-          "chosen_user": "Druid_KL",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "2:29:54",
-          "bot_reply": "КУСЬ и у Druid_KL ( . Y . ) стали больше!",
-          "adjective": "лучшую попу чата",
-          "popka_form": "",
-          "kus_text": "лучшую попу чата",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2781419034"
-        },
-        {
-          "time": "3:59:09",
-          "seconds": 14349,
-          "chooser": "haska_6977",
-          "chosen_user": "hellboundf",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "3:59:10",
-          "bot_reply": "КУСЬ и у hellboundf ( . Y . ) стали больше!",
-          "adjective": "лучшую попу чата",
-          "popka_form": "",
-          "kus_text": "лучшую попу чата",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2781419034"
         }
@@ -6668,6 +7306,50 @@
       ]
     },
     {
+      "title": "Бота",
+      "count": 2,
+      "chosen_users": [
+        {
+          "user": "ArxMani9I",
+          "count": 1
+        },
+        {
+          "user": "mishanya_zritel",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:50:38",
+          "seconds": 13838,
+          "chooser": "haska_6977",
+          "chosen_user": "ArxMani9I",
+          "command": "!кусь бота",
+          "bot_time": "3:50:39",
+          "bot_reply": "КУСЬ и у ArxMani9I ( . Y . ) стали больше!",
+          "adjective": "бота",
+          "popka_form": "",
+          "kus_text": "бота",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "3:22:09",
+          "seconds": 12129,
+          "chooser": "haska_6977",
+          "chosen_user": "mishanya_zritel",
+          "command": "!кусь бота",
+          "bot_time": "3:22:09",
+          "bot_reply": "КУСЬ и у mishanya_zritel ( . Y . ) стали больше!",
+          "adjective": "бота",
+          "popka_form": "",
+          "kus_text": "бота",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Друида",
       "count": 2,
       "chosen_users": [
@@ -6708,6 +7390,50 @@
           "kus_text": "друида",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Женщину",
+      "count": 2,
+      "chosen_users": [
+        {
+          "user": "risele",
+          "count": 1
+        },
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:54:41",
+          "seconds": 6881,
+          "chooser": "risele",
+          "chosen_user": "timmaadm",
+          "command": "!кусь женщину",
+          "bot_time": "1:54:41",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "1:57:25",
+          "seconds": 7045,
+          "chooser": "Dark426k",
+          "chosen_user": "risele",
+          "command": "!кусь женщину",
+          "bot_time": "1:57:25",
+          "bot_reply": "КУСЬ и у risele ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -7322,28 +8048,28 @@
       ]
     },
     {
-      "title": "Бота",
+      "title": "Больного",
       "count": 1,
       "chosen_users": [
         {
-          "user": "ArxMani9I",
+          "user": "dms_tj_mike",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "3:50:38",
-          "seconds": 13838,
-          "chooser": "haska_6977",
-          "chosen_user": "ArxMani9I",
-          "command": "!кусь бота",
-          "bot_time": "3:50:39",
-          "bot_reply": "КУСЬ и у ArxMani9I ( . Y . ) стали больше!",
-          "adjective": "бота",
+          "time": "0:15:06",
+          "seconds": 906,
+          "chooser": "timmaadm",
+          "chosen_user": "dms_tj_mike",
+          "command": "!кусь больного",
+          "bot_time": "0:15:06",
+          "bot_reply": "КУСЬ и у dms_tj_mike ( . Y . ) стали больше!",
+          "adjective": "больного",
           "popka_form": "",
-          "kus_text": "бота",
+          "kus_text": "больного",
           "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2781419034"
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -7478,6 +8204,32 @@
       ]
     },
     {
+      "title": "Вифи вора",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Toka_Tuxo",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:26:18",
+          "seconds": 8778,
+          "chooser": "Toka_Tuxo",
+          "chosen_user": "Toka_Tuxo",
+          "command": "!кусь вифи вора",
+          "bot_time": "2:26:19",
+          "bot_reply": "КУСЬ и у Toka_Tuxo ( . Y . ) стали больше!",
+          "adjective": "вифи вора",
+          "popka_form": "",
+          "kus_text": "вифи вора",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Вора",
       "count": 1,
       "chosen_users": [
@@ -7552,6 +8304,32 @@
           "kus_text": "вредную пуську",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2779025707"
+        }
+      ]
+    },
+    {
+      "title": "Втубершу",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Gossha",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:22:07",
+          "seconds": 4927,
+          "chooser": "timmaadm",
+          "chosen_user": "Gossha",
+          "command": "!кусь втубершу",
+          "bot_time": "1:22:08",
+          "bot_reply": "КУСЬ и у Gossha ( . Y . ) стали больше!",
+          "adjective": "втубершу",
+          "popka_form": "",
+          "kus_text": "втубершу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -7682,6 +8460,32 @@
           "kus_text": "грабителя жопку",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Грязного",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "fenrirherel",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:50:37",
+          "seconds": 6637,
+          "chooser": "timmaadm",
+          "chosen_user": "fenrirherel",
+          "command": "!кусь грязного",
+          "bot_time": "1:50:38",
+          "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
+          "adjective": "грязного",
+          "popka_form": "",
+          "kus_text": "грязного",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -8232,6 +9036,32 @@
       ]
     },
     {
+      "title": "За жопу",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "ging33rr",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:03:30",
+          "seconds": 11010,
+          "chooser": "l3uga",
+          "chosen_user": "ging33rr",
+          "command": "!кусь за жопу",
+          "bot_time": "3:03:30",
+          "bot_reply": "КУСЬ и у ging33rr ( . Y . ) стали больше!",
+          "adjective": "за жопу",
+          "popka_form": "",
+          "kus_text": "за жопу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "За звезду смерти",
       "count": 1,
       "chosen_users": [
@@ -8596,6 +9426,32 @@
       ]
     },
     {
+      "title": "Зернышко",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "WitnessTheFallacy",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:29:16",
+          "seconds": 8956,
+          "chooser": "risele",
+          "chosen_user": "WitnessTheFallacy",
+          "command": "!кусь зернышко",
+          "bot_time": "2:29:17",
+          "bot_reply": "КУСЬ и у WitnessTheFallacy ( . Y . ) стали больше!",
+          "adjective": "зернышко",
+          "popka_form": "",
+          "kus_text": "зернышко",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Злого",
       "count": 1,
       "chosen_users": [
@@ -8618,6 +9474,32 @@
           "kus_text": "злого",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Злую попку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Skeleton41k",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:10:46",
+          "seconds": 15046,
+          "chooser": "TheDolten",
+          "chosen_user": "Skeleton41k",
+          "command": "!кусь злую попку",
+          "bot_time": "4:10:47",
+          "bot_reply": "КУСЬ и у Skeleton41k ( . Y . ) стали больше!",
+          "adjective": "злую попку",
+          "popka_form": "",
+          "kus_text": "злую попку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -8696,6 +9578,32 @@
           "kus_text": "играмана",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2781419034"
+        }
+      ]
+    },
+    {
+      "title": "Изменника",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Mara_Nei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:13:02",
+          "seconds": 4382,
+          "chooser": "timmaadm",
+          "chosen_user": "Mara_Nei",
+          "command": "!кусь изменника",
+          "bot_time": "1:13:02",
+          "bot_reply": "КУСЬ и у Mara_Nei ( . Y . ) стали больше!",
+          "adjective": "изменника",
+          "popka_form": "",
+          "kus_text": "изменника",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -9662,6 +10570,32 @@
       ]
     },
     {
+      "title": "Помытого",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "haska_6977",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:50:22",
+          "seconds": 6622,
+          "chooser": "risele",
+          "chosen_user": "haska_6977",
+          "command": "!кусь помытого",
+          "bot_time": "1:50:22",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "помытого",
+          "popka_form": "",
+          "kus_text": "помытого",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Пончика awoo",
       "count": 1,
       "chosen_users": [
@@ -9892,6 +10826,32 @@
           "kus_text": "пчелку JAJAJAJA",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Размытого",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Toka_Tuxo",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:29:26",
+          "seconds": 8966,
+          "chooser": "timmaadm",
+          "chosen_user": "Toka_Tuxo",
+          "command": "!кусь размытого",
+          "bot_time": "2:29:27",
+          "bot_reply": "КУСЬ и у Toka_Tuxo ( . Y . ) стали больше!",
+          "adjective": "размытого",
+          "popka_form": "",
+          "kus_text": "размытого",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -10130,6 +11090,32 @@
       ]
     },
     {
+      "title": "Секретную попку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "fenrirherel",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:11:02",
+          "seconds": 15062,
+          "chooser": "TheDolten",
+          "chosen_user": "fenrirherel",
+          "command": "!кусь секретную попку",
+          "bot_time": "4:11:02",
+          "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
+          "adjective": "секретную попку",
+          "popka_form": "",
+          "kus_text": "секретную попку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Сладенького зрителя",
       "count": 1,
       "chosen_users": [
@@ -10260,6 +11246,32 @@
       ]
     },
     {
+      "title": "Спойлер",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "fenrirherel",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:56:59",
+          "seconds": 7019,
+          "chooser": "Toka_Tuxo",
+          "chosen_user": "fenrirherel",
+          "command": "!кусь спойлер",
+          "bot_time": "1:57:00",
+          "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
+          "adjective": "спойлер",
+          "popka_form": "",
+          "kus_text": "спойлер",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Спорную логику",
       "count": 1,
       "chosen_users": [
@@ -10312,6 +11324,32 @@
       ]
     },
     {
+      "title": "Среднего",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "l3uga",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:59:35",
+          "seconds": 7175,
+          "chooser": "risele",
+          "chosen_user": "l3uga",
+          "command": "!кусь среднего",
+          "bot_time": "1:59:36",
+          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
+          "adjective": "среднего",
+          "popka_form": "",
+          "kus_text": "среднего",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
       "title": "Стрелка",
       "count": 1,
       "chosen_users": [
@@ -10334,6 +11372,58 @@
           "kus_text": "стрелка",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Стрим настроек",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "lilanei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:29:44",
+          "seconds": 8984,
+          "chooser": "Dark426k",
+          "chosen_user": "lilanei",
+          "command": "!кусь стрим настроек",
+          "bot_time": "2:29:44",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "стрим настроек",
+          "popka_form": "",
+          "kus_text": "стрим настроек",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        }
+      ]
+    },
+    {
+      "title": "Стримершу",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:21:09",
+          "seconds": 4869,
+          "chooser": "timmaadm",
+          "chosen_user": "timmaadm",
+          "command": "!кусь стримершу",
+          "bot_time": "1:21:10",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "стримершу",
+          "popka_form": "",
+          "kus_text": "стримершу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
@@ -10932,6 +12022,32 @@
           "kus_text": "шерсть ебаную",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2779025707"
+        }
+      ]
+    },
+    {
+      "title": "Шлендателя",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "sherilova",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:24:43",
+          "seconds": 5083,
+          "chooser": "Dark426k",
+          "chosen_user": "sherilova",
+          "command": "!кусь шлендателя",
+          "bot_time": "1:24:44",
+          "bot_reply": "КУСЬ и у sherilova ( . Y . ) стали больше!",
+          "adjective": "шлендателя",
+          "popka_form": "",
+          "kus_text": "шлендателя",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
         }
       ]
     },
