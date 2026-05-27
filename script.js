@@ -8,7 +8,7 @@ let DETAILS_OPEN = false;
 // 2) В OAuth Redirect URLs добавь адрес главной GitHub Pages страницы, например:
 //    https://anicreek.github.io/REPO_NAME/
 // 3) Вставь сюда "Идентификатор клиента". Client Secret сюда НЕ вставлять.
-const TWITCH_CLIENT_ID = "PASTE_TWITCH_CLIENT_ID_HERE";
+const TWITCH_CLIENT_ID = "lrvv741h9kzldosuxd5aw0k6jir7hv";
 const TWITCH_SCOPES = ""; // для получения ника права не нужны
 let AUTH_USER = null;
 
