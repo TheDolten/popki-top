@@ -4,7 +4,7 @@
     "mode": "popki",
     "source": "lilanei",
     "source_url": "https://www.twitch.tv/lilanei",
-    "total": 88,
+    "total": 91,
     "groups": 69,
     "sort": "По количеству"
   },
@@ -20,6 +20,10 @@
     {
       "user": "TheDolten",
       "count": 5
+    },
+    {
+      "user": "lilanei",
+      "count": 4
     },
     {
       "user": "Mara_Nei",
@@ -39,10 +43,6 @@
     },
     {
       "user": "DarKSiR666",
-      "count": 3
-    },
-    {
-      "user": "lilanei",
       "count": 3
     },
     {
@@ -98,7 +98,15 @@
       "count": 1
     },
     {
+      "user": "Druid_KL",
+      "count": 1
+    },
+    {
       "user": "Gossha",
+      "count": 1
+    },
+    {
+      "user": "hellboundf",
       "count": 1
     },
     {
@@ -180,11 +188,141 @@
   ],
   "popki": [
     {
+      "title": "Лучшая попа",
+      "count": 7,
+      "chosen_users": [
+        {
+          "user": "BipolarGluttony",
+          "count": 1
+        },
+        {
+          "user": "conroy0001",
+          "count": 1
+        },
+        {
+          "user": "Darkenrald",
+          "count": 1
+        },
+        {
+          "user": "Druid_KL",
+          "count": 1
+        },
+        {
+          "user": "hellboundf",
+          "count": 1
+        },
+        {
+          "user": "peoap_rus",
+          "count": 1
+        },
+        {
+          "user": "thegoustbear",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:55:50",
+          "seconds": 10550,
+          "chooser": "l3uga",
+          "chosen_user": "conroy0001",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:55:50",
+          "bot_reply": "КУСЬ и у conroy0001 ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2775862699"
+        },
+        {
+          "time": "3:30:58",
+          "seconds": 12658,
+          "chooser": "l3uga",
+          "chosen_user": "Darkenrald",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "3:30:58",
+          "bot_reply": "КУСЬ и у Darkenrald ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2776665031"
+        },
+        {
+          "time": "2:53:46",
+          "seconds": 10426,
+          "chooser": "l3uga",
+          "chosen_user": "thegoustbear",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:53:47",
+          "bot_reply": "КУСЬ и у thegoustbear ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2777435656"
+        },
+        {
+          "time": "3:15:21",
+          "seconds": 11721,
+          "chooser": "TheDolten",
+          "chosen_user": "peoap_rus",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "3:15:22",
+          "bot_reply": "КУСЬ и у peoap_rus ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "source": "https://www.twitch.tv/videos/2777435656"
+        },
+        {
+          "time": "0:50:11",
+          "seconds": 3011,
+          "chooser": "l3uga",
+          "chosen_user": "BipolarGluttony",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "0:50:11",
+          "bot_reply": "КУСЬ и у BipolarGluttony ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "kus_text": "лучшую попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "2:29:54",
+          "seconds": 8994,
+          "chooser": "l3uga",
+          "chosen_user": "Druid_KL",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "2:29:54",
+          "bot_reply": "КУСЬ и у Druid_KL ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "kus_text": "лучшую попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "3:59:09",
+          "seconds": 14349,
+          "chooser": "haska_6977",
+          "chosen_user": "hellboundf",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "3:59:10",
+          "bot_reply": "КУСЬ и у hellboundf ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "kus_text": "лучшую попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        }
+      ]
+    },
+    {
       "title": "За попа",
-      "count": 5,
+      "count": 6,
       "chosen_users": [
         {
           "user": "alekstaurus",
+          "count": 1
+        },
+        {
+          "user": "lilanei",
           "count": 1
         },
         {
@@ -272,96 +410,20 @@
           "kus_text": "за попу",
           "mode": "popki",
           "source": "https://www.twitch.tv/videos/2779025707"
-        }
-      ]
-    },
-    {
-      "title": "Лучшая попа",
-      "count": 5,
-      "chosen_users": [
-        {
-          "user": "BipolarGluttony",
-          "count": 1
         },
         {
-          "user": "conroy0001",
-          "count": 1
-        },
-        {
-          "user": "Darkenrald",
-          "count": 1
-        },
-        {
-          "user": "peoap_rus",
-          "count": 1
-        },
-        {
-          "user": "thegoustbear",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "2:55:50",
-          "seconds": 10550,
+          "time": "3:58:48",
+          "seconds": 14328,
           "chooser": "l3uga",
-          "chosen_user": "conroy0001",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "2:55:50",
-          "bot_reply": "КУСЬ и у conroy0001 ( . Y . ) стали больше!",
-          "adjective": "лучшую",
+          "chosen_user": "lilanei",
+          "command": "!кусь за попу",
+          "bot_time": "3:58:48",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "за",
           "popka_form": "попу",
-          "source": "https://www.twitch.tv/videos/2775862699"
-        },
-        {
-          "time": "3:30:58",
-          "seconds": 12658,
-          "chooser": "l3uga",
-          "chosen_user": "Darkenrald",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "3:30:58",
-          "bot_reply": "КУСЬ и у Darkenrald ( . Y . ) стали больше!",
-          "adjective": "лучшую",
-          "popka_form": "попу",
-          "source": "https://www.twitch.tv/videos/2776665031"
-        },
-        {
-          "time": "2:53:46",
-          "seconds": 10426,
-          "chooser": "l3uga",
-          "chosen_user": "thegoustbear",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "2:53:47",
-          "bot_reply": "КУСЬ и у thegoustbear ( . Y . ) стали больше!",
-          "adjective": "лучшую",
-          "popka_form": "попу",
-          "source": "https://www.twitch.tv/videos/2777435656"
-        },
-        {
-          "time": "3:15:21",
-          "seconds": 11721,
-          "chooser": "TheDolten",
-          "chosen_user": "peoap_rus",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "3:15:22",
-          "bot_reply": "КУСЬ и у peoap_rus ( . Y . ) стали больше!",
-          "adjective": "лучшую",
-          "popka_form": "попу",
-          "source": "https://www.twitch.tv/videos/2777435656"
-        },
-        {
-          "time": "0:50:11",
-          "seconds": 3011,
-          "chooser": "l3uga",
-          "chosen_user": "BipolarGluttony",
-          "command": "!кусь лучшую попу чата",
-          "bot_time": "0:50:11",
-          "bot_reply": "КУСЬ и у BipolarGluttony ( . Y . ) стали больше!",
-          "adjective": "лучшую",
-          "popka_form": "попу",
-          "kus_text": "лучшую попу",
+          "kus_text": "за попу",
           "mode": "popki",
-          "source": "https://www.twitch.tv/videos/2778186232"
+          "source": "https://www.twitch.tv/videos/2781419034"
         }
       ]
     },
