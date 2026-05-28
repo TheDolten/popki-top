@@ -4,10 +4,7 @@ const PAGE = body?.dataset?.page || "kus";
 let DATA = null;
 let DETAILS_OPEN = false;
 
-// 1) Создай приложение Twitch: https://dev.twitch.tv/console/apps
-// 2) В OAuth Redirect URLs добавь адрес главной GitHub Pages страницы, например:
-//    https://anicreek.github.io/REPO_NAME/
-// 3) Вставь сюда "Идентификатор клиента". Client Secret сюда НЕ вставлять.
+
 const TWITCH_CLIENT_ID = "lrvv741h9kzldosuxd5aw0k6jir7hv";
 const TWITCH_SCOPES = ""; // для получения ника права не нужны
 let AUTH_USER = null;
@@ -58,8 +55,6 @@ function saveUser(user) {
 }
 
 function baseRedirectUri() {
-  // Для GitHub Pages удобнее всегда возвращаться на главную папку репозитория.
-  // Поэтому в Twitch Redirect URLs добавляй именно URL с / на конце.
   const path = window.location.pathname.replace(/\/(index|popki)\.html$/i, "/");
   return window.location.origin + path;
 }
@@ -353,3 +348,213 @@ handleTwitchCallback().finally(() => {
     </div>`);
   });
 });
+
+
+
+// ─────────────────────────────────────────────
+// Тихая фоновая музыка
+// Сохраняем позицию, чтобы при переходе index.html ↔ popki.html
+// музыка продолжалась примерно с того же места, а не начиналась заново.
+// ─────────────────────────────────────────────
+(function initBackgroundMusic(){
+  const music = document.getElementById("bgMusic");
+  const btn = document.getElementById("musicToggle");
+  if (!music || !btn) return;
+
+  const MUSIC_VOLUME = 0.05;
+  const MUSIC_TIME_KEY = "bgMusicTime";
+  const MUSIC_UPDATED_KEY = "bgMusicTimeUpdatedAt";
+
+  music.volume = MUSIC_VOLUME;
+  let enabled = localStorage.getItem("bgMusicOff") !== "1";
+  let playing = false;
+  let saveTimer = null;
+
+  function safeSavedTime(){
+    const value = Number(localStorage.getItem(MUSIC_TIME_KEY) || 0);
+    return Number.isFinite(value) && value >= 0 ? value : 0;
+  }
+
+  function restoreMusicPosition(){
+    const saved = safeSavedTime();
+    if (!saved) return;
+
+    // Если трек уже знает duration — не ставим время прямо в самый конец.
+    if (Number.isFinite(music.duration) && music.duration > 0) {
+      music.currentTime = Math.min(saved, Math.max(0, music.duration - 0.5));
+    } else {
+      music.currentTime = saved;
+    }
+  }
+
+  function saveMusicPosition(){
+    if (!music || !Number.isFinite(music.currentTime)) return;
+    localStorage.setItem(MUSIC_TIME_KEY, String(music.currentTime));
+    localStorage.setItem(MUSIC_UPDATED_KEY, String(Date.now()));
+  }
+
+  function startSavingPosition(){
+    if (saveTimer) return;
+    saveTimer = setInterval(saveMusicPosition, 700);
+  }
+
+  function stopSavingPosition(){
+    if (!saveTimer) return;
+    clearInterval(saveTimer);
+    saveTimer = null;
+  }
+
+  function updateMusicButton(){
+    if (!enabled) {
+      btn.textContent = "🔇";
+      btn.classList.add("is-off");
+      btn.title = "Включить музыку";
+      btn.setAttribute("aria-label", "Включить музыку");
+    } else if (playing) {
+      btn.textContent = "🔊";
+      btn.classList.remove("is-off");
+      btn.title = "Выключить музыку";
+      btn.setAttribute("aria-label", "Выключить музыку");
+    } else {
+      btn.textContent = "🎵";
+      btn.classList.remove("is-off");
+      btn.title = "Включить музыку";
+      btn.setAttribute("aria-label", "Включить музыку");
+    }
+  }
+
+  async function tryPlayMusic(){
+    if (!enabled) return;
+    try {
+      music.volume = MUSIC_VOLUME;
+      if (music.readyState >= 1) restoreMusicPosition();
+      await music.play();
+      playing = true;
+      startSavingPosition();
+    } catch (_) {
+      // Браузер может блокировать звук до первого клика по странице.
+      playing = false;
+    }
+    updateMusicButton();
+  }
+
+  function stopMusic(){
+    saveMusicPosition();
+    music.pause();
+    playing = false;
+    stopSavingPosition();
+    updateMusicButton();
+  }
+
+  music.addEventListener("loadedmetadata", restoreMusicPosition, { once: true });
+  music.addEventListener("timeupdate", saveMusicPosition);
+  music.addEventListener("pause", saveMusicPosition);
+  music.addEventListener("ended", () => {
+    localStorage.setItem(MUSIC_TIME_KEY, "0");
+  });
+
+  window.addEventListener("pagehide", saveMusicPosition);
+  window.addEventListener("beforeunload", saveMusicPosition);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") saveMusicPosition();
+  });
+
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (enabled && playing) {
+      enabled = false;
+      localStorage.setItem("bgMusicOff", "1");
+      stopMusic();
+      return;
+    }
+
+    if (enabled && !playing) {
+      tryPlayMusic();
+      return;
+    }
+
+    enabled = true;
+    localStorage.removeItem("bgMusicOff");
+    tryPlayMusic();
+  });
+
+  function startAfterFirstInteraction(e){
+    if (e?.target?.closest?.("#musicToggle")) return;
+    tryPlayMusic();
+    document.removeEventListener("pointerdown", startAfterFirstInteraction);
+    document.removeEventListener("keydown", startAfterFirstInteraction);
+  }
+
+  if (enabled) {
+    // Попробуем сразу, но если браузер запретит — включится после первого клика по сайту.
+    tryPlayMusic();
+    document.addEventListener("pointerdown", startAfterFirstInteraction);
+    document.addEventListener("keydown", startAfterFirstInteraction);
+  }
+
+  updateMusicButton();
+})();
+
+// ─────────────────────────────────────────────
+// Интерактивный кот
+// ─────────────────────────────────────────────
+(function initPetCat(){
+  const petCat = document.getElementById("petCat");
+  const catBubble = document.getElementById("catBubble");
+  const catCount = document.getElementById("catCount");
+  const catPurrSound = document.getElementById("catPurrSound");
+  if (!petCat || !catBubble || !catCount) return;
+
+  let pets = Number(localStorage.getItem("catPets") || 0);
+  catCount.textContent = String(pets);
+
+  const catPhrases = [
+    "мур-р-р ♡",
+    "мяу",
+    "ещё!",
+    "приятно",
+    "пурр",
+    "люблю куси",
+    "я охраняю топ"
+  ];
+
+  function playCatPurr(){
+    if (!catPurrSound) return;
+    try {
+      catPurrSound.pause();
+      catPurrSound.currentTime = 0;
+      catPurrSound.volume = 0.32;
+      const promise = catPurrSound.play();
+      if (promise && typeof promise.catch === "function") promise.catch(() => {});
+    } catch (_) {}
+  }
+
+  function petTheCat(){
+    pets += 1;
+    localStorage.setItem("catPets", String(pets));
+    catCount.textContent = String(pets);
+
+    catBubble.textContent = catPhrases[Math.floor(Math.random() * catPhrases.length)];
+    petCat.classList.add("happy", "pet-shake");
+    playCatPurr();
+
+    const heart = document.createElement("div");
+    heart.className = "cat-heart";
+    heart.textContent = Math.random() > 0.18 ? "❤" : "★";
+    petCat.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 900);
+    setTimeout(() => petCat.classList.remove("pet-shake"), 360);
+    setTimeout(() => petCat.classList.remove("happy"), 650);
+  }
+
+  petCat.addEventListener("click", petTheCat);
+  petCat.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      petTheCat();
+    }
+  });
+})();
