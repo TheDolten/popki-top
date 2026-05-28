@@ -17,3 +17,5 @@ style.css
 script.js
 data/
 └── popki_site_data.json
+assets/
+└── purr.mp3
