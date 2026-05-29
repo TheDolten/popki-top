@@ -24,6 +24,7 @@
         <nav class="nav" aria-label="Навигация по сайту">
           <a href="index.html">Все куси</a>
           <a class="active" href="popki.html">Попки</a>
+          <a class="achievements-nav-link" href="achievements.html" title="Нужно войти через Twitch">Достижения</a>
         </nav>
       </div>
 
@@ -121,6 +122,35 @@
     </footer>
   </main>
 
+
+  <div id="d20Widget" class="d20-widget" title="Бросить d20" aria-label="Бросить d20">
+    <div id="d20Bubble" class="d20-bubble">Скоро будет</div>
+
+    <button id="d20Dice" class="d20-dice d20-clean" type="button" aria-label="Бросить d20">
+      <svg class="d20-svg" viewBox="0 0 200 200" aria-hidden="true">
+        <!-- светлый d20 с увеличенной центральной гранью -->
+        <polygon points="100,12 180,58 178,138 100,188 22,138 20,58"
+                 fill="#f7f9ff" stroke="#0d0f1d" stroke-width="5" stroke-linejoin="round"/>
+
+        <polygon points="100,12 180,58 122,58" fill="#e8eeff" stroke="#0d0f1d" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="100,12 78,58 20,58" fill="#f3f6ff" stroke="#0d0f1d" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="78,58 100,12 122,58" fill="#eef3ff" stroke="#0d0f1d" stroke-width="4" stroke-linejoin="round"/>
+
+        <polygon points="20,58 78,58 42,138 22,138" fill="#e1e8fb" stroke="#0d0f1d" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="122,58 180,58 178,138 158,138" fill="#dce5fb" stroke="#0d0f1d" stroke-width="4" stroke-linejoin="round"/>
+
+        <!-- центральная грань специально крупнее, число только здесь -->
+        <polygon class="d20-center-face" points="78,58 122,58 158,138 100,172 42,138"
+                 fill="#ffffff" stroke="#0d0f1d" stroke-width="5" stroke-linejoin="round"/>
+
+        <polygon points="22,138 42,138 100,188" fill="#d6e0f5" stroke="#0d0f1d" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="158,138 178,138 100,188" fill="#d6e0f5" stroke="#0d0f1d" stroke-width="4" stroke-linejoin="round"/>
+        <polygon points="42,138 100,172 158,138 100,188" fill="#edf2ff" stroke="#0d0f1d" stroke-width="4" stroke-linejoin="round"/>
+
+        <text id="d20Main" class="d20-svg-number" x="100" y="122" text-anchor="middle">20</text>
+      </svg>
+    </button>
+  </div>
 
   <div id="petCat" class="pet-cat" title="Погладить кота" aria-label="Погладить кота" role="button" tabindex="0">
     <div class="cat-bubble" id="catBubble">мяу</div>

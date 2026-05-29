@@ -4,10 +4,27 @@ const PAGE = body?.dataset?.page || "kus";
 let DATA = null;
 let DETAILS_OPEN = false;
 
-
 const TWITCH_CLIENT_ID = "lrvv741h9kzldosuxd5aw0k6jir7hv";
-const TWITCH_SCOPES = ""; // для получения ника права не нужны
+const TWITCH_SCOPES = "";
+const ACHIEVEMENTS_API_URL = "https://script.google.com/macros/s/AKfycbyqHLfvWLv6b6Txxh1MfmpERO8ISN9AaeCd78s-nTFDbY9i_pO4Yhp16Nz2HXyC6FL4/exec";
 let AUTH_USER = null;
+let USER_STATE = null;
+let LAST_RANK_SYNC_KEY = "";
+let CAT_PET_PENDING = 0;
+let CAT_PET_TIMER = null;
+let CAT_PET_SYNCING = false;
+
+const ACHIEVEMENT_DEFS = [
+  { id: "top_1", icon: "👑", title: "Король топа", desc: "Попасть на 1 место в общем топе.", hidden: false },
+  { id: "top_5", icon: "💎", title: "Топ-5", desc: "Попасть в первые 5 мест общего топа.", hidden: false },
+  { id: "top_10", icon: "🏆", title: "Топ-10", desc: "Попасть в первые 10 мест общего топа.", hidden: false },
+  { id: "top_20", icon: "⭐", title: "Топ-20", desc: "Попасть в первые 20 мест общего топа.", hidden: false },
+  { id: "cat_10", icon: "🐾", title: "Котик доверяет", desc: "Погладить кота 10 раз.", hidden: false },
+  { id: "cat_20", icon: "😺", title: "Любимчик кота", desc: "Погладить кота 20 раз.", hidden: false },
+  { id: "hidden_cat_100", icon: "🐈‍⬛", title: "Тайный кошачий друг", desc: "Скрытое достижение: погладить кота 100 раз.", hidden: true },
+  { id: "hidden_three_20", icon: "🎲", title: "Критическая удача", desc: "Скрытое достижение: выбросить 20 три раза подряд за 5 минут.", hidden: true },
+  { id: "hidden_jump_lila", icon: "🤡", title: "Сначала нужно прыгнуть", desc: "Скрытое достижение: за постоянные прыжки в бездну", hidden: true },
+];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, m => ({
   "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
@@ -50,8 +67,15 @@ function getSavedUser() {
 
 function saveUser(user) {
   AUTH_USER = user || null;
-  if (AUTH_USER) localStorage.setItem("twitch_user", JSON.stringify(AUTH_USER));
-  else localStorage.removeItem("twitch_user");
+  USER_STATE = null;
+  LAST_RANK_SYNC_KEY = "";
+  if (AUTH_USER) {
+    localStorage.setItem("twitch_user", JSON.stringify(AUTH_USER));
+    loadLocalUserState();
+  } else {
+    localStorage.removeItem("twitch_user");
+  }
+  updateAchievementsNavLock();
 }
 
 function baseRedirectUri() {
@@ -194,6 +218,347 @@ function setupAuthButtons() {
   });
 }
 
+function achievementsApiReady() {
+  return ACHIEVEMENTS_API_URL && ACHIEVEMENTS_API_URL !== "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+}
+
+function userAchievementsSet() {
+  return new Set(Array.isArray(USER_STATE?.achievements) ? USER_STATE.achievements : []);
+}
+
+function getAchievementDef(id) {
+  return ACHIEVEMENT_DEFS.find(a => a.id === id) || { id, icon: "🏅", title: id, desc: "Достижение открыто.", hidden: false };
+}
+
+function localStateKey(login = AUTH_USER?.login) {
+  return "achievements_state_" + cleanLogin(login || "guest");
+}
+
+function defaultUserState(user = AUTH_USER) {
+  const login = cleanLogin(user?.login || "");
+  return {
+    login,
+    display_name: user?.display_name || login,
+    profile_image_url: user?.profile_image_url || "",
+    cat_pets: 0,
+    d20_rolls: 0,
+    best_d20: 0,
+    last_d20: "",
+    achievements: [],
+    recent20: [],
+    updated_at: new Date().toISOString(),
+  };
+}
+
+function normalizeUserState(state, user = AUTH_USER) {
+  const base = defaultUserState(user);
+  const merged = { ...base, ...(state || {}) };
+  merged.login = cleanLogin(merged.login || user?.login || "");
+  merged.cat_pets = Number(merged.cat_pets || 0);
+  merged.d20_rolls = Number(merged.d20_rolls || 0);
+  merged.best_d20 = Number(merged.best_d20 || 0);
+  merged.achievements = Array.isArray(merged.achievements) ? merged.achievements : [];
+  merged.recent20 = Array.isArray(merged.recent20) ? merged.recent20 : [];
+  return merged;
+}
+
+function loadLocalUserState() {
+  if (!AUTH_USER) return null;
+  try {
+    const raw = localStorage.getItem(localStateKey());
+    USER_STATE = normalizeUserState(raw ? JSON.parse(raw) : null);
+  } catch (_) {
+    USER_STATE = defaultUserState();
+  }
+  localStorage.setItem("catPets", String(USER_STATE.cat_pets || 0));
+  return USER_STATE;
+}
+
+function saveLocalUserState() {
+  if (!AUTH_USER || !USER_STATE) return;
+  USER_STATE = normalizeUserState(USER_STATE);
+  USER_STATE.updated_at = new Date().toISOString();
+  localStorage.setItem(localStateKey(), JSON.stringify(USER_STATE));
+  localStorage.setItem("catPets", String(USER_STATE.cat_pets || 0));
+}
+
+function ensureUserState() {
+  if (!AUTH_USER) return null;
+  if (!USER_STATE) loadLocalUserState();
+  if (!USER_STATE) USER_STATE = defaultUserState();
+  return USER_STATE;
+}
+
+function unlockLocalAchievement(id, notify = true) {
+  const state = ensureUserState();
+  if (!state) return false;
+  if (!state.achievements.includes(id)) {
+    state.achievements.push(id);
+    saveLocalUserState();
+    if (notify) showAchievementToast(id);
+    renderAchievementsPage();
+    return true;
+  }
+  return false;
+}
+
+function mergeRemoteState(remote) {
+  if (!AUTH_USER || !remote) return;
+  const local = ensureUserState() || defaultUserState();
+  const remoteAchievements = Array.isArray(remote.achievements) ? remote.achievements : [];
+  USER_STATE = normalizeUserState({
+    ...local,
+    ...remote,
+    cat_pets: Math.max(Number(local.cat_pets || 0), Number(remote.cat_pets || 0)),
+    d20_rolls: Math.max(Number(local.d20_rolls || 0), Number(remote.d20_rolls || 0)),
+    best_d20: Math.max(Number(local.best_d20 || 0), Number(remote.best_d20 || 0)),
+    achievements: remoteAchievements,
+  });
+  saveLocalUserState();
+}
+
+function updateCatCounterFromState() {
+  const catCount = document.getElementById("catCount");
+  if (!catCount || !AUTH_USER || USER_STATE?.cat_pets == null) return;
+  const visible = Number(catCount.textContent || 0);
+  const saved = Number(USER_STATE.cat_pets || 0);
+  catCount.textContent = String(Math.max(visible, saved));
+}
+
+function updateAchievementsNavLock() {
+  document.querySelectorAll(".achievements-nav-link").forEach((a) => {
+    if (AUTH_USER) {
+      a.classList.remove("auth-required");
+      a.removeAttribute("title");
+    } else {
+      a.classList.add("auth-required");
+      a.setAttribute("title", "Нужно войти через Twitch");
+    }
+  });
+}
+
+function setupAchievementsNav() {
+  document.querySelectorAll(".achievements-nav-link").forEach((a) => {
+    const warn = () => {
+      if (!AUTH_USER) showSmallSiteNotice("Сначала войди через Twitch, чтобы открыть достижения.");
+    };
+    a.addEventListener("mouseenter", warn);
+    a.addEventListener("focus", warn);
+    a.addEventListener("click", (e) => {
+      if (!AUTH_USER) {
+        e.preventDefault();
+        warn();
+      }
+    });
+  });
+  updateAchievementsNavLock();
+}
+
+function showSmallSiteNotice(text) {
+  let box = document.getElementById("siteNotice");
+  if (!box) {
+    box = document.createElement("div");
+    box.id = "siteNotice";
+    box.className = "site-notice";
+    document.body.appendChild(box);
+  }
+  box.textContent = text;
+  box.classList.add("show");
+  clearTimeout(showSmallSiteNotice._timer);
+  showSmallSiteNotice._timer = setTimeout(() => box.classList.remove("show"), 2200);
+}
+
+function showAchievementToast(achievementId) {
+  const def = getAchievementDef(achievementId);
+  let holder = document.getElementById("achievementToastHolder");
+  if (!holder) {
+    holder = document.createElement("div");
+    holder.id = "achievementToastHolder";
+    holder.className = "achievement-toast-holder";
+    document.body.appendChild(holder);
+  }
+
+  const toast = document.createElement("button");
+  toast.type = "button";
+  toast.className = "achievement-toast";
+  toast.innerHTML = `
+    <span class="achievement-toast-glow"></span>
+    <b>${esc(def.icon)} Достижение открыто!</b>
+    <strong>${esc(def.title)}</strong>
+    <small>${esc(def.desc || "Нажми, чтобы закрыть")}</small>
+    <em>Нажми, чтобы закрыть</em>
+  `;
+
+  const closeToast = () => {
+    clearTimeout(toast._closeTimer);
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 260);
+  };
+
+  toast.addEventListener("click", closeToast);
+  holder.appendChild(toast);
+
+  setTimeout(() => toast.classList.add("show"), 20);
+  toast._closeTimer = setTimeout(closeToast, 30000);
+}
+
+function applyApiState(payload) {
+  if (!payload || !payload.ok) return;
+  const before = userAchievementsSet();
+  mergeRemoteState(payload.user || null);
+
+  const newly = Array.isArray(payload.newly_unlocked) ? payload.newly_unlocked : [];
+  newly.forEach((id) => {
+    if (!before.has(id)) showAchievementToast(id);
+    unlockLocalAchievement(id, false);
+  });
+
+  updateCatCounterFromState();
+  renderAchievementsPage();
+}
+
+async function sendAchievementEvent(action, value = {}) {
+  if (!AUTH_USER || !achievementsApiReady()) return null;
+
+  const payload = {
+    action,
+    value,
+    page: PAGE,
+    user: {
+      login: AUTH_USER.login,
+      display_name: AUTH_USER.display_name || AUTH_USER.login,
+      profile_image_url: AUTH_USER.profile_image_url || "",
+    }
+  };
+
+  try {
+    const res = await fetch(ACHIEVEMENTS_API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+    });
+    const json = await res.json();
+    applyApiState(json);
+    return json;
+  } catch (err) {
+    console.warn("Не удалось обновить достижения:", err);
+    return null;
+  }
+}
+
+async function loadRemoteUserState() {
+  if (!AUTH_USER || !achievementsApiReady()) {
+    renderAchievementsPage();
+    return;
+  }
+  await sendAchievementEvent("get", {});
+}
+
+async function syncRankAchievement() {
+  if (!AUTH_USER || !DATA || PAGE === "popki") return;
+  const rank = findUserRank(AUTH_USER.login);
+  if (!rank) return;
+
+  const key = `${AUTH_USER.login}:${PAGE}:${rank.place}:${rank.count}`;
+  if (LAST_RANK_SYNC_KEY === key) return;
+  LAST_RANK_SYNC_KEY = key;
+
+  await sendAchievementEvent("rank_sync", {
+    place: rank.place,
+    count: rank.count,
+    source_page: PAGE,
+  });
+}
+
+function queueCatPetSync(amount = 1) {
+  if (!AUTH_USER || !achievementsApiReady()) return;
+  CAT_PET_PENDING += Math.max(1, Number(amount || 1));
+  clearTimeout(CAT_PET_TIMER);
+  CAT_PET_TIMER = setTimeout(flushCatPetSync, 700);
+}
+
+async function flushCatPetSync() {
+  if (CAT_PET_SYNCING || CAT_PET_PENDING <= 0) return;
+  CAT_PET_SYNCING = true;
+  const amount = CAT_PET_PENDING;
+  CAT_PET_PENDING = 0;
+  await sendAchievementEvent("cat_pet", { amount });
+  CAT_PET_SYNCING = false;
+  if (CAT_PET_PENDING > 0) {
+    clearTimeout(CAT_PET_TIMER);
+    CAT_PET_TIMER = setTimeout(flushCatPetSync, 350);
+  }
+}
+
+function recordCatPet() {
+  if (!AUTH_USER) return;
+  const state = ensureUserState();
+  state.cat_pets = Number(state.cat_pets || 0) + 1;
+  saveLocalUserState();
+  updateCatCounterFromState();
+  queueCatPetSync(1);
+}
+
+async function recordD20Roll(value) {
+  if (!AUTH_USER) return;
+  const roll = Math.max(1, Math.min(20, Number(value) || 0));
+  const state = ensureUserState();
+  state.d20_rolls = Number(state.d20_rolls || 0) + 1;
+  state.last_d20 = roll;
+  state.best_d20 = Math.max(Number(state.best_d20 || 0), roll);
+  saveLocalUserState();
+  renderAchievementsPage();
+  await sendAchievementEvent("d20_roll", { roll });
+}
+
+function renderAchievementsPage() {
+  if (PAGE !== "achievements") return;
+
+  const locked = document.getElementById("achLocked");
+  const grid = document.getElementById("achievementsGrid");
+  const msg = document.getElementById("achievementsMessage");
+  if (!locked || !grid) return;
+
+  if (!AUTH_USER) {
+    locked.hidden = false;
+    grid.innerHTML = "";
+    if (msg) msg.innerHTML = "";
+    setText("achUnlockedCount", "0");
+    setText("achCatPets", "0");
+    setText("achBestD20", "—");
+    return;
+  }
+
+  locked.hidden = true;
+
+  if (!achievementsApiReady()) {
+    if (msg) msg.innerHTML = `<div class="error">В <code>script.js</code> нужно вставить URL Google Apps Script в <b>ACHIEVEMENTS_API_URL</b>, иначе достижения не будут сохраняться.</div>`;
+  } else if (msg) {
+    msg.innerHTML = "";
+  }
+
+  const earned = userAchievementsSet();
+  const visibleDefs = ACHIEVEMENT_DEFS.filter(a => !a.hidden || earned.has(a.id));
+
+  setText("achUnlockedCount", String(earned.size));
+  setText("achCatPets", String(USER_STATE?.cat_pets ?? 0));
+  setText("achBestD20", USER_STATE?.best_d20 ? String(USER_STATE.best_d20) : "—");
+
+  grid.innerHTML = visibleDefs.map((a) => {
+    const unlocked = earned.has(a.id);
+    return `
+      <article class="achievement-card ${unlocked ? "unlocked" : "locked"} ${a.hidden ? "secret" : ""}">
+        <div class="achievement-icon">${esc(a.icon)}</div>
+        <div>
+          <h3>${esc(a.title)}</h3>
+          <p>${esc(a.desc)}</p>
+          <span class="achievement-status">${unlocked ? "Открыто" : "Не открыто"}</span>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
 async function loadData() {
   const res = await fetch(DATA_URL + "?v=" + Date.now(), { cache: "no-store" });
   if (!res.ok) throw new Error("Не смог загрузить " + DATA_URL);
@@ -222,9 +587,15 @@ function renderSource(meta = {}) {
 function render() {
   const groups = getGroups(DATA);
   const meta = DATA?.meta || {};
-  document.title = meta.title || (PAGE === "kus" ? "🫦 Статистика кусей" : "🍑 Топ попок");
+  document.title = meta.title || (PAGE === "kus" ? "🫦 Статистика кусей" : PAGE === "popki" ? "🍑 Топ попок" : "🏅 Достижения");
   renderSource(meta);
   renderAuth();
+  updateAchievementsNavLock();
+
+  if (PAGE === "achievements") {
+    renderAchievementsPage();
+    return;
+  }
 
   setText("total", String(meta.total ?? totalCount(groups)));
   setText("groups", String(meta.groups ?? groups.length));
@@ -336,32 +707,36 @@ $("toggleDetails")?.addEventListener("click", () => {
 });
 
 AUTH_USER = getSavedUser();
+if (AUTH_USER) loadLocalUserState();
 setupAuthButtons();
-handleTwitchCallback().finally(() => {
-  loadData().catch(err => {
+setupAchievementsNav();
+handleTwitchCallback().finally(async () => {
+  try {
+    await loadData();
+    if (AUTH_USER) {
+      await syncRankAchievement();
+      await loadRemoteUserState();
+      await syncRankAchievement();
+      render();
+    }
+  } catch (err) {
     setText("sourceName", "Ошибка загрузки данных");
-    setHTML("message", `<div class="error">
+    const target = PAGE === "achievements" ? "achievementsMessage" : "message";
+    setHTML(target, `<div class="error">
       Не удалось загрузить <b>${esc(DATA_URL)}</b>.<br>
-      ${PAGE === "kus"
-        ? "Для главной страницы нужен файл <code>data/kus_site_data.json</code>. В парсере выключи ползунок “Попки” и сохрани JSON сайта."
-        : "Для страницы попок нужен файл <code>data/popki_site_data.json</code>. В парсере включи ползунок “Попки” и сохрани JSON сайта."}
+      ${PAGE === "popki"
+        ? "Для страницы попок нужен файл <code>data/popki_site_data.json</code>. В парсере включи ползунок “Попки” и сохрани JSON сайта."
+        : "Для главной страницы и достижений нужен файл <code>data/kus_site_data.json</code>."}
     </div>`);
-  });
+  }
 });
 
-
-
-// ─────────────────────────────────────────────
-// Тихая фоновая музыка
-// Сохраняем позицию, чтобы при переходе index.html ↔ popki.html
-// музыка продолжалась примерно с того же места, а не начиналась заново.
-// ─────────────────────────────────────────────
 (function initBackgroundMusic(){
   const music = document.getElementById("bgMusic");
   const btn = document.getElementById("musicToggle");
   if (!music || !btn) return;
 
-  const MUSIC_VOLUME = 0.05;
+  const MUSIC_VOLUME = 0.14;
   const MUSIC_TIME_KEY = "bgMusicTime";
   const MUSIC_UPDATED_KEY = "bgMusicTimeUpdatedAt";
 
@@ -379,7 +754,6 @@ handleTwitchCallback().finally(() => {
     const saved = safeSavedTime();
     if (!saved) return;
 
-    // Если трек уже знает duration — не ставим время прямо в самый конец.
     if (Number.isFinite(music.duration) && music.duration > 0) {
       music.currentTime = Math.min(saved, Math.max(0, music.duration - 0.5));
     } else {
@@ -432,7 +806,6 @@ handleTwitchCallback().finally(() => {
       playing = true;
       startSavingPosition();
     } catch (_) {
-      // Браузер может блокировать звук до первого клика по странице.
       playing = false;
     }
     updateMusicButton();
@@ -488,7 +861,6 @@ handleTwitchCallback().finally(() => {
   }
 
   if (enabled) {
-    // Попробуем сразу, но если браузер запретит — включится после первого клика по сайту.
     tryPlayMusic();
     document.addEventListener("pointerdown", startAfterFirstInteraction);
     document.addEventListener("keydown", startAfterFirstInteraction);
@@ -497,9 +869,6 @@ handleTwitchCallback().finally(() => {
   updateMusicButton();
 })();
 
-// ─────────────────────────────────────────────
-// Интерактивный кот
-// ─────────────────────────────────────────────
 (function initPetCat(){
   const petCat = document.getElementById("petCat");
   const catBubble = document.getElementById("catBubble");
@@ -507,7 +876,7 @@ handleTwitchCallback().finally(() => {
   const catPurrSound = document.getElementById("catPurrSound");
   if (!petCat || !catBubble || !catCount) return;
 
-  let pets = Number(localStorage.getItem("catPets") || 0);
+  let pets = AUTH_USER ? Number(ensureUserState()?.cat_pets || 0) : Number(localStorage.getItem("catPets") || 0);
   catCount.textContent = String(pets);
 
   const catPhrases = [
@@ -532,9 +901,19 @@ handleTwitchCallback().finally(() => {
   }
 
   function petTheCat(){
-    pets += 1;
-    localStorage.setItem("catPets", String(pets));
-    catCount.textContent = String(pets);
+    if (AUTH_USER) {
+      const state = ensureUserState();
+      state.cat_pets = Number(state.cat_pets || 0) + 1;
+      pets = Number(state.cat_pets || 0);
+      saveLocalUserState();
+      catCount.textContent = String(pets);
+      queueCatPetSync(1);
+      renderAchievementsPage();
+    } else {
+      pets += 1;
+      localStorage.setItem("catPets", String(pets));
+      catCount.textContent = String(pets);
+    }
 
     catBubble.textContent = catPhrases[Math.floor(Math.random() * catPhrases.length)];
     petCat.classList.add("happy", "pet-shake");
@@ -556,5 +935,83 @@ handleTwitchCallback().finally(() => {
       e.preventDefault();
       petTheCat();
     }
+  });
+})();
+
+(function initD20Widget(){
+  const d20Widget = document.getElementById("d20Widget");
+  const d20Bubble = document.getElementById("d20Bubble");
+  const d20Dice = document.getElementById("d20Dice");
+  const d20Main = document.getElementById("d20Main");
+  if (!d20Widget || !d20Bubble || !d20Dice || !d20Main) return;
+
+  let d20Rolling = false;
+
+  function randomD20(min = 1, max = 20) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function paintD20(value) {
+    d20Main.textContent = String(value);
+  }
+
+  function showD20Bubble(text = "Скоро будет") {
+    d20Bubble.textContent = text;
+    d20Widget.classList.add("show-bubble");
+    clearTimeout(showD20Bubble._timer);
+    showD20Bubble._timer = setTimeout(() => {
+      d20Widget.classList.remove("show-bubble");
+    }, 1500);
+  }
+
+  function addD20Spark() {
+    const spark = document.createElement("div");
+    spark.className = "d20-spark";
+    spark.textContent = Math.random() > 0.5 ? "✦" : "✧";
+    d20Widget.appendChild(spark);
+    setTimeout(() => spark.remove(), 900);
+  }
+
+  function rollD20() {
+    if (d20Rolling) return;
+    d20Rolling = true;
+
+    showD20Bubble("Скоро будет");
+    addD20Spark();
+
+    const rx = randomD20(-7, 7);
+    const ry = randomD20(-7, 7);
+    const rz = 720 + randomD20(0, 220);
+
+    d20Dice.style.setProperty("--rx", `${rx}deg`);
+    d20Dice.style.setProperty("--ry", `${ry}deg`);
+    d20Dice.style.setProperty("--rz", `${rz}deg`);
+
+    d20Dice.classList.remove("rolling");
+    void d20Dice.offsetWidth;
+    d20Dice.classList.add("rolling");
+
+    const shuffle = setInterval(() => {
+      paintD20(randomD20());
+    }, 75);
+
+    const finalMain = randomD20();
+
+    setTimeout(() => {
+      clearInterval(shuffle);
+      paintD20(finalMain);
+      recordD20Roll(finalMain);
+    }, 980);
+
+    setTimeout(() => {
+      d20Dice.classList.remove("rolling");
+      d20Rolling = false;
+    }, 1180);
+  }
+
+  paintD20(20);
+  d20Dice.addEventListener("click", (e) => {
+    e.preventDefault();
+    rollD20();
   });
 })();
