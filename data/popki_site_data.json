@@ -4,14 +4,18 @@
     "mode": "popki",
     "source": "lilanei",
     "source_url": "https://www.twitch.tv/lilanei",
-    "total": 95,
-    "groups": 72,
+    "total": 98,
+    "groups": 74,
     "sort": "По количеству"
   },
   "top_chosen": [
     {
       "user": "haska_6977",
-      "count": 6
+      "count": 7
+    },
+    {
+      "user": "lilanei",
+      "count": 5
     },
     {
       "user": "linmie",
@@ -20,10 +24,6 @@
     {
       "user": "TheDolten",
       "count": 5
-    },
-    {
-      "user": "lilanei",
-      "count": 4
     },
     {
       "user": "Mara_Nei",
@@ -62,6 +62,10 @@
       "count": 2
     },
     {
+      "user": "Darkenrald",
+      "count": 2
+    },
+    {
       "user": "MeowGPT",
       "count": 2
     },
@@ -91,10 +95,6 @@
     },
     {
       "user": "amonyash_",
-      "count": 1
-    },
-    {
-      "user": "Darkenrald",
       "count": 1
     },
     {
@@ -341,10 +341,14 @@
     },
     {
       "title": "За попа",
-      "count": 6,
+      "count": 7,
       "chosen_users": [
         {
           "user": "alekstaurus",
+          "count": 1
+        },
+        {
+          "user": "haska_6977",
           "count": 1
         },
         {
@@ -450,6 +454,20 @@
           "kus_text": "за попу",
           "mode": "popki",
           "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "3:59:40",
+          "seconds": 14380,
+          "chooser": "l3uga",
+          "chosen_user": "haska_6977",
+          "command": "!кусь за попу",
+          "bot_time": "3:59:40",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "попу",
+          "kus_text": "за попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -1066,6 +1084,32 @@
           "adjective": "весёлую",
           "popka_form": "попку",
           "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Вредная жопка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Darkenrald",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:37:09",
+          "seconds": 20229,
+          "chooser": "TheDolten",
+          "chosen_user": "Darkenrald",
+          "command": "!кусь вредную жопку",
+          "bot_time": "5:37:10",
+          "bot_reply": "КУСЬ и у Darkenrald ( . Y . ) стали больше!",
+          "adjective": "вредную",
+          "popka_form": "жопку",
+          "kus_text": "вредную жопку",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -2324,6 +2368,32 @@
           "adjective": "чью то",
           "popka_form": "попу",
           "source": "https://www.twitch.tv/videos/2776665031"
+        }
+      ]
+    },
+    {
+      "title": "Шпионская жэпа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "lilanei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:24:36",
+          "seconds": 12276,
+          "chooser": "whitefoxplayer",
+          "chosen_user": "lilanei",
+          "command": "!Кусь шпионскую жэпу",
+          "bot_time": "3:24:36",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "шпионскую",
+          "popka_form": "жэпу",
+          "kus_text": "шпионскую жэпу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     }

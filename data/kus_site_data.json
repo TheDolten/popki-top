@@ -4,34 +4,34 @@
     "mode": "all_kus",
     "source": "lilanei",
     "source_url": "https://www.twitch.tv/lilanei",
-    "total": 241,
-    "groups": 189,
+    "total": 273,
+    "groups": 214,
     "sort": "По количеству"
   },
   "top_chosen": [
     {
       "user": "lilanei",
-      "count": 11
+      "count": 13
     },
     {
       "user": "Mara_Nei",
-      "count": 11
+      "count": 12
     },
     {
       "user": "fenrirherel",
+      "count": 11
+    },
+    {
+      "user": "timmaadm",
+      "count": 11
+    },
+    {
+      "user": "haska_6977",
       "count": 10
     },
     {
       "user": "l3uga",
       "count": 9
-    },
-    {
-      "user": "timmaadm",
-      "count": 9
-    },
-    {
-      "user": "haska_6977",
-      "count": 8
     },
     {
       "user": "risele",
@@ -47,7 +47,11 @@
     },
     {
       "user": "TheKuraSaKI",
-      "count": 6
+      "count": 7
+    },
+    {
+      "user": "whitefoxplayer",
+      "count": 7
     },
     {
       "user": "MeowGPT",
@@ -62,7 +66,15 @@
       "count": 4
     },
     {
+      "user": "Darkenrald",
+      "count": 4
+    },
+    {
       "user": "Soba_Ken",
+      "count": 4
+    },
+    {
+      "user": "TheDolten",
       "count": 4
     },
     {
@@ -70,11 +82,11 @@
       "count": 4
     },
     {
-      "user": "vsratbrok",
+      "user": "Trace_Fire",
       "count": 4
     },
     {
-      "user": "whitefoxplayer",
+      "user": "vsratbrok",
       "count": 4
     },
     {
@@ -106,20 +118,16 @@
       "count": 3
     },
     {
-      "user": "TheDolten",
-      "count": 3
-    },
-    {
-      "user": "Trace_Fire",
-      "count": 3
-    },
-    {
       "user": "Welland_AOK",
       "count": 3
     },
     {
       "user": "zero_pavuk",
       "count": 3
+    },
+    {
+      "user": "amonyash_",
+      "count": 2
     },
     {
       "user": "BOOPCUTlEt",
@@ -142,11 +150,19 @@
       "count": 2
     },
     {
+      "user": "gsghbm33_01",
+      "count": 2
+    },
+    {
       "user": "Hordegalger",
       "count": 2
     },
     {
       "user": "mike_witcher",
+      "count": 2
+    },
+    {
+      "user": "Nobody_MARA",
       "count": 2
     },
     {
@@ -167,6 +183,10 @@
     },
     {
       "user": "yatoshenkaa",
+      "count": 2
+    },
+    {
+      "user": "z0ydb3rg",
       "count": 2
     },
     {
@@ -214,15 +234,15 @@
       "count": 1
     },
     {
-      "user": "Darkenrald",
-      "count": 1
-    },
-    {
       "user": "deylex__",
       "count": 1
     },
     {
       "user": "di__ti_",
+      "count": 1
+    },
+    {
+      "user": "dimamooonn",
       "count": 1
     },
     {
@@ -254,10 +274,6 @@
       "count": 1
     },
     {
-      "user": "gsghbm33_01",
-      "count": 1
-    },
-    {
       "user": "hellboundf",
       "count": 1
     },
@@ -266,7 +282,15 @@
       "count": 1
     },
     {
+      "user": "impratd",
+      "count": 1
+    },
+    {
       "user": "iwyry_favorite_kaptain",
+      "count": 1
+    },
+    {
+      "user": "k0ntaktor",
       "count": 1
     },
     {
@@ -298,6 +322,10 @@
       "count": 1
     },
     {
+      "user": "maxsolowka",
+      "count": 1
+    },
+    {
       "user": "mihail46k",
       "count": 1
     },
@@ -314,7 +342,15 @@
       "count": 1
     },
     {
+      "user": "monokuma_rp",
+      "count": 1
+    },
+    {
       "user": "mudack_production1991",
+      "count": 1
+    },
+    {
+      "user": "nicknew34",
       "count": 1
     },
     {
@@ -343,6 +379,10 @@
     },
     {
       "user": "rimurugamer404",
+      "count": 1
+    },
+    {
+      "user": "Sekirin",
       "count": 1
     },
     {
@@ -378,11 +418,11 @@
       "count": 1
     },
     {
-      "user": "z0ydb3rg",
+      "user": "zip2401",
       "count": 1
     },
     {
-      "user": "zip2401",
+      "user": "zmejgorynych64",
       "count": 1
     },
     {
@@ -702,6 +742,122 @@
       ]
     },
     {
+      "title": "За попу",
+      "count": 6,
+      "chosen_users": [
+        {
+          "user": "alekstaurus",
+          "count": 1
+        },
+        {
+          "user": "haska_6977",
+          "count": 1
+        },
+        {
+          "user": "lilanei",
+          "count": 1
+        },
+        {
+          "user": "milkypinqvi",
+          "count": 1
+        },
+        {
+          "user": "MIN0NA",
+          "count": 1
+        },
+        {
+          "user": "vsratbrok",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:12:58",
+          "seconds": 4378,
+          "chooser": "l3uga",
+          "chosen_user": "milkypinqvi",
+          "command": "!кусь за попу",
+          "bot_time": "1:12:58",
+          "bot_reply": "КУСЬ и у milkypinqvi ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "1:14:17",
+          "seconds": 4457,
+          "chooser": "haska_6977",
+          "chosen_user": "MIN0NA",
+          "command": "!кусь за попу",
+          "bot_time": "1:14:17",
+          "bot_reply": "КУСЬ и у MIN0NA ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "1:14:43",
+          "seconds": 4483,
+          "chooser": "linmie",
+          "chosen_user": "vsratbrok",
+          "command": "!кусь за попу",
+          "bot_time": "1:14:44",
+          "bot_reply": "КУСЬ и у vsratbrok ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "1:58:39",
+          "seconds": 7119,
+          "chooser": "l3uga",
+          "chosen_user": "alekstaurus",
+          "command": "!кусь за попу",
+          "bot_time": "1:58:40",
+          "bot_reply": "КУСЬ и у alekstaurus ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2779025707"
+        },
+        {
+          "time": "3:58:48",
+          "seconds": 14328,
+          "chooser": "l3uga",
+          "chosen_user": "lilanei",
+          "command": "!кусь за попу",
+          "bot_time": "3:58:48",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "3:59:40",
+          "seconds": 14380,
+          "chooser": "l3uga",
+          "chosen_user": "haska_6977",
+          "command": "!кусь за попу",
+          "bot_time": "3:59:40",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Лучшую бубу чата",
       "count": 6,
       "chosen_users": [
@@ -934,100 +1090,278 @@
       ]
     },
     {
-      "title": "За попу",
+      "title": "Леона",
       "count": 5,
       "chosen_users": [
         {
-          "user": "alekstaurus",
+          "user": "Dark426k",
           "count": 1
         },
         {
-          "user": "lilanei",
+          "user": "gsghbm33_01",
           "count": 1
         },
         {
-          "user": "milkypinqvi",
+          "user": "morion_feather",
           "count": 1
         },
         {
-          "user": "MIN0NA",
+          "user": "Trace_Fire",
           "count": 1
         },
         {
-          "user": "vsratbrok",
+          "user": "zmejgorynych64",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "1:12:58",
-          "seconds": 4378,
-          "chooser": "l3uga",
-          "chosen_user": "milkypinqvi",
-          "command": "!кусь за попу",
-          "bot_time": "1:12:58",
-          "bot_reply": "КУСЬ и у milkypinqvi ( . Y . ) стали больше!",
-          "adjective": "за попу",
+          "time": "1:37:23",
+          "seconds": 5843,
+          "chooser": "risele",
+          "chosen_user": "Trace_Fire",
+          "command": "!кусь леона",
+          "bot_time": "1:37:23",
+          "bot_reply": "КУСЬ и у Trace_Fire ( . Y . ) стали больше!",
+          "adjective": "леона",
           "popka_form": "",
-          "kus_text": "за попу",
+          "kus_text": "леона",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2777435656"
+        },
+        {
+          "time": "5:07:07",
+          "seconds": 18427,
+          "chooser": "risele",
+          "chosen_user": "morion_feather",
+          "command": "!кусь леона",
+          "bot_time": "5:07:08",
+          "bot_reply": "КУСЬ и у morion_feather ( . Y . ) стали больше!",
+          "adjective": "леона",
+          "popka_form": "",
+          "kus_text": "леона",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
         },
         {
-          "time": "1:14:17",
-          "seconds": 4457,
-          "chooser": "haska_6977",
-          "chosen_user": "MIN0NA",
-          "command": "!кусь за попу",
-          "bot_time": "1:14:17",
-          "bot_reply": "КУСЬ и у MIN0NA ( . Y . ) стали больше!",
-          "adjective": "за попу",
+          "time": "0:40:05",
+          "seconds": 2405,
+          "chooser": "risele",
+          "chosen_user": "Dark426k",
+          "command": "!кусь леона",
+          "bot_time": "0:40:05",
+          "bot_reply": "КУСЬ и у Dark426k ( . Y . ) стали больше!",
+          "adjective": "леона",
           "popka_form": "",
-          "kus_text": "за попу",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "1:14:43",
-          "seconds": 4483,
-          "chooser": "linmie",
-          "chosen_user": "vsratbrok",
-          "command": "!кусь за попу",
-          "bot_time": "1:14:44",
-          "bot_reply": "КУСЬ и у vsratbrok ( . Y . ) стали больше!",
-          "adjective": "за попу",
-          "popka_form": "",
-          "kus_text": "за попу",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "1:58:39",
-          "seconds": 7119,
-          "chooser": "l3uga",
-          "chosen_user": "alekstaurus",
-          "command": "!кусь за попу",
-          "bot_time": "1:58:40",
-          "bot_reply": "КУСЬ и у alekstaurus ( . Y . ) стали больше!",
-          "adjective": "за попу",
-          "popka_form": "",
-          "kus_text": "за попу",
+          "kus_text": "леона",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2779025707"
         },
         {
-          "time": "3:58:48",
-          "seconds": 14328,
-          "chooser": "l3uga",
-          "chosen_user": "lilanei",
-          "command": "!кусь за попу",
-          "bot_time": "3:58:48",
-          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
-          "adjective": "за попу",
+          "time": "4:10:04",
+          "seconds": 15004,
+          "chooser": "risele",
+          "chosen_user": "gsghbm33_01",
+          "command": "!кусь леона",
+          "bot_time": "4:10:04",
+          "bot_reply": "КУСЬ и у gsghbm33_01 ( . Y . ) стали больше!",
+          "adjective": "леона",
           "popka_form": "",
-          "kus_text": "за попу",
+          "kus_text": "леона",
           "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2781419034"
+          "source": "https://www.twitch.tv/videos/2782972664"
+        },
+        {
+          "time": "4:47:17",
+          "seconds": 17237,
+          "chooser": "risele",
+          "chosen_user": "zmejgorynych64",
+          "command": "!кусь леона",
+          "bot_time": "4:47:17",
+          "bot_reply": "КУСЬ и у zmejgorynych64 ( . Y . ) стали больше!",
+          "adjective": "леона",
+          "popka_form": "",
+          "kus_text": "леона",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Пуську",
+      "count": 5,
+      "chosen_users": [
+        {
+          "user": "Bananez",
+          "count": 1
+        },
+        {
+          "user": "haska_6977",
+          "count": 1
+        },
+        {
+          "user": "l3uga",
+          "count": 1
+        },
+        {
+          "user": "sukhareki",
+          "count": 1
+        },
+        {
+          "user": "z0ydb3rg",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:13:41",
+          "seconds": 11621,
+          "chooser": "risele",
+          "chosen_user": "sukhareki",
+          "command": "!кусь пуську",
+          "bot_time": "3:13:42",
+          "bot_reply": "КУСЬ и у sukhareki ( . Y . ) стали больше!",
+          "adjective": "пуську",
+          "popka_form": "",
+          "kus_text": "пуську",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2777435656"
+        },
+        {
+          "time": "1:01:38",
+          "seconds": 3698,
+          "chooser": "l3uga",
+          "chosen_user": "haska_6977",
+          "command": "!кусь пуську",
+          "bot_time": "1:01:39",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "пуську",
+          "popka_form": "",
+          "kus_text": "пуську",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "2:07:03",
+          "seconds": 7623,
+          "chooser": "l3uga",
+          "chosen_user": "Bananez",
+          "command": "!кусь пуську",
+          "bot_time": "2:07:03",
+          "bot_reply": "КУСЬ и у Bananez ( . Y . ) стали больше!",
+          "adjective": "пуську",
+          "popka_form": "",
+          "kus_text": "пуську",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2779025707"
+        },
+        {
+          "time": "3:59:17",
+          "seconds": 14357,
+          "chooser": "l3uga",
+          "chosen_user": "l3uga",
+          "command": "!кусь пуську",
+          "bot_time": "3:59:17",
+          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
+          "adjective": "пуську",
+          "popka_form": "",
+          "kus_text": "пуську",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2779025707"
+        },
+        {
+          "time": "4:29:31",
+          "seconds": 16171,
+          "chooser": "l3uga",
+          "chosen_user": "z0ydb3rg",
+          "command": "!кусь пуську",
+          "bot_time": "4:29:32",
+          "bot_reply": "КУСЬ и у z0ydb3rg ( . Y . ) стали больше!",
+          "adjective": "пуську",
+          "popka_form": "",
+          "kus_text": "пуську",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Женщину",
+      "count": 4,
+      "chosen_users": [
+        {
+          "user": "risele",
+          "count": 1
+        },
+        {
+          "user": "Sekirin",
+          "count": 1
+        },
+        {
+          "user": "timmaadm",
+          "count": 1
+        },
+        {
+          "user": "whitefoxplayer",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:54:41",
+          "seconds": 6881,
+          "chooser": "risele",
+          "chosen_user": "timmaadm",
+          "command": "!кусь женщину",
+          "bot_time": "1:54:41",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "1:57:25",
+          "seconds": 7045,
+          "chooser": "Dark426k",
+          "chosen_user": "risele",
+          "command": "!кусь женщину",
+          "bot_time": "1:57:25",
+          "bot_reply": "КУСЬ и у risele ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "0:37:41",
+          "seconds": 2261,
+          "chooser": "timmaadm",
+          "chosen_user": "Sekirin",
+          "command": "!кусь женщину",
+          "bot_time": "0:37:41",
+          "bot_reply": "КУСЬ и у Sekirin ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        },
+        {
+          "time": "4:14:27",
+          "seconds": 15267,
+          "chooser": "risele",
+          "chosen_user": "whitefoxplayer",
+          "command": "!кусь женщину",
+          "bot_time": "4:14:28",
+          "bot_reply": "КУСЬ и у whitefoxplayer ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -1112,86 +1446,6 @@
       ]
     },
     {
-      "title": "Пуську",
-      "count": 4,
-      "chosen_users": [
-        {
-          "user": "Bananez",
-          "count": 1
-        },
-        {
-          "user": "haska_6977",
-          "count": 1
-        },
-        {
-          "user": "l3uga",
-          "count": 1
-        },
-        {
-          "user": "sukhareki",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "3:13:41",
-          "seconds": 11621,
-          "chooser": "risele",
-          "chosen_user": "sukhareki",
-          "command": "!кусь пуську",
-          "bot_time": "3:13:42",
-          "bot_reply": "КУСЬ и у sukhareki ( . Y . ) стали больше!",
-          "adjective": "пуську",
-          "popka_form": "",
-          "kus_text": "пуську",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2777435656"
-        },
-        {
-          "time": "1:01:38",
-          "seconds": 3698,
-          "chooser": "l3uga",
-          "chosen_user": "haska_6977",
-          "command": "!кусь пуську",
-          "bot_time": "1:01:39",
-          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
-          "adjective": "пуську",
-          "popka_form": "",
-          "kus_text": "пуську",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "2:07:03",
-          "seconds": 7623,
-          "chooser": "l3uga",
-          "chosen_user": "Bananez",
-          "command": "!кусь пуську",
-          "bot_time": "2:07:03",
-          "bot_reply": "КУСЬ и у Bananez ( . Y . ) стали больше!",
-          "adjective": "пуську",
-          "popka_form": "",
-          "kus_text": "пуську",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2779025707"
-        },
-        {
-          "time": "3:59:17",
-          "seconds": 14357,
-          "chooser": "l3uga",
-          "chosen_user": "l3uga",
-          "command": "!кусь пуську",
-          "bot_time": "3:59:17",
-          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
-          "adjective": "пуську",
-          "popka_form": "",
-          "kus_text": "пуську",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2779025707"
-        }
-      ]
-    },
-    {
       "title": "За пухлое",
       "count": 3,
       "chosen_users": [
@@ -1254,64 +1508,64 @@
       ]
     },
     {
-      "title": "Леона",
+      "title": "За щечку",
       "count": 3,
       "chosen_users": [
         {
-          "user": "Dark426k",
+          "user": "fenrirherel",
           "count": 1
         },
         {
-          "user": "morion_feather",
+          "user": "l3uga",
           "count": 1
         },
         {
-          "user": "Trace_Fire",
+          "user": "TheKuraSaKI",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "1:37:23",
-          "seconds": 5843,
-          "chooser": "risele",
-          "chosen_user": "Trace_Fire",
-          "command": "!кусь леона",
-          "bot_time": "1:37:23",
-          "bot_reply": "КУСЬ и у Trace_Fire ( . Y . ) стали больше!",
-          "adjective": "леона",
+          "time": "0:47:32",
+          "seconds": 2852,
+          "chooser": "l3uga",
+          "chosen_user": "TheKuraSaKI",
+          "command": "!кусь за щечку",
+          "bot_time": "0:47:33",
+          "bot_reply": "КУСЬ и у TheKuraSaKI ( . Y . ) стали больше!",
+          "adjective": "за щечку",
           "popka_form": "",
-          "kus_text": "леона",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2777435656"
-        },
-        {
-          "time": "5:07:07",
-          "seconds": 18427,
-          "chooser": "risele",
-          "chosen_user": "morion_feather",
-          "command": "!кусь леона",
-          "bot_time": "5:07:08",
-          "bot_reply": "КУСЬ и у morion_feather ( . Y . ) стали больше!",
-          "adjective": "леона",
-          "popka_form": "",
-          "kus_text": "леона",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "0:40:05",
-          "seconds": 2405,
-          "chooser": "risele",
-          "chosen_user": "Dark426k",
-          "command": "!кусь леона",
-          "bot_time": "0:40:05",
-          "bot_reply": "КУСЬ и у Dark426k ( . Y . ) стали больше!",
-          "adjective": "леона",
-          "popka_form": "",
-          "kus_text": "леона",
+          "kus_text": "за щечку",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2779025707"
+        },
+        {
+          "time": "4:03:30",
+          "seconds": 14610,
+          "chooser": "l3uga",
+          "chosen_user": "l3uga",
+          "command": "!кусь за щечку",
+          "bot_time": "4:03:30",
+          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
+          "adjective": "за щечку",
+          "popka_form": "",
+          "kus_text": "за щечку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "4:32:09",
+          "seconds": 16329,
+          "chooser": "l3uga",
+          "chosen_user": "fenrirherel",
+          "command": "!кусь за щечку",
+          "bot_time": "4:32:09",
+          "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
+          "adjective": "за щечку",
+          "popka_form": "",
+          "kus_text": "за щечку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -1550,50 +1804,6 @@
       ]
     },
     {
-      "title": "Женщину",
-      "count": 2,
-      "chosen_users": [
-        {
-          "user": "risele",
-          "count": 1
-        },
-        {
-          "user": "timmaadm",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "1:54:41",
-          "seconds": 6881,
-          "chooser": "risele",
-          "chosen_user": "timmaadm",
-          "command": "!кусь женщину",
-          "bot_time": "1:54:41",
-          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
-          "adjective": "женщину",
-          "popka_form": "",
-          "kus_text": "женщину",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2782202430"
-        },
-        {
-          "time": "1:57:25",
-          "seconds": 7045,
-          "chooser": "Dark426k",
-          "chosen_user": "risele",
-          "command": "!кусь женщину",
-          "bot_time": "1:57:25",
-          "bot_reply": "КУСЬ и у risele ( . Y . ) стали больше!",
-          "adjective": "женщину",
-          "popka_form": "",
-          "kus_text": "женщину",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2782202430"
-        }
-      ]
-    },
-    {
       "title": "За большие",
       "count": 2,
       "chosen_users": [
@@ -1678,50 +1888,6 @@
           "kus_text": "за грязную попу",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
-        }
-      ]
-    },
-    {
-      "title": "За щечку",
-      "count": 2,
-      "chosen_users": [
-        {
-          "user": "l3uga",
-          "count": 1
-        },
-        {
-          "user": "TheKuraSaKI",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "0:47:32",
-          "seconds": 2852,
-          "chooser": "l3uga",
-          "chosen_user": "TheKuraSaKI",
-          "command": "!кусь за щечку",
-          "bot_time": "0:47:33",
-          "bot_reply": "КУСЬ и у TheKuraSaKI ( . Y . ) стали больше!",
-          "adjective": "за щечку",
-          "popka_form": "",
-          "kus_text": "за щечку",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2779025707"
-        },
-        {
-          "time": "4:03:30",
-          "seconds": 14610,
-          "chooser": "l3uga",
-          "chosen_user": "l3uga",
-          "command": "!кусь за щечку",
-          "bot_time": "4:03:30",
-          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
-          "adjective": "за щечку",
-          "popka_form": "",
-          "kus_text": "за щечку",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2781419034"
         }
       ]
     },
@@ -2152,6 +2318,32 @@
       ]
     },
     {
+      "title": "Бабулю малыша",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "k0ntaktor",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:22:49",
+          "seconds": 8569,
+          "chooser": "l3uga",
+          "chosen_user": "k0ntaktor",
+          "command": "!кусь бабулю малыша",
+          "bot_time": "2:22:50",
+          "bot_reply": "КУСЬ и у k0ntaktor ( . Y . ) стали больше!",
+          "adjective": "бабулю малыша",
+          "popka_form": "",
+          "kus_text": "бабулю малыша",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Бахубали",
       "count": 1,
       "chosen_users": [
@@ -2200,6 +2392,32 @@
           "kus_text": "безответственного",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2781419034"
+        }
+      ]
+    },
+    {
+      "title": "Блондина",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Nobody_MARA",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:51:19",
+          "seconds": 17479,
+          "chooser": "risele",
+          "chosen_user": "Nobody_MARA",
+          "command": "!кусь блондина",
+          "bot_time": "4:51:20",
+          "bot_reply": "КУСЬ и у Nobody_MARA ( . Y . ) стали больше!",
+          "adjective": "блондина",
+          "popka_form": "",
+          "kus_text": "блондина",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -2438,6 +2656,32 @@
       ]
     },
     {
+      "title": "Вредную жопку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Darkenrald",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:37:09",
+          "seconds": 20229,
+          "chooser": "TheDolten",
+          "chosen_user": "Darkenrald",
+          "command": "!кусь вредную жопку",
+          "bot_time": "5:37:10",
+          "bot_reply": "КУСЬ и у Darkenrald ( . Y . ) стали больше!",
+          "adjective": "вредную жопку",
+          "popka_form": "",
+          "kus_text": "вредную жопку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Вредную пуську",
       "count": 1,
       "chosen_users": [
@@ -2512,6 +2756,32 @@
           "kus_text": "высокого",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Гига ебаку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "TheKuraSaKI",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:59:36",
+          "seconds": 7176,
+          "chooser": "risele",
+          "chosen_user": "TheKuraSaKI",
+          "command": "!кусь гига ебаку",
+          "bot_time": "1:59:38",
+          "bot_reply": "КУСЬ и у TheKuraSaKI ( . Y . ) стали больше!",
+          "adjective": "гига ебаку",
+          "popka_form": "",
+          "kus_text": "гига ебаку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -2698,6 +2968,32 @@
       ]
     },
     {
+      "title": "Деда",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Darkenrald",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:40:50",
+          "seconds": 20450,
+          "chooser": "risele",
+          "chosen_user": "Darkenrald",
+          "command": "!кусь деда",
+          "bot_time": "5:40:50",
+          "bot_reply": "КУСЬ и у Darkenrald ( . Y . ) стали больше!",
+          "adjective": "деда",
+          "popka_form": "",
+          "kus_text": "деда",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Демонический писюн",
       "count": 1,
       "chosen_users": [
@@ -2772,6 +3068,32 @@
           "kus_text": "Джина COCKING",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Донатера",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "dimamooonn",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "0:24:56",
+          "seconds": 1496,
+          "chooser": "haska_6977",
+          "chosen_user": "dimamooonn",
+          "command": "!кусь донатера",
+          "bot_time": "0:24:56",
+          "bot_reply": "КУСЬ и у dimamooonn ( . Y . ) стали больше!",
+          "adjective": "донатера",
+          "popka_form": "",
+          "kus_text": "донатера",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -3240,6 +3562,32 @@
           "kus_text": "за звезду смерти",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "За коленку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "amonyash_",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:19:21",
+          "seconds": 19161,
+          "chooser": "risele",
+          "chosen_user": "amonyash_",
+          "command": "!кусь за коленку",
+          "bot_time": "5:19:21",
+          "bot_reply": "КУСЬ и у amonyash_ ( . Y . ) стали больше!",
+          "adjective": "за коленку",
+          "popka_form": "",
+          "kus_text": "за коленку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -3816,6 +4164,32 @@
       ]
     },
     {
+      "title": "Информатора",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "TheDolten",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:36:07",
+          "seconds": 9367,
+          "chooser": "Toka_Tuxo",
+          "chosen_user": "TheDolten",
+          "command": "!кусь информатора",
+          "bot_time": "2:36:08",
+          "bot_reply": "КУСЬ и у TheDolten ( . Y . ) стали больше!",
+          "adjective": "информатора",
+          "popka_form": "",
+          "kus_text": "информатора",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Ириску",
       "count": 1,
       "chosen_users": [
@@ -4128,6 +4502,32 @@
       ]
     },
     {
+      "title": "Лиланей",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "maxsolowka",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:41:45",
+          "seconds": 20505,
+          "chooser": "Darkenrald",
+          "chosen_user": "maxsolowka",
+          "command": "!Кусь Лиланей",
+          "bot_time": "5:41:46",
+          "bot_reply": "КУСЬ и у maxsolowka ( . Y . ) стали больше!",
+          "adjective": "Лиланей",
+          "popka_form": "",
+          "kus_text": "Лиланей",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Лисицу cap",
       "count": 1,
       "chosen_users": [
@@ -4280,6 +4680,84 @@
           "kus_text": "маленького",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Мармеладку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Mara_Nei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:17:03",
+          "seconds": 4623,
+          "chooser": "haska_6977",
+          "chosen_user": "Mara_Nei",
+          "command": "!кусь мармеладку",
+          "bot_time": "1:17:03",
+          "bot_reply": "КУСЬ и у Mara_Nei ( . Y . ) стали больше!",
+          "adjective": "мармеладку",
+          "popka_form": "",
+          "kus_text": "мармеладку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Маршала",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "не определено",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:16:30",
+          "seconds": 4590,
+          "chooser": "timmaadm",
+          "chosen_user": "не определено",
+          "command": "!кусь маршала",
+          "bot_time": "1:16:31",
+          "bot_reply": "КУСЬ и у 11_alex_1_ ( . Y . ) стали больше!",
+          "adjective": "маршала",
+          "popka_form": "",
+          "kus_text": "маршала",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Мастера стелса",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "monokuma_rp",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:16:45",
+          "seconds": 15405,
+          "chooser": "1BeeBeer",
+          "chosen_user": "monokuma_rp",
+          "command": "!кусь мастера стелса",
+          "bot_time": "4:16:46",
+          "bot_reply": "КУСЬ и у monokuma_rp ( . Y . ) стали больше!",
+          "adjective": "мастера стелса",
+          "popka_form": "",
+          "kus_text": "мастера стелса",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -4440,6 +4918,32 @@
       ]
     },
     {
+      "title": "Мою женщину",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "impratd",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "0:37:27",
+          "seconds": 2247,
+          "chooser": "risele",
+          "chosen_user": "impratd",
+          "command": "!кусь мою женщину",
+          "bot_time": "0:37:27",
+          "bot_reply": "КУСЬ и у impratd ( . Y . ) стали больше!",
+          "adjective": "мою женщину",
+          "popka_form": "",
+          "kus_text": "мою женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Мытую пуську",
       "count": 1,
       "chosen_users": [
@@ -4514,6 +5018,32 @@
           "kus_text": "не сашу",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Некурящего",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "whitefoxplayer",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:52:47",
+          "seconds": 21167,
+          "chooser": "risele",
+          "chosen_user": "whitefoxplayer",
+          "command": "!кусь некурящего",
+          "bot_time": "5:52:48",
+          "bot_reply": "КУСЬ и у whitefoxplayer ( . Y . ) стали больше!",
+          "adjective": "некурящего",
+          "popka_form": "",
+          "kus_text": "некурящего",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -4674,6 +5204,32 @@
       ]
     },
     {
+      "title": "Пистолет",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Nobody_MARA",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "6:48:25",
+          "seconds": 24505,
+          "chooser": "risele",
+          "chosen_user": "Nobody_MARA",
+          "command": "!кусь пистолет",
+          "bot_time": "6:48:25",
+          "bot_reply": "КУСЬ и у Nobody_MARA ( . Y . ) стали больше!",
+          "adjective": "пистолет",
+          "popka_form": "",
+          "kus_text": "пистолет",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Плохого грабителя",
       "count": 1,
       "chosen_users": [
@@ -4774,6 +5330,32 @@
           "kus_text": "пончика awoo",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Попец",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Darkenrald",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:06:29",
+          "seconds": 3989,
+          "chooser": "PLunanei",
+          "chosen_user": "Darkenrald",
+          "command": "!кусь попец",
+          "bot_time": "1:06:30",
+          "bot_reply": "КУСЬ и у Darkenrald ( . Y . ) стали больше!",
+          "adjective": "попец",
+          "popka_form": "",
+          "kus_text": "попец",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -5064,6 +5646,32 @@
       ]
     },
     {
+      "title": "Рисочку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "lilanei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:24:14",
+          "seconds": 12254,
+          "chooser": "risele",
+          "chosen_user": "lilanei",
+          "command": "!кусь рисочку",
+          "bot_time": "3:24:15",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "рисочку",
+          "popka_form": "",
+          "kus_text": "рисочку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Романтика",
       "count": 1,
       "chosen_users": [
@@ -5294,6 +5902,32 @@
           "kus_text": "сладенького зрителя",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2779025707"
+        }
+      ]
+    },
+    {
+      "title": "Сморчка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "nicknew34",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:35:26",
+          "seconds": 5726,
+          "chooser": "Toka_Tuxo",
+          "chosen_user": "nicknew34",
+          "command": "!кусь сморчка",
+          "bot_time": "1:35:27",
+          "bot_reply": "КУСЬ и у nicknew34 ( . Y . ) стали больше!",
+          "adjective": "сморчка",
+          "popka_form": "",
+          "kus_text": "сморчка",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -5740,6 +6374,32 @@
       ]
     },
     {
+      "title": "Тусовщицу",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Trace_Fire",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:56:09",
+          "seconds": 10569,
+          "chooser": "risele",
+          "chosen_user": "Trace_Fire",
+          "command": "!кусь тусовщицу",
+          "bot_time": "2:56:10",
+          "bot_reply": "КУСЬ и у Trace_Fire ( . Y . ) стали больше!",
+          "adjective": "тусовщицу",
+          "popka_form": "",
+          "kus_text": "тусовщицу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Тётю Карину",
       "count": 1,
       "chosen_users": [
@@ -5762,6 +6422,32 @@
           "kus_text": "тётю Карину",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "У кого 3 нога",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "amonyash_",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:13:47",
+          "seconds": 15227,
+          "chooser": "haska_6977",
+          "chosen_user": "amonyash_",
+          "command": "!кусь у кого 3 нога",
+          "bot_time": "4:13:47",
+          "bot_reply": "КУСЬ и у amonyash_ ( . Y . ) стали больше!",
+          "adjective": "у кого 3 нога",
+          "popka_form": "",
+          "kus_text": "у кого 3 нога",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -6156,6 +6842,32 @@
       ]
     },
     {
+      "title": "Шалуна",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "whitefoxplayer",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:36:26",
+          "seconds": 20186,
+          "chooser": "risele",
+          "chosen_user": "whitefoxplayer",
+          "command": "!кусь шалуна",
+          "bot_time": "5:36:26",
+          "bot_reply": "КУСЬ и у whitefoxplayer ( . Y . ) стали больше!",
+          "adjective": "шалуна",
+          "popka_form": "",
+          "kus_text": "шалуна",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Шерсть ебаную",
       "count": 1,
       "chosen_users": [
@@ -6208,6 +6920,58 @@
       ]
     },
     {
+      "title": "Шпионеро",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "haska_6977",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:14:38",
+          "seconds": 15278,
+          "chooser": "timmaadm",
+          "chosen_user": "haska_6977",
+          "command": "!кусь шпионеро",
+          "bot_time": "4:14:39",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "шпионеро",
+          "popka_form": "",
+          "kus_text": "шпионеро",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Шпионскую жэпу",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "lilanei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:24:36",
+          "seconds": 12276,
+          "chooser": "whitefoxplayer",
+          "chosen_user": "lilanei",
+          "command": "!Кусь шпионскую жэпу",
+          "bot_time": "3:24:36",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "шпионскую жэпу",
+          "popka_form": "",
+          "kus_text": "шпионскую жэпу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Элеанору",
       "count": 1,
       "chosen_users": [
@@ -6230,6 +6994,58 @@
           "kus_text": "элеанору",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Ютуб",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "0:32:46",
+          "seconds": 1966,
+          "chooser": "risele",
+          "chosen_user": "timmaadm",
+          "command": "!кусь ютуб",
+          "bot_time": "0:32:47",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "ютуб",
+          "popka_form": "",
+          "kus_text": "ютуб",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Я ми 6",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:05:02",
+          "seconds": 14702,
+          "chooser": "risele",
+          "chosen_user": "timmaadm",
+          "command": "!кусь я ми 6",
+          "bot_time": "4:05:04",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "я ми 6",
+          "popka_form": "",
+          "kus_text": "я ми 6",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     }
@@ -6546,6 +7362,122 @@
       ]
     },
     {
+      "title": "За попу",
+      "count": 6,
+      "chosen_users": [
+        {
+          "user": "alekstaurus",
+          "count": 1
+        },
+        {
+          "user": "haska_6977",
+          "count": 1
+        },
+        {
+          "user": "lilanei",
+          "count": 1
+        },
+        {
+          "user": "milkypinqvi",
+          "count": 1
+        },
+        {
+          "user": "MIN0NA",
+          "count": 1
+        },
+        {
+          "user": "vsratbrok",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:12:58",
+          "seconds": 4378,
+          "chooser": "l3uga",
+          "chosen_user": "milkypinqvi",
+          "command": "!кусь за попу",
+          "bot_time": "1:12:58",
+          "bot_reply": "КУСЬ и у milkypinqvi ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "1:14:17",
+          "seconds": 4457,
+          "chooser": "haska_6977",
+          "chosen_user": "MIN0NA",
+          "command": "!кусь за попу",
+          "bot_time": "1:14:17",
+          "bot_reply": "КУСЬ и у MIN0NA ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "1:14:43",
+          "seconds": 4483,
+          "chooser": "linmie",
+          "chosen_user": "vsratbrok",
+          "command": "!кусь за попу",
+          "bot_time": "1:14:44",
+          "bot_reply": "КУСЬ и у vsratbrok ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "1:58:39",
+          "seconds": 7119,
+          "chooser": "l3uga",
+          "chosen_user": "alekstaurus",
+          "command": "!кусь за попу",
+          "bot_time": "1:58:40",
+          "bot_reply": "КУСЬ и у alekstaurus ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2779025707"
+        },
+        {
+          "time": "3:58:48",
+          "seconds": 14328,
+          "chooser": "l3uga",
+          "chosen_user": "lilanei",
+          "command": "!кусь за попу",
+          "bot_time": "3:58:48",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "3:59:40",
+          "seconds": 14380,
+          "chooser": "l3uga",
+          "chosen_user": "haska_6977",
+          "command": "!кусь за попу",
+          "bot_time": "3:59:40",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "за попу",
+          "popka_form": "",
+          "kus_text": "за попу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Лучшую бубу чата",
       "count": 6,
       "chosen_users": [
@@ -6778,100 +7710,278 @@
       ]
     },
     {
-      "title": "За попу",
+      "title": "Леона",
       "count": 5,
       "chosen_users": [
         {
-          "user": "alekstaurus",
+          "user": "Dark426k",
           "count": 1
         },
         {
-          "user": "lilanei",
+          "user": "gsghbm33_01",
           "count": 1
         },
         {
-          "user": "milkypinqvi",
+          "user": "morion_feather",
           "count": 1
         },
         {
-          "user": "MIN0NA",
+          "user": "Trace_Fire",
           "count": 1
         },
         {
-          "user": "vsratbrok",
+          "user": "zmejgorynych64",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "1:12:58",
-          "seconds": 4378,
-          "chooser": "l3uga",
-          "chosen_user": "milkypinqvi",
-          "command": "!кусь за попу",
-          "bot_time": "1:12:58",
-          "bot_reply": "КУСЬ и у milkypinqvi ( . Y . ) стали больше!",
-          "adjective": "за попу",
+          "time": "1:37:23",
+          "seconds": 5843,
+          "chooser": "risele",
+          "chosen_user": "Trace_Fire",
+          "command": "!кусь леона",
+          "bot_time": "1:37:23",
+          "bot_reply": "КУСЬ и у Trace_Fire ( . Y . ) стали больше!",
+          "adjective": "леона",
           "popka_form": "",
-          "kus_text": "за попу",
+          "kus_text": "леона",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2777435656"
+        },
+        {
+          "time": "5:07:07",
+          "seconds": 18427,
+          "chooser": "risele",
+          "chosen_user": "morion_feather",
+          "command": "!кусь леона",
+          "bot_time": "5:07:08",
+          "bot_reply": "КУСЬ и у morion_feather ( . Y . ) стали больше!",
+          "adjective": "леона",
+          "popka_form": "",
+          "kus_text": "леона",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
         },
         {
-          "time": "1:14:17",
-          "seconds": 4457,
-          "chooser": "haska_6977",
-          "chosen_user": "MIN0NA",
-          "command": "!кусь за попу",
-          "bot_time": "1:14:17",
-          "bot_reply": "КУСЬ и у MIN0NA ( . Y . ) стали больше!",
-          "adjective": "за попу",
+          "time": "0:40:05",
+          "seconds": 2405,
+          "chooser": "risele",
+          "chosen_user": "Dark426k",
+          "command": "!кусь леона",
+          "bot_time": "0:40:05",
+          "bot_reply": "КУСЬ и у Dark426k ( . Y . ) стали больше!",
+          "adjective": "леона",
           "popka_form": "",
-          "kus_text": "за попу",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "1:14:43",
-          "seconds": 4483,
-          "chooser": "linmie",
-          "chosen_user": "vsratbrok",
-          "command": "!кусь за попу",
-          "bot_time": "1:14:44",
-          "bot_reply": "КУСЬ и у vsratbrok ( . Y . ) стали больше!",
-          "adjective": "за попу",
-          "popka_form": "",
-          "kus_text": "за попу",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "1:58:39",
-          "seconds": 7119,
-          "chooser": "l3uga",
-          "chosen_user": "alekstaurus",
-          "command": "!кусь за попу",
-          "bot_time": "1:58:40",
-          "bot_reply": "КУСЬ и у alekstaurus ( . Y . ) стали больше!",
-          "adjective": "за попу",
-          "popka_form": "",
-          "kus_text": "за попу",
+          "kus_text": "леона",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2779025707"
         },
         {
-          "time": "3:58:48",
-          "seconds": 14328,
-          "chooser": "l3uga",
-          "chosen_user": "lilanei",
-          "command": "!кусь за попу",
-          "bot_time": "3:58:48",
-          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
-          "adjective": "за попу",
+          "time": "4:10:04",
+          "seconds": 15004,
+          "chooser": "risele",
+          "chosen_user": "gsghbm33_01",
+          "command": "!кусь леона",
+          "bot_time": "4:10:04",
+          "bot_reply": "КУСЬ и у gsghbm33_01 ( . Y . ) стали больше!",
+          "adjective": "леона",
           "popka_form": "",
-          "kus_text": "за попу",
+          "kus_text": "леона",
           "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2781419034"
+          "source": "https://www.twitch.tv/videos/2782972664"
+        },
+        {
+          "time": "4:47:17",
+          "seconds": 17237,
+          "chooser": "risele",
+          "chosen_user": "zmejgorynych64",
+          "command": "!кусь леона",
+          "bot_time": "4:47:17",
+          "bot_reply": "КУСЬ и у zmejgorynych64 ( . Y . ) стали больше!",
+          "adjective": "леона",
+          "popka_form": "",
+          "kus_text": "леона",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Пуську",
+      "count": 5,
+      "chosen_users": [
+        {
+          "user": "Bananez",
+          "count": 1
+        },
+        {
+          "user": "haska_6977",
+          "count": 1
+        },
+        {
+          "user": "l3uga",
+          "count": 1
+        },
+        {
+          "user": "sukhareki",
+          "count": 1
+        },
+        {
+          "user": "z0ydb3rg",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:13:41",
+          "seconds": 11621,
+          "chooser": "risele",
+          "chosen_user": "sukhareki",
+          "command": "!кусь пуську",
+          "bot_time": "3:13:42",
+          "bot_reply": "КУСЬ и у sukhareki ( . Y . ) стали больше!",
+          "adjective": "пуську",
+          "popka_form": "",
+          "kus_text": "пуську",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2777435656"
+        },
+        {
+          "time": "1:01:38",
+          "seconds": 3698,
+          "chooser": "l3uga",
+          "chosen_user": "haska_6977",
+          "command": "!кусь пуську",
+          "bot_time": "1:01:39",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "пуську",
+          "popka_form": "",
+          "kus_text": "пуську",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2778186232"
+        },
+        {
+          "time": "2:07:03",
+          "seconds": 7623,
+          "chooser": "l3uga",
+          "chosen_user": "Bananez",
+          "command": "!кусь пуську",
+          "bot_time": "2:07:03",
+          "bot_reply": "КУСЬ и у Bananez ( . Y . ) стали больше!",
+          "adjective": "пуську",
+          "popka_form": "",
+          "kus_text": "пуську",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2779025707"
+        },
+        {
+          "time": "3:59:17",
+          "seconds": 14357,
+          "chooser": "l3uga",
+          "chosen_user": "l3uga",
+          "command": "!кусь пуську",
+          "bot_time": "3:59:17",
+          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
+          "adjective": "пуську",
+          "popka_form": "",
+          "kus_text": "пуську",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2779025707"
+        },
+        {
+          "time": "4:29:31",
+          "seconds": 16171,
+          "chooser": "l3uga",
+          "chosen_user": "z0ydb3rg",
+          "command": "!кусь пуську",
+          "bot_time": "4:29:32",
+          "bot_reply": "КУСЬ и у z0ydb3rg ( . Y . ) стали больше!",
+          "adjective": "пуську",
+          "popka_form": "",
+          "kus_text": "пуську",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Женщину",
+      "count": 4,
+      "chosen_users": [
+        {
+          "user": "risele",
+          "count": 1
+        },
+        {
+          "user": "Sekirin",
+          "count": 1
+        },
+        {
+          "user": "timmaadm",
+          "count": 1
+        },
+        {
+          "user": "whitefoxplayer",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:54:41",
+          "seconds": 6881,
+          "chooser": "risele",
+          "chosen_user": "timmaadm",
+          "command": "!кусь женщину",
+          "bot_time": "1:54:41",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "1:57:25",
+          "seconds": 7045,
+          "chooser": "Dark426k",
+          "chosen_user": "risele",
+          "command": "!кусь женщину",
+          "bot_time": "1:57:25",
+          "bot_reply": "КУСЬ и у risele ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "0:37:41",
+          "seconds": 2261,
+          "chooser": "timmaadm",
+          "chosen_user": "Sekirin",
+          "command": "!кусь женщину",
+          "bot_time": "0:37:41",
+          "bot_reply": "КУСЬ и у Sekirin ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        },
+        {
+          "time": "4:14:27",
+          "seconds": 15267,
+          "chooser": "risele",
+          "chosen_user": "whitefoxplayer",
+          "command": "!кусь женщину",
+          "bot_time": "4:14:28",
+          "bot_reply": "КУСЬ и у whitefoxplayer ( . Y . ) стали больше!",
+          "adjective": "женщину",
+          "popka_form": "",
+          "kus_text": "женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -6956,86 +8066,6 @@
       ]
     },
     {
-      "title": "Пуську",
-      "count": 4,
-      "chosen_users": [
-        {
-          "user": "Bananez",
-          "count": 1
-        },
-        {
-          "user": "haska_6977",
-          "count": 1
-        },
-        {
-          "user": "l3uga",
-          "count": 1
-        },
-        {
-          "user": "sukhareki",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "3:13:41",
-          "seconds": 11621,
-          "chooser": "risele",
-          "chosen_user": "sukhareki",
-          "command": "!кусь пуську",
-          "bot_time": "3:13:42",
-          "bot_reply": "КУСЬ и у sukhareki ( . Y . ) стали больше!",
-          "adjective": "пуську",
-          "popka_form": "",
-          "kus_text": "пуську",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2777435656"
-        },
-        {
-          "time": "1:01:38",
-          "seconds": 3698,
-          "chooser": "l3uga",
-          "chosen_user": "haska_6977",
-          "command": "!кусь пуську",
-          "bot_time": "1:01:39",
-          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
-          "adjective": "пуську",
-          "popka_form": "",
-          "kus_text": "пуську",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "2:07:03",
-          "seconds": 7623,
-          "chooser": "l3uga",
-          "chosen_user": "Bananez",
-          "command": "!кусь пуську",
-          "bot_time": "2:07:03",
-          "bot_reply": "КУСЬ и у Bananez ( . Y . ) стали больше!",
-          "adjective": "пуську",
-          "popka_form": "",
-          "kus_text": "пуську",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2779025707"
-        },
-        {
-          "time": "3:59:17",
-          "seconds": 14357,
-          "chooser": "l3uga",
-          "chosen_user": "l3uga",
-          "command": "!кусь пуську",
-          "bot_time": "3:59:17",
-          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
-          "adjective": "пуську",
-          "popka_form": "",
-          "kus_text": "пуську",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2779025707"
-        }
-      ]
-    },
-    {
       "title": "За пухлое",
       "count": 3,
       "chosen_users": [
@@ -7098,64 +8128,64 @@
       ]
     },
     {
-      "title": "Леона",
+      "title": "За щечку",
       "count": 3,
       "chosen_users": [
         {
-          "user": "Dark426k",
+          "user": "fenrirherel",
           "count": 1
         },
         {
-          "user": "morion_feather",
+          "user": "l3uga",
           "count": 1
         },
         {
-          "user": "Trace_Fire",
+          "user": "TheKuraSaKI",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "1:37:23",
-          "seconds": 5843,
-          "chooser": "risele",
-          "chosen_user": "Trace_Fire",
-          "command": "!кусь леона",
-          "bot_time": "1:37:23",
-          "bot_reply": "КУСЬ и у Trace_Fire ( . Y . ) стали больше!",
-          "adjective": "леона",
+          "time": "0:47:32",
+          "seconds": 2852,
+          "chooser": "l3uga",
+          "chosen_user": "TheKuraSaKI",
+          "command": "!кусь за щечку",
+          "bot_time": "0:47:33",
+          "bot_reply": "КУСЬ и у TheKuraSaKI ( . Y . ) стали больше!",
+          "adjective": "за щечку",
           "popka_form": "",
-          "kus_text": "леона",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2777435656"
-        },
-        {
-          "time": "5:07:07",
-          "seconds": 18427,
-          "chooser": "risele",
-          "chosen_user": "morion_feather",
-          "command": "!кусь леона",
-          "bot_time": "5:07:08",
-          "bot_reply": "КУСЬ и у morion_feather ( . Y . ) стали больше!",
-          "adjective": "леона",
-          "popka_form": "",
-          "kus_text": "леона",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2778186232"
-        },
-        {
-          "time": "0:40:05",
-          "seconds": 2405,
-          "chooser": "risele",
-          "chosen_user": "Dark426k",
-          "command": "!кусь леона",
-          "bot_time": "0:40:05",
-          "bot_reply": "КУСЬ и у Dark426k ( . Y . ) стали больше!",
-          "adjective": "леона",
-          "popka_form": "",
-          "kus_text": "леона",
+          "kus_text": "за щечку",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2779025707"
+        },
+        {
+          "time": "4:03:30",
+          "seconds": 14610,
+          "chooser": "l3uga",
+          "chosen_user": "l3uga",
+          "command": "!кусь за щечку",
+          "bot_time": "4:03:30",
+          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
+          "adjective": "за щечку",
+          "popka_form": "",
+          "kus_text": "за щечку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2781419034"
+        },
+        {
+          "time": "4:32:09",
+          "seconds": 16329,
+          "chooser": "l3uga",
+          "chosen_user": "fenrirherel",
+          "command": "!кусь за щечку",
+          "bot_time": "4:32:09",
+          "bot_reply": "КУСЬ и у fenrirherel ( . Y . ) стали больше!",
+          "adjective": "за щечку",
+          "popka_form": "",
+          "kus_text": "за щечку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -7394,50 +8424,6 @@
       ]
     },
     {
-      "title": "Женщину",
-      "count": 2,
-      "chosen_users": [
-        {
-          "user": "risele",
-          "count": 1
-        },
-        {
-          "user": "timmaadm",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "1:54:41",
-          "seconds": 6881,
-          "chooser": "risele",
-          "chosen_user": "timmaadm",
-          "command": "!кусь женщину",
-          "bot_time": "1:54:41",
-          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
-          "adjective": "женщину",
-          "popka_form": "",
-          "kus_text": "женщину",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2782202430"
-        },
-        {
-          "time": "1:57:25",
-          "seconds": 7045,
-          "chooser": "Dark426k",
-          "chosen_user": "risele",
-          "command": "!кусь женщину",
-          "bot_time": "1:57:25",
-          "bot_reply": "КУСЬ и у risele ( . Y . ) стали больше!",
-          "adjective": "женщину",
-          "popka_form": "",
-          "kus_text": "женщину",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2782202430"
-        }
-      ]
-    },
-    {
       "title": "За большие",
       "count": 2,
       "chosen_users": [
@@ -7522,50 +8508,6 @@
           "kus_text": "за грязную попу",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
-        }
-      ]
-    },
-    {
-      "title": "За щечку",
-      "count": 2,
-      "chosen_users": [
-        {
-          "user": "l3uga",
-          "count": 1
-        },
-        {
-          "user": "TheKuraSaKI",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "0:47:32",
-          "seconds": 2852,
-          "chooser": "l3uga",
-          "chosen_user": "TheKuraSaKI",
-          "command": "!кусь за щечку",
-          "bot_time": "0:47:33",
-          "bot_reply": "КУСЬ и у TheKuraSaKI ( . Y . ) стали больше!",
-          "adjective": "за щечку",
-          "popka_form": "",
-          "kus_text": "за щечку",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2779025707"
-        },
-        {
-          "time": "4:03:30",
-          "seconds": 14610,
-          "chooser": "l3uga",
-          "chosen_user": "l3uga",
-          "command": "!кусь за щечку",
-          "bot_time": "4:03:30",
-          "bot_reply": "КУСЬ и у l3uga ( . Y . ) стали больше!",
-          "adjective": "за щечку",
-          "popka_form": "",
-          "kus_text": "за щечку",
-          "mode": "all_kus",
-          "source": "https://www.twitch.tv/videos/2781419034"
         }
       ]
     },
@@ -7996,6 +8938,32 @@
       ]
     },
     {
+      "title": "Бабулю малыша",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "k0ntaktor",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:22:49",
+          "seconds": 8569,
+          "chooser": "l3uga",
+          "chosen_user": "k0ntaktor",
+          "command": "!кусь бабулю малыша",
+          "bot_time": "2:22:50",
+          "bot_reply": "КУСЬ и у k0ntaktor ( . Y . ) стали больше!",
+          "adjective": "бабулю малыша",
+          "popka_form": "",
+          "kus_text": "бабулю малыша",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Бахубали",
       "count": 1,
       "chosen_users": [
@@ -8044,6 +9012,32 @@
           "kus_text": "безответственного",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2781419034"
+        }
+      ]
+    },
+    {
+      "title": "Блондина",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Nobody_MARA",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:51:19",
+          "seconds": 17479,
+          "chooser": "risele",
+          "chosen_user": "Nobody_MARA",
+          "command": "!кусь блондина",
+          "bot_time": "4:51:20",
+          "bot_reply": "КУСЬ и у Nobody_MARA ( . Y . ) стали больше!",
+          "adjective": "блондина",
+          "popka_form": "",
+          "kus_text": "блондина",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -8282,6 +9276,32 @@
       ]
     },
     {
+      "title": "Вредную жопку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Darkenrald",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:37:09",
+          "seconds": 20229,
+          "chooser": "TheDolten",
+          "chosen_user": "Darkenrald",
+          "command": "!кусь вредную жопку",
+          "bot_time": "5:37:10",
+          "bot_reply": "КУСЬ и у Darkenrald ( . Y . ) стали больше!",
+          "adjective": "вредную жопку",
+          "popka_form": "",
+          "kus_text": "вредную жопку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Вредную пуську",
       "count": 1,
       "chosen_users": [
@@ -8356,6 +9376,32 @@
           "kus_text": "высокого",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Гига ебаку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "TheKuraSaKI",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:59:36",
+          "seconds": 7176,
+          "chooser": "risele",
+          "chosen_user": "TheKuraSaKI",
+          "command": "!кусь гига ебаку",
+          "bot_time": "1:59:38",
+          "bot_reply": "КУСЬ и у TheKuraSaKI ( . Y . ) стали больше!",
+          "adjective": "гига ебаку",
+          "popka_form": "",
+          "kus_text": "гига ебаку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -8542,6 +9588,32 @@
       ]
     },
     {
+      "title": "Деда",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Darkenrald",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:40:50",
+          "seconds": 20450,
+          "chooser": "risele",
+          "chosen_user": "Darkenrald",
+          "command": "!кусь деда",
+          "bot_time": "5:40:50",
+          "bot_reply": "КУСЬ и у Darkenrald ( . Y . ) стали больше!",
+          "adjective": "деда",
+          "popka_form": "",
+          "kus_text": "деда",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Демонический писюн",
       "count": 1,
       "chosen_users": [
@@ -8616,6 +9688,32 @@
           "kus_text": "Джина COCKING",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Донатера",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "dimamooonn",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "0:24:56",
+          "seconds": 1496,
+          "chooser": "haska_6977",
+          "chosen_user": "dimamooonn",
+          "command": "!кусь донатера",
+          "bot_time": "0:24:56",
+          "bot_reply": "КУСЬ и у dimamooonn ( . Y . ) стали больше!",
+          "adjective": "донатера",
+          "popka_form": "",
+          "kus_text": "донатера",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -9084,6 +10182,32 @@
           "kus_text": "за звезду смерти",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "За коленку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "amonyash_",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:19:21",
+          "seconds": 19161,
+          "chooser": "risele",
+          "chosen_user": "amonyash_",
+          "command": "!кусь за коленку",
+          "bot_time": "5:19:21",
+          "bot_reply": "КУСЬ и у amonyash_ ( . Y . ) стали больше!",
+          "adjective": "за коленку",
+          "popka_form": "",
+          "kus_text": "за коленку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -9660,6 +10784,32 @@
       ]
     },
     {
+      "title": "Информатора",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "TheDolten",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:36:07",
+          "seconds": 9367,
+          "chooser": "Toka_Tuxo",
+          "chosen_user": "TheDolten",
+          "command": "!кусь информатора",
+          "bot_time": "2:36:08",
+          "bot_reply": "КУСЬ и у TheDolten ( . Y . ) стали больше!",
+          "adjective": "информатора",
+          "popka_form": "",
+          "kus_text": "информатора",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Ириску",
       "count": 1,
       "chosen_users": [
@@ -9972,6 +11122,32 @@
       ]
     },
     {
+      "title": "Лиланей",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "maxsolowka",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:41:45",
+          "seconds": 20505,
+          "chooser": "Darkenrald",
+          "chosen_user": "maxsolowka",
+          "command": "!Кусь Лиланей",
+          "bot_time": "5:41:46",
+          "bot_reply": "КУСЬ и у maxsolowka ( . Y . ) стали больше!",
+          "adjective": "Лиланей",
+          "popka_form": "",
+          "kus_text": "Лиланей",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Лисицу cap",
       "count": 1,
       "chosen_users": [
@@ -10124,6 +11300,84 @@
           "kus_text": "маленького",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Мармеладку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Mara_Nei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:17:03",
+          "seconds": 4623,
+          "chooser": "haska_6977",
+          "chosen_user": "Mara_Nei",
+          "command": "!кусь мармеладку",
+          "bot_time": "1:17:03",
+          "bot_reply": "КУСЬ и у Mara_Nei ( . Y . ) стали больше!",
+          "adjective": "мармеладку",
+          "popka_form": "",
+          "kus_text": "мармеладку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Маршала",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "не определено",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:16:30",
+          "seconds": 4590,
+          "chooser": "timmaadm",
+          "chosen_user": "не определено",
+          "command": "!кусь маршала",
+          "bot_time": "1:16:31",
+          "bot_reply": "КУСЬ и у 11_alex_1_ ( . Y . ) стали больше!",
+          "adjective": "маршала",
+          "popka_form": "",
+          "kus_text": "маршала",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Мастера стелса",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "monokuma_rp",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:16:45",
+          "seconds": 15405,
+          "chooser": "1BeeBeer",
+          "chosen_user": "monokuma_rp",
+          "command": "!кусь мастера стелса",
+          "bot_time": "4:16:46",
+          "bot_reply": "КУСЬ и у monokuma_rp ( . Y . ) стали больше!",
+          "adjective": "мастера стелса",
+          "popka_form": "",
+          "kus_text": "мастера стелса",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -10284,6 +11538,32 @@
       ]
     },
     {
+      "title": "Мою женщину",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "impratd",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "0:37:27",
+          "seconds": 2247,
+          "chooser": "risele",
+          "chosen_user": "impratd",
+          "command": "!кусь мою женщину",
+          "bot_time": "0:37:27",
+          "bot_reply": "КУСЬ и у impratd ( . Y . ) стали больше!",
+          "adjective": "мою женщину",
+          "popka_form": "",
+          "kus_text": "мою женщину",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Мытую пуську",
       "count": 1,
       "chosen_users": [
@@ -10358,6 +11638,32 @@
           "kus_text": "не сашу",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Некурящего",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "whitefoxplayer",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:52:47",
+          "seconds": 21167,
+          "chooser": "risele",
+          "chosen_user": "whitefoxplayer",
+          "command": "!кусь некурящего",
+          "bot_time": "5:52:48",
+          "bot_reply": "КУСЬ и у whitefoxplayer ( . Y . ) стали больше!",
+          "adjective": "некурящего",
+          "popka_form": "",
+          "kus_text": "некурящего",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -10518,6 +11824,32 @@
       ]
     },
     {
+      "title": "Пистолет",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Nobody_MARA",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "6:48:25",
+          "seconds": 24505,
+          "chooser": "risele",
+          "chosen_user": "Nobody_MARA",
+          "command": "!кусь пистолет",
+          "bot_time": "6:48:25",
+          "bot_reply": "КУСЬ и у Nobody_MARA ( . Y . ) стали больше!",
+          "adjective": "пистолет",
+          "popka_form": "",
+          "kus_text": "пистолет",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Плохого грабителя",
       "count": 1,
       "chosen_users": [
@@ -10618,6 +11950,32 @@
           "kus_text": "пончика awoo",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Попец",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Darkenrald",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:06:29",
+          "seconds": 3989,
+          "chooser": "PLunanei",
+          "chosen_user": "Darkenrald",
+          "command": "!кусь попец",
+          "bot_time": "1:06:30",
+          "bot_reply": "КУСЬ и у Darkenrald ( . Y . ) стали больше!",
+          "adjective": "попец",
+          "popka_form": "",
+          "kus_text": "попец",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -10908,6 +12266,32 @@
       ]
     },
     {
+      "title": "Рисочку",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "lilanei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:24:14",
+          "seconds": 12254,
+          "chooser": "risele",
+          "chosen_user": "lilanei",
+          "command": "!кусь рисочку",
+          "bot_time": "3:24:15",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "рисочку",
+          "popka_form": "",
+          "kus_text": "рисочку",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Романтика",
       "count": 1,
       "chosen_users": [
@@ -11138,6 +12522,32 @@
           "kus_text": "сладенького зрителя",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2779025707"
+        }
+      ]
+    },
+    {
+      "title": "Сморчка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "nicknew34",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:35:26",
+          "seconds": 5726,
+          "chooser": "Toka_Tuxo",
+          "chosen_user": "nicknew34",
+          "command": "!кусь сморчка",
+          "bot_time": "1:35:27",
+          "bot_reply": "КУСЬ и у nicknew34 ( . Y . ) стали больше!",
+          "adjective": "сморчка",
+          "popka_form": "",
+          "kus_text": "сморчка",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -11584,6 +12994,32 @@
       ]
     },
     {
+      "title": "Тусовщицу",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "Trace_Fire",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:56:09",
+          "seconds": 10569,
+          "chooser": "risele",
+          "chosen_user": "Trace_Fire",
+          "command": "!кусь тусовщицу",
+          "bot_time": "2:56:10",
+          "bot_reply": "КУСЬ и у Trace_Fire ( . Y . ) стали больше!",
+          "adjective": "тусовщицу",
+          "popka_form": "",
+          "kus_text": "тусовщицу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Тётю Карину",
       "count": 1,
       "chosen_users": [
@@ -11606,6 +13042,32 @@
           "kus_text": "тётю Карину",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "У кого 3 нога",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "amonyash_",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:13:47",
+          "seconds": 15227,
+          "chooser": "haska_6977",
+          "chosen_user": "amonyash_",
+          "command": "!кусь у кого 3 нога",
+          "bot_time": "4:13:47",
+          "bot_reply": "КУСЬ и у amonyash_ ( . Y . ) стали больше!",
+          "adjective": "у кого 3 нога",
+          "popka_form": "",
+          "kus_text": "у кого 3 нога",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     },
@@ -12000,6 +13462,32 @@
       ]
     },
     {
+      "title": "Шалуна",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "whitefoxplayer",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "5:36:26",
+          "seconds": 20186,
+          "chooser": "risele",
+          "chosen_user": "whitefoxplayer",
+          "command": "!кусь шалуна",
+          "bot_time": "5:36:26",
+          "bot_reply": "КУСЬ и у whitefoxplayer ( . Y . ) стали больше!",
+          "adjective": "шалуна",
+          "popka_form": "",
+          "kus_text": "шалуна",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Шерсть ебаную",
       "count": 1,
       "chosen_users": [
@@ -12052,6 +13540,58 @@
       ]
     },
     {
+      "title": "Шпионеро",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "haska_6977",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:14:38",
+          "seconds": 15278,
+          "chooser": "timmaadm",
+          "chosen_user": "haska_6977",
+          "command": "!кусь шпионеро",
+          "bot_time": "4:14:39",
+          "bot_reply": "КУСЬ и у haska_6977 ( . Y . ) стали больше!",
+          "adjective": "шпионеро",
+          "popka_form": "",
+          "kus_text": "шпионеро",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Шпионскую жэпу",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "lilanei",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:24:36",
+          "seconds": 12276,
+          "chooser": "whitefoxplayer",
+          "chosen_user": "lilanei",
+          "command": "!Кусь шпионскую жэпу",
+          "bot_time": "3:24:36",
+          "bot_reply": "КУСЬ и у lilanei ( . Y . ) стали больше!",
+          "adjective": "шпионскую жэпу",
+          "popka_form": "",
+          "kus_text": "шпионскую жэпу",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
       "title": "Элеанору",
       "count": 1,
       "chosen_users": [
@@ -12074,6 +13614,58 @@
           "kus_text": "элеанору",
           "mode": "all_kus",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "Ютуб",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "0:32:46",
+          "seconds": 1966,
+          "chooser": "risele",
+          "chosen_user": "timmaadm",
+          "command": "!кусь ютуб",
+          "bot_time": "0:32:47",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "ютуб",
+          "popka_form": "",
+          "kus_text": "ютуб",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Я ми 6",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "timmaadm",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "4:05:02",
+          "seconds": 14702,
+          "chooser": "risele",
+          "chosen_user": "timmaadm",
+          "command": "!кусь я ми 6",
+          "bot_time": "4:05:04",
+          "bot_reply": "КУСЬ и у timmaadm ( . Y . ) стали больше!",
+          "adjective": "я ми 6",
+          "popka_form": "",
+          "kus_text": "я ми 6",
+          "mode": "all_kus",
+          "source": "https://www.twitch.tv/videos/2782972664"
         }
       ]
     }
