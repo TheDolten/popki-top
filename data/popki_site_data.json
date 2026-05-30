@@ -4,8 +4,8 @@
     "mode": "popki",
     "source": "lilanei",
     "source_url": "https://www.twitch.tv/lilanei",
-    "total": 98,
-    "groups": 74,
+    "total": 103,
+    "groups": 77,
     "sort": "По количеству"
   },
   "top_chosen": [
@@ -66,6 +66,10 @@
       "count": 2
     },
     {
+      "user": "ging33rr",
+      "count": 2
+    },
+    {
       "user": "MeowGPT",
       "count": 2
     },
@@ -102,10 +106,6 @@
       "count": 1
     },
     {
-      "user": "ging33rr",
-      "count": 1
-    },
-    {
       "user": "Gossha",
       "count": 1
     },
@@ -126,11 +126,19 @@
       "count": 1
     },
     {
+      "user": "kusok__myasa",
+      "count": 1
+    },
+    {
       "user": "l3uga",
       "count": 1
     },
     {
       "user": "lozarit",
+      "count": 1
+    },
+    {
+      "user": "mick_moran",
       "count": 1
     },
     {
@@ -182,6 +190,10 @@
       "count": 1
     },
     {
+      "user": "whitefoxplayer",
+      "count": 1
+    },
+    {
       "user": "Xyseinr",
       "count": 1
     },
@@ -197,7 +209,7 @@
   "popki": [
     {
       "title": "Лучшая попа",
-      "count": 8,
+      "count": 9,
       "chosen_users": [
         {
           "user": "BipolarGluttony",
@@ -225,6 +237,10 @@
         },
         {
           "user": "thegoustbear",
+          "count": 1
+        },
+        {
+          "user": "whitefoxplayer",
           "count": 1
         },
         {
@@ -336,6 +352,20 @@
           "kus_text": "лучшую попу",
           "mode": "popki",
           "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "1:50:36",
+          "seconds": 6636,
+          "chooser": "l3uga",
+          "chosen_user": "whitefoxplayer",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "1:50:36",
+          "bot_reply": "КУСЬ и у whitefoxplayer ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "kus_text": "лучшую попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2783750632"
         }
       ]
     },
@@ -724,6 +754,50 @@
           "kus_text": "за грязную попу",
           "mode": "popki",
           "source": "https://www.twitch.tv/videos/2778186232"
+        }
+      ]
+    },
+    {
+      "title": "За жопа",
+      "count": 2,
+      "chosen_users": [
+        {
+          "user": "ging33rr",
+          "count": 1
+        },
+        {
+          "user": "kusok__myasa",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:03:30",
+          "seconds": 11010,
+          "chooser": "l3uga",
+          "chosen_user": "ging33rr",
+          "command": "!кусь за жопу",
+          "bot_time": "3:03:30",
+          "bot_reply": "КУСЬ и у ging33rr ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "жопу",
+          "kus_text": "за жопу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "2:39:51",
+          "seconds": 9591,
+          "chooser": "l3uga",
+          "chosen_user": "kusok__myasa",
+          "command": "!кусь за жопу",
+          "bot_time": "2:39:51",
+          "bot_reply": "КУСЬ и у kusok__myasa ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "жопу",
+          "kus_text": "за жопу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2783750632"
         }
       ]
     },
@@ -1354,7 +1428,7 @@
       ]
     },
     {
-      "title": "За жопа",
+      "title": "За жепа",
       "count": 1,
       "chosen_users": [
         {
@@ -1364,18 +1438,18 @@
       ],
       "items": [
         {
-          "time": "3:03:30",
-          "seconds": 11010,
-          "chooser": "l3uga",
+          "time": "2:23:28",
+          "seconds": 8608,
+          "chooser": "risele",
           "chosen_user": "ging33rr",
-          "command": "!кусь за жопу",
-          "bot_time": "3:03:30",
+          "command": "!кусь за жепу",
+          "bot_time": "2:23:28",
           "bot_reply": "КУСЬ и у ging33rr ( . Y . ) стали больше!",
           "adjective": "за",
-          "popka_form": "жопу",
-          "kus_text": "за жопу",
+          "popka_form": "жепу",
+          "kus_text": "за жепу",
           "mode": "popki",
-          "source": "https://www.twitch.tv/videos/2782202430"
+          "source": "https://www.twitch.tv/videos/2783750632"
         }
       ]
     },
@@ -2202,6 +2276,32 @@
       ]
     },
     {
+      "title": "Среднестатистическая попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "не определено",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:51:36",
+          "seconds": 6696,
+          "chooser": "Dark426k",
+          "chosen_user": "не определено",
+          "command": "!кусь среднестатистическую попу чата",
+          "bot_time": "1:51:36",
+          "bot_reply": "КУСЬ и у 8hot_face ( . Y . ) стали больше!",
+          "adjective": "среднестатистическую",
+          "popka_form": "попу",
+          "kus_text": "среднестатистическую попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2783750632"
+        }
+      ]
+    },
+    {
       "title": "Стервозная попка",
       "count": 1,
       "chosen_users": [
@@ -2318,6 +2418,32 @@
           "adjective": "хотори",
           "popka_form": "жопку",
           "source": "https://www.twitch.tv/videos/2777435656"
+        }
+      ]
+    },
+    {
+      "title": "Худшая попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "mick_moran",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "1:51:02",
+          "seconds": 6662,
+          "chooser": "haska_6977",
+          "chosen_user": "mick_moran",
+          "command": "!кусь худшую попу чата",
+          "bot_time": "1:51:02",
+          "bot_reply": "КУСЬ и у mick_moran ( . Y . ) стали больше!",
+          "adjective": "худшую",
+          "popka_form": "попу",
+          "kus_text": "худшую попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2783750632"
         }
       ]
     },
