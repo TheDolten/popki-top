@@ -4,8 +4,8 @@
     "mode": "popki",
     "source": "lilanei",
     "source_url": "https://www.twitch.tv/lilanei",
-    "total": 103,
-    "groups": 77,
+    "total": 104,
+    "groups": 78,
     "sort": "По количеству"
   },
   "top_chosen": [
@@ -50,6 +50,10 @@
       "count": 3
     },
     {
+      "user": "MeowGPT",
+      "count": 3
+    },
+    {
       "user": "TheKuraSaKI",
       "count": 3
     },
@@ -67,10 +71,6 @@
     },
     {
       "user": "ging33rr",
-      "count": 2
-    },
-    {
-      "user": "MeowGPT",
       "count": 2
     },
     {
@@ -1694,6 +1694,32 @@
           "adjective": "кусателя",
           "popka_form": "поп",
           "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Ленивая жэпа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "MeowGPT",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "0:44:26",
+          "seconds": 2666,
+          "chooser": "whitefoxplayer",
+          "chosen_user": "MeowGPT",
+          "command": "!кусь ленивую жэпу",
+          "bot_time": "0:44:26",
+          "bot_reply": "КУСЬ и у MeowGPT ( . Y . ) стали больше!",
+          "adjective": "ленивую",
+          "popka_form": "жэпу",
+          "kus_text": "ленивую жэпу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2786912788"
         }
       ]
     },
