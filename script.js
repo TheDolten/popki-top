@@ -4,9 +4,9 @@ const PAGE = body?.dataset?.page || "kus";
 let DATA = null;
 let DETAILS_OPEN = false;
 
-const TWITCH_CLIENT_ID = "lrvv741h9kzldosuxd5aw0k6jir7hv";
+const TWITCH_CLIENT_ID = "PASTE_TWITCH_CLIENT_ID_HERE";
 const TWITCH_SCOPES = "";
-const ACHIEVEMENTS_API_URL = "https://script.google.com/macros/s/AKfycbyqHLfvWLv6b6Txxh1MfmpERO8ISN9AaeCd78s-nTFDbY9i_pO4Yhp16Nz2HXyC6FL4/exec";
+const ACHIEVEMENTS_API_URL = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
 let AUTH_USER = null;
 let USER_STATE = null;
 let LAST_RANK_SYNC_KEY = "";
@@ -23,7 +23,6 @@ const ACHIEVEMENT_DEFS = [
   { id: "cat_20", icon: "😺", title: "Любимчик кота", desc: "Погладить кота 20 раз.", hidden: false },
   { id: "hidden_cat_100", icon: "🐈‍⬛", title: "Тайный кошачий друг", desc: "Скрытое достижение: погладить кота 100 раз.", hidden: true },
   { id: "hidden_three_20", icon: "🎲", title: "Критическая удача", desc: "Скрытое достижение: выбросить 20 три раза подряд за 5 минут.", hidden: true },
-  { id: "hidden_jump_lila", icon: "🤡", title: "Сначала нужно прыгнуть", desc: "Скрытое достижение: за постоянные прыжки в бездну", hidden: true },
 ];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, m => ({
@@ -587,7 +586,7 @@ function renderSource(meta = {}) {
 function render() {
   const groups = getGroups(DATA);
   const meta = DATA?.meta || {};
-  document.title = meta.title || (PAGE === "kus" ? "🫦 Статистика кусей" : PAGE === "popki" ? "🍑 Топ попок" : "🏅 Достижения");
+  document.title = meta.title || (PAGE === "kus" ? "🫦 Статистика кусей" : PAGE === "popki" ? "🍑 Топ попок" : PAGE === "schedule" ? "📅 Расписание" : "🏅 Достижения");
   renderSource(meta);
   renderAuth();
   updateAchievementsNavLock();
@@ -712,6 +711,13 @@ setupAuthButtons();
 setupAchievementsNav();
 handleTwitchCallback().finally(async () => {
   try {
+    if (PAGE === "schedule") {
+      renderAuth();
+      updateAchievementsNavLock();
+      await loadSchedulePage();
+      return;
+    }
+
     await loadData();
     if (AUTH_USER) {
       await syncRankAchievement();
@@ -726,7 +732,9 @@ handleTwitchCallback().finally(async () => {
       Не удалось загрузить <b>${esc(DATA_URL)}</b>.<br>
       ${PAGE === "popki"
         ? "Для страницы попок нужен файл <code>data/popki_site_data.json</code>. В парсере включи ползунок “Попки” и сохрани JSON сайта."
-        : "Для главной страницы и достижений нужен файл <code>data/kus_site_data.json</code>."}
+        : PAGE === "schedule"
+          ? "Для страницы расписания нужен файл <code>data/schedule.json</code>."
+          : "Для главной страницы и достижений нужен файл <code>data/kus_site_data.json</code>."}
     </div>`);
   }
 });
@@ -1015,3 +1023,105 @@ handleTwitchCallback().finally(async () => {
     rollD20();
   });
 })();
+
+
+function scheduleStatusLabel(status) {
+  if (status === "video") return "видео";
+  if (status === "stream") return "стрим";
+  return "offline";
+}
+
+function scheduleStatusClass(status) {
+  if (status === "video") return "schedule-video";
+  if (status === "stream") return "schedule-stream";
+  return "schedule-offline";
+}
+
+async function loadSchedulePage() {
+  if (PAGE !== "schedule") return;
+
+  const board = document.getElementById("scheduleBoard");
+  const strip = document.getElementById("scheduleWeekStrip");
+  const month = document.getElementById("scheduleMonth");
+  const next = document.getElementById("scheduleNext");
+  if (!board || !strip) return;
+
+  try {
+    const res = await fetch("data/schedule.json?v=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error("Не смог загрузить data/schedule.json");
+    const schedule = await res.json();
+    const days = Array.isArray(schedule.days) ? schedule.days : [];
+    const meta = schedule.meta || {};
+
+    if (month) month.textContent = meta.month || "06.2026";
+
+    const weekdayMap = ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"];
+    const now = new Date();
+    const todayDay = weekdayMap[now.getDay()];
+    const todayDate = now.getDate();
+
+    let todayIndex = days.findIndex((d) => Number(d.date) === todayDate);
+    if (todayIndex === -1) {
+      todayIndex = days.findIndex((d) => String(d.day || "").toUpperCase() === todayDay);
+    }
+
+    strip.innerHTML = days.map((d, idx) => `
+      <div class="week-day ${idx === todayIndex ? "is-today" : ""}">
+        <span>${esc(d.day || "")}</span>
+        <b>${esc(d.date || "")}</b>
+      </div>
+    `).join("");
+
+    board.innerHTML = days.map((d, idx) => {
+      const status = String(d.status || "offline").toLowerCase();
+      const isOffline = status === "offline";
+      const time = d.time || (!isOffline ? meta.default_time : "");
+      const title = d.title || scheduleStatusLabel(status);
+      return `
+        <article class="schedule-card ${scheduleStatusClass(status)} ${idx === todayIndex ? "is-today" : ""}">
+          <div class="schedule-card-day">${esc(d.day || "")}</div>
+          <div class="schedule-card-main">
+            <div class="schedule-toggle ${isOffline ? "" : "on"}"><span></span></div>
+            <div>
+              <h3>${esc(title)}</h3>
+              ${d.note ? `<p>${esc(d.note)}</p>` : ""}
+              ${time ? `<em>${esc(time)}</em>` : ""}
+            </div>
+          </div>
+        </article>
+      `;
+    }).join("");
+
+    let upcomingIndex = -1;
+    if (todayIndex !== -1) {
+      for (let offset = 0; offset < days.length; offset += 1) {
+        const idx = (todayIndex + offset) % days.length;
+        if (String(days[idx]?.status || "offline").toLowerCase() !== "offline") {
+          upcomingIndex = idx;
+          break;
+        }
+      }
+    }
+    if (upcomingIndex === -1) {
+      upcomingIndex = days.findIndex((d) => String(d.status || "offline").toLowerCase() !== "offline");
+    }
+
+    if (next) {
+      if (upcomingIndex !== -1) {
+        const upcoming = days[upcomingIndex];
+        const time = upcoming.time || meta.default_time || "";
+        const prefix = upcomingIndex === todayIndex ? "Сегодня" : "Ближайшее";
+        next.innerHTML = `
+          <b>${esc(prefix)} · ${esc(upcoming.day || "")} · ${esc(upcoming.title || "")}</b>
+          <span>${esc(time)}</span>
+        `;
+      } else {
+        next.textContent = "На этой неделе только отдых.";
+      }
+    }
+  } catch (err) {
+    board.innerHTML = `<div class="error">Не удалось загрузить расписание: ${esc(err.message || err)}</div>`;
+    if (next) next.textContent = "Ошибка загрузки";
+  }
+}
+

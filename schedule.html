@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🏅 Достижения</title>
+  <title>📅 Расписание</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-<body data-page="achievements" data-file="data/kus_site_data.json" data-active="achievements">
+<body data-page="schedule" data-file="data/schedule.json" data-active="schedule">
   <div class="bg-orb orb-1"></div>
   <div class="bg-orb orb-2"></div>
   <div class="bg-grid"></div>
@@ -17,92 +18,92 @@
   <button id="musicToggle" class="music-toggle" type="button" title="Музыка" aria-label="Включить или выключить музыку">🎵</button>
   <audio id="bgMusic" src="assets/music.mp3" loop preload="auto"></audio>
 
-  <main class="wrap">
-    <header class="hero">
+  <main class="wrap schedule-page-wrap">
+    <header class="hero schedule-hero">
       <div class="hero-topline">
         <span class="eyebrow">Twitch chat stats</span>
         <nav class="nav" aria-label="Навигация по сайту">
           <a href="index.html">Все куси</a>
           <a href="popki.html">Попки</a>
-          <a href="schedule.html">Расписание</a>
-          <a class="active achievements-nav-link" href="achievements.html" title="Нужно войти через Twitch">Достижения</a>
+          <a class="active" href="schedule.html">Расписание</a>
+          <a class="achievements-nav-link" href="achievements.html" title="Нужно войти через Twitch">Достижения</a>
         </nav>
       </div>
 
-      <div class="hero-card">
-        <div class="hero-icon">🏅</div>
+      <div class="hero-card schedule-hero-card schedule-hero-card--compact">
         <div class="hero-copy">
-          <h1>Достижения</h1>
-          <p class="sub">Открываются только для авторизованных Twitch-пользователей. Скрытые достижения появляются только после выполнения условий.</p>
+          <h1>Расписание</h1>
+          <p class="sub">Страница расписания в стиле Telegram-поста: телефон, карточки по дням, енотик и фон с артом.</p>
           <div class="hero-tags">
-            <span class="tag">Топовые места</span>
-            <span class="tag">Поглаживания кота</span>
-            <span class="tag">Секретные условия</span>
+            <span class="tag">Неделя</span>
+            <span class="tag">Telegram style</span>
+            <span class="tag">Сегодня подсвечено</span>
           </div>
         </div>
-
-        <section class="auth-panel hero-auth" id="authPanel">
-          <div class="auth-left">
-            <div class="auth-kicker">Twitch вход</div>
-            <div class="auth-title" id="authTitle">Нужна авторизация</div>
-            <div class="auth-sub" id="authStatus">Войди через Twitch, чтобы увидеть свои достижения.</div>
-          </div>
-          <div class="auth-actions">
-            <button id="loginTwitch" type="button">Войти через Twitch</button>
-            <button id="logoutTwitch" class="ghost-btn" type="button" hidden>Выйти</button>
-          </div>
-        </section>
       </div>
     </header>
 
-    <section class="meta-grid">
-      <article class="meta-card">
-        <span class="meta-label">Источник</span>
-        <div class="meta-value" id="sourceName">Загрузка...</div>
-      </article>
-    </section>
+    <section class="schedule-stage">
+      <div class="schedule-stage-art">
+        <img class="schedule-girl-art" src="assets/schedule_girl.png" alt="" />
+      </div>
 
-    <section class="stats">
-      <div class="stat">
-        <span class="stat-kicker">Открыто</span>
-        <b id="achUnlockedCount">0</b>
-        <span>достижений</span>
-      </div>
-      <div class="stat">
-        <span class="stat-kicker">Кот</span>
-        <b id="achCatPets">0</b>
-        <span>поглаживаний</span>
-      </div>
-      <div class="stat">
-        <span class="stat-kicker">d20</span>
-        <b id="achBestD20">—</b>
-        <span>лучший бросок</span>
-      </div>
-    </section>
+      <div class="schedule-stage-grid">
+        <aside class="schedule-side-panels">
+          <div class="panel schedule-next-panel schedule-floating-panel">
+            <div class="panel-head compact">
+              <h2>🔔 Ближайшее</h2>
+            </div>
+            <div id="scheduleNext" class="schedule-next">Пока неизвестно</div>
+          </div><img class="schedule-raccoon" src="assets/schedule_raccoon.png" alt="" />
+        </aside>
 
-    <section class="panel achievements-panel">
-      <div class="panel-head compact">
-        <div>
-          <h2>🏆 Твои достижения</h2>
-          <p class="panel-sub">Обычные достижения видны сразу. Скрытые появятся здесь только после выполнения.</p>
+        <div class="schedule-phone-frame">
+          <div class="schedule-phone">
+            <div class="schedule-phone-top">
+              <span id="scheduleMonth">06.2026</span>
+              <span class="phone-status"><i class="fa-solid fa-signal"></i> <i class="fa-solid fa-wifi"></i> <i class="fa-solid fa-battery-three-quarters"></i></span>
+            
+            </div>
+
+            <div class="week-strip" id="scheduleWeekStrip"></div> 
+
+            <div class="schedule-board" id="scheduleBoard">
+              <div class="schedule-loading">Загрузка расписания...</div>
+              
+            </div>
+            
+           
+
+            <div class="schedule-social-row">
+              <a href="https://t.me/lilanei" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+              <a href="https://www.youtube.com/@lilanei" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://discord.com/invite/sZ5TtS2" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+            </div>
+
+            <div class="schedule-dots">
+              <span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="schedule-bottom">
+              <span class="schedule-brand">💜 lilanei</span>
+              <span class="schedule-search">⌕</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="achLocked" class="locked-box">
-        🔒 Войди через Twitch, чтобы открыть вкладку достижений.
-      </div>
-      <div id="achievementsGrid" class="achievements-grid"></div>
-      <div id="achievementsMessage"></div>
     </section>
 
     <footer class="footer">
       <span>Сайт для веселья</span>
       <span class="footer-dot">•</span>
-      <span>Достижения</span>
+      <span>Вкладка: расписание</span>
     </footer>
   </main>
 
   <div id="d20Widget" class="d20-widget" title="Бросить d20" aria-label="Бросить d20">
     <div id="d20Bubble" class="d20-bubble">Скоро будет</div>
+
     <button id="d20Dice" class="d20-dice d20-clean" type="button" aria-label="Бросить d20">
       <svg class="d20-svg" viewBox="0 0 200 200" aria-hidden="true">
         <polygon points="100,12 180,58 178,138 100,188 22,138 20,58" fill="#f7f9ff" stroke="#0d0f1d" stroke-width="5" stroke-linejoin="round"/>
