@@ -1,6 +1,6 @@
 const body = document.body;
 const DATA_URL = body?.dataset?.file || "data/kus_site_data.json";
-const PAGE = body?.dataset?.page || "kus";
+const PAGE = body?.dataset?.page || "kus"; 
 let DATA = null;
 let DETAILS_OPEN = false;
 
