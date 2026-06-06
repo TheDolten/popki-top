@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "month": "06.2026",
+    "default_time": "19:00 МСК",
+    "title": "Расписание на неделю",
+    "updated": "2026-06-01"
+  },
+  "days": [
+    {
+      "day": "ПН",
+      "date": 1,
+      "status": "offline",
+      "title": "offline",
+      "time": "",
+      "note": ""
+    },
+    {
+      "day": "ВТ",
+      "date": 2,
+      "status": "video",
+      "title": "видосы",
+      "time": "19:00 МСК",
+      "note": ""
+    },
+    {
+      "day": "СР",
+      "date": 3,
+      "status": "video",
+      "title": "видосы + NTE",
+      "time": "19:00 МСК",
+      "note": ""
+    },
+    {
+      "day": "ЧТ",
+      "date": 4,
+      "status": "offline",
+      "title": "offline",
+      "time": "",
+      "note": ""
+    },
+    {
+      "day": "ПТ",
+      "date": 5,
+      "status": "offline",
+      "title": "offline",
+      "time": "",
+      "note": ""
+    },
+    {
+      "day": "СБ",
+      "date": 6,
+      "status": "video",
+      "title": "007 First Light",
+      "time": "19:00 МСК",
+      "note": ""
+    },
+    {
+      "day": "ВС",
+      "date": 7,
+      "status": "offline",
+      "title": "offline",
+      "time": "",
+      "note": ""
+    }
+  ],
+  "links": [
+    {
+      "label": "Telegram",
+      "url": "https://t.me/lilanei"
+    },
+    {
+      "label": "TikTok",
+      "url": "#"
+    },
+    {
+      "label": "YouTube",
+      "url": "#"
+    },
+    {
+      "label": "Discord",
+      "url": "#"
+    }
+  ]
+}
