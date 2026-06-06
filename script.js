@@ -6,7 +6,7 @@ let DETAILS_OPEN = false;
 
 const TWITCH_CLIENT_ID = "lrvv741h9kzldosuxd5aw0k6jir7hv";
 const TWITCH_SCOPES = "";
-const ACHIEVEMENTS_API_URL = "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const ACHIEVEMENTS_API_URL = "https://script.google.com/macros/s/AKfycbyqHLfvWLv6b6Txxh1MfmpERO8ISN9AaeCd78s-nTFDbY9i_pO4Yhp16Nz2HXyC6FL4/exec";
 let AUTH_USER = null;
 let USER_STATE = null;
 let LAST_RANK_SYNC_KEY = "";
