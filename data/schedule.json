@@ -1,66 +1,60 @@
 {
-  "meta": {
-    "month": "06.2026",
-    "default_time": "19:00 МСК",
-    "title": "Расписание на неделю",
-    "updated": "2026-06-01"
-  },
   "days": [
     {
+      "date": 8,
       "day": "ПН",
-      "date": 1,
+      "note": "",
       "status": "offline",
-      "title": "offline",
       "time": "",
-      "note": ""
+      "title": "offline"
     },
     {
+      "date": 9,
       "day": "ВТ",
-      "date": 2,
+      "note": "",
       "status": "video",
-      "title": "видосы",
       "time": "19:00 МСК",
-      "note": ""
+      "title": "NTE + видосы"
     },
     {
+      "date": 10,
       "day": "СР",
-      "date": 3,
+      "note": "",
       "status": "video",
-      "title": "видосы + NTE",
       "time": "19:00 МСК",
-      "note": ""
+      "title": "Gothic 1 Remakel"
     },
     {
+      "date": 11,
       "day": "ЧТ",
-      "date": 4,
-      "status": "offline",
-      "title": "offline",
-      "time": "",
-      "note": ""
-    },
-    {
-      "day": "ПТ",
-      "date": 5,
-      "status": "offline",
-      "title": "offline",
-      "time": "",
-      "note": ""
-    },
-    {
-      "day": "СБ",
-      "date": 6,
+      "note": "",
       "status": "video",
-      "title": "007 First Light",
       "time": "19:00 МСК",
-      "note": ""
+      "title": "007 First Light"
     },
     {
+      "date": 12,
+      "day": "ПТ",
+      "note": "",
+      "status": "video",
+      "time": "19:00 МСК",
+      "title": "007 First Light"
+    },
+    {
+      "date": 13,
+      "day": "СБ",
+      "note": "",
+      "status": "video",
+      "time": "19:00 МСК",
+      "title": "NTE + видосы"
+    },
+    {
+      "date": 14,
       "day": "ВС",
-      "date": 7,
+      "note": "",
       "status": "offline",
-      "title": "offline",
       "time": "",
-      "note": ""
+      "title": "offline"
     }
   ],
   "links": [
@@ -69,16 +63,18 @@
       "url": "https://t.me/lilanei"
     },
     {
-      "label": "TikTok",
-      "url": "#"
-    },
-    {
       "label": "YouTube",
-      "url": "#"
+      "url": "https://www.youtube.com/@lilanei"
     },
     {
       "label": "Discord",
-      "url": "#"
+      "url": "https://discord.com/invite/sZ5TtS2"
     }
-  ]
+  ],
+  "meta": {
+    "default_time": "19:00 МСК",
+    "month": "06.2026",
+    "title": "Расписание на неделю",
+    "updated": "2026-06-08"
+  }
 }
