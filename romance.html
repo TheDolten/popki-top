@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🖤 Чат с lilanei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="romance" data-active="romance">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <button id="musicToggle" class="music-toggle" type="button" title="Музыка" aria-label="Включить или выключить музыку">🎵</button>
+  <audio id="bgMusic" src="assets/music.mp3" loop preload="auto"></audio>
+
+  <main class="wrap romance-wrap romance-hardmode chat-romance-page">
+    <header class="hero">
+      <div class="hero-topline">
+        <span class="eyebrow">free talk</span>
+        <nav class="nav" aria-label="Навигация по сайту">
+          <a href="index.html">Все куси</a>
+          <a href="popki.html">Попки</a>
+          <a href="schedule.html">Расписание</a>
+          <a class="active" href="romance.html">Романс</a>
+          <a class="achievements-nav-link" href="achievements.html" title="Нужно войти через Twitch">Достижения</a>
+        </nav>
+      </div>
+
+      <div class="hero-card romance-hero-card">
+        <div class="hero-icon romance-heart">🖤</div>
+        <div class="hero-copy">
+          <h1>Чат с lilanei</h1>
+          <p class="sub">Попробуй добиться</p>
+          <div class="hero-tags">
+            <span class="tag">Без кнопок-реплик</span>
+            <span class="tag">Автосохранение</span>
+          </div>
+        </div>
+        <div class="romance-mini-card">
+          <span>Режим</span>
+          <b>Без подсказок</b>
+          <small>Только хардкор.</small>
+        </div>
+      </div>
+    </header>
+
+    <section class="romance-layout romance-layout-clean chat-romance-layout">
+      <aside class="panel romance-profile romance-profile-clean chat-profile">
+        <div class="romance-character romance-character-photo">
+          <div class="romance-aura"></div>
+          <div class="romance-photo-shell">
+            <img id="characterPhoto" class="romance-photo" src="assets/lilanei_placeholder.svg" alt="Портрет lilanei" />
+          </div>
+        </div>
+        <h2 id="characterName">lilanei</h2>
+        <p id="characterMood">Она спокойная и внимательная. Строгость в голосе не мешает ей быть доброй, если с ней говорить честно.</p>
+        <div class="romance-actions-small">
+          <button id="resetRomance" class="ghost-btn" type="button">Очистить общение</button>
+        </div>
+      </aside>
+
+      <section class="panel romance-story-panel romance-story-panel-clean chat-panel">
+        <div class="chat-topbar solo-ai-topbar">
+          <div class="chat-status-stack">
+            <span id="chatStatus">lilanei рядом</span>
+            <small id="aiStatus">ИИ-ответы только после входа через Twitch</small>
+          </div>
+        </div>
+
+        <div id="loginHint" class="chat-login-hint">Чтобы lilanei отвечала через ИИ, войди через Twitch на главной странице. Здесь остался только ИИ-чат без кнопок и без локальных ответов.</div>
+
+        <div class="chat-window" id="chatWindow" aria-live="polite"></div>
+
+        <form class="chat-input-row" id="chatForm">
+          <textarea id="chatInput" rows="2" placeholder="Напиши lilanei сообщение..." maxlength="280"></textarea>
+          <button id="sendBtn" type="submit">Отправить</button>
+        </form>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <span>Сайт для веселья</span>
+      <span class="footer-dot">•</span>
+      <span>Свободный романс lilanei</span>
+    </footer>
+  </main>
+
+  <script src="romance.js"></script>
+</body>
+</html>

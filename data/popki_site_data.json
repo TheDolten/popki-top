@@ -4,8 +4,8 @@
     "mode": "popki",
     "source": "lilanei",
     "source_url": "https://www.twitch.tv/lilanei",
-    "total": 104,
-    "groups": 78,
+    "total": 111,
+    "groups": 80,
     "sort": "По количеству"
   },
   "top_chosen": [
@@ -22,15 +22,15 @@
       "count": 5
     },
     {
+      "user": "risele",
+      "count": 5
+    },
+    {
       "user": "TheDolten",
       "count": 5
     },
     {
       "user": "Mara_Nei",
-      "count": 4
-    },
-    {
-      "user": "risele",
       "count": 4
     },
     {
@@ -94,6 +94,10 @@
       "count": 2
     },
     {
+      "user": "8hot_face",
+      "count": 1
+    },
+    {
       "user": "alekstaurus",
       "count": 1
     },
@@ -103,6 +107,10 @@
     },
     {
       "user": "Druid_KL",
+      "count": 1
+    },
+    {
+      "user": "gidra2d",
       "count": 1
     },
     {
@@ -123,6 +131,10 @@
     },
     {
       "user": "korean_money",
+      "count": 1
+    },
+    {
+      "user": "ktgwmarin",
       "count": 1
     },
     {
@@ -154,11 +166,19 @@
       "count": 1
     },
     {
+      "user": "PhataPhlex",
+      "count": 1
+    },
+    {
       "user": "plitka_shokoladki",
       "count": 1
     },
     {
       "user": "PLunanei",
+      "count": 1
+    },
+    {
+      "user": "ru_s_ya",
       "count": 1
     },
     {
@@ -186,6 +206,10 @@
       "count": 1
     },
     {
+      "user": "Varllosm",
+      "count": 1
+    },
+    {
       "user": "Welland_AOK",
       "count": 1
     },
@@ -209,8 +233,12 @@
   "popki": [
     {
       "title": "Лучшая попа",
-      "count": 9,
+      "count": 11,
       "chosen_users": [
+        {
+          "user": "8hot_face",
+          "count": 1
+        },
         {
           "user": "BipolarGluttony",
           "count": 1
@@ -237,6 +265,10 @@
         },
         {
           "user": "thegoustbear",
+          "count": 1
+        },
+        {
+          "user": "Varllosm",
           "count": 1
         },
         {
@@ -366,15 +398,47 @@
           "kus_text": "лучшую попу",
           "mode": "popki",
           "source": "https://www.twitch.tv/videos/2783750632"
+        },
+        {
+          "time": "3:27:10",
+          "seconds": 12430,
+          "chooser": "l3uga",
+          "chosen_user": "8hot_face",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "3:27:10",
+          "bot_reply": "КУСЬ и у 8hot_face ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "kus_text": "лучшую попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2787713589"
+        },
+        {
+          "time": "1:31:36",
+          "seconds": 5496,
+          "chooser": "l3uga",
+          "chosen_user": "Varllosm",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "1:31:36",
+          "bot_reply": "КУСЬ и у Varllosm ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "kus_text": "лучшую попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2790169655"
         }
       ]
     },
     {
       "title": "За попа",
-      "count": 7,
+      "count": 8,
       "chosen_users": [
         {
           "user": "alekstaurus",
+          "count": 1
+        },
+        {
+          "user": "gidra2d",
           "count": 1
         },
         {
@@ -498,6 +562,20 @@
           "kus_text": "за попу",
           "mode": "popki",
           "source": "https://www.twitch.tv/videos/2782972664"
+        },
+        {
+          "time": "3:37:53",
+          "seconds": 13073,
+          "chooser": "l3uga",
+          "chosen_user": "gidra2d",
+          "command": "!кусь за попу",
+          "bot_time": "3:37:53",
+          "bot_reply": "КУСЬ и у gidra2d ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "попу",
+          "kus_text": "за попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2793362567"
         }
       ]
     },
@@ -570,6 +648,68 @@
           "adjective": "",
           "popka_form": "попи",
           "source": "https://www.twitch.tv/videos/2776665031"
+        }
+      ]
+    },
+    {
+      "title": "За жопа",
+      "count": 3,
+      "chosen_users": [
+        {
+          "user": "ging33rr",
+          "count": 1
+        },
+        {
+          "user": "kusok__myasa",
+          "count": 1
+        },
+        {
+          "user": "PhataPhlex",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "3:03:30",
+          "seconds": 11010,
+          "chooser": "l3uga",
+          "chosen_user": "ging33rr",
+          "command": "!кусь за жопу",
+          "bot_time": "3:03:30",
+          "bot_reply": "КУСЬ и у ging33rr ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "жопу",
+          "kus_text": "за жопу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2782202430"
+        },
+        {
+          "time": "2:39:51",
+          "seconds": 9591,
+          "chooser": "l3uga",
+          "chosen_user": "kusok__myasa",
+          "command": "!кусь за жопу",
+          "bot_time": "2:39:51",
+          "bot_reply": "КУСЬ и у kusok__myasa ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "жопу",
+          "kus_text": "за жопу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2783750632"
+        },
+        {
+          "time": "1:43:05",
+          "seconds": 6185,
+          "chooser": "l3uga",
+          "chosen_user": "PhataPhlex",
+          "command": "!кусь за жопу",
+          "bot_time": "1:43:06",
+          "bot_reply": "КУСЬ и у PhataPhlex ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "жопу",
+          "kus_text": "за жопу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2793362567"
         }
       ]
     },
@@ -758,7 +898,7 @@
       ]
     },
     {
-      "title": "За жопа",
+      "title": "За жепа",
       "count": 2,
       "chosen_users": [
         {
@@ -766,38 +906,38 @@
           "count": 1
         },
         {
-          "user": "kusok__myasa",
+          "user": "ktgwmarin",
           "count": 1
         }
       ],
       "items": [
         {
-          "time": "3:03:30",
-          "seconds": 11010,
-          "chooser": "l3uga",
+          "time": "2:23:28",
+          "seconds": 8608,
+          "chooser": "risele",
           "chosen_user": "ging33rr",
-          "command": "!кусь за жопу",
-          "bot_time": "3:03:30",
+          "command": "!кусь за жепу",
+          "bot_time": "2:23:28",
           "bot_reply": "КУСЬ и у ging33rr ( . Y . ) стали больше!",
           "adjective": "за",
-          "popka_form": "жопу",
-          "kus_text": "за жопу",
-          "mode": "popki",
-          "source": "https://www.twitch.tv/videos/2782202430"
-        },
-        {
-          "time": "2:39:51",
-          "seconds": 9591,
-          "chooser": "l3uga",
-          "chosen_user": "kusok__myasa",
-          "command": "!кусь за жопу",
-          "bot_time": "2:39:51",
-          "bot_reply": "КУСЬ и у kusok__myasa ( . Y . ) стали больше!",
-          "adjective": "за",
-          "popka_form": "жопу",
-          "kus_text": "за жопу",
+          "popka_form": "жепу",
+          "kus_text": "за жепу",
           "mode": "popki",
           "source": "https://www.twitch.tv/videos/2783750632"
+        },
+        {
+          "time": "2:48:52",
+          "seconds": 10132,
+          "chooser": "risele",
+          "chosen_user": "ktgwmarin",
+          "command": "!кусь за жепу",
+          "bot_time": "2:48:52",
+          "bot_reply": "КУСЬ и у ktgwmarin ( . Y . ) стали больше!",
+          "adjective": "за",
+          "popka_form": "жепу",
+          "kus_text": "за жепу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2790169655"
         }
       ]
     },
@@ -1236,6 +1376,32 @@
       ]
     },
     {
+      "title": "Грустная попа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "ru_s_ya",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:13:35",
+          "seconds": 8015,
+          "chooser": "l3uga",
+          "chosen_user": "ru_s_ya",
+          "command": "!кусь грустную попу",
+          "bot_time": "2:13:35",
+          "bot_reply": "КУСЬ и у ru_s_ya ( . Y . ) стали больше!",
+          "adjective": "грустную",
+          "popka_form": "попу",
+          "kus_text": "грустную попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2792555519"
+        }
+      ]
+    },
+    {
       "title": "Девачку за попа",
       "count": 1,
       "chosen_users": [
@@ -1424,32 +1590,6 @@
           "adjective": "",
           "popka_form": "жэпу",
           "source": "https://www.twitch.tv/videos/2775862699"
-        }
-      ]
-    },
-    {
-      "title": "За жепа",
-      "count": 1,
-      "chosen_users": [
-        {
-          "user": "ging33rr",
-          "count": 1
-        }
-      ],
-      "items": [
-        {
-          "time": "2:23:28",
-          "seconds": 8608,
-          "chooser": "risele",
-          "chosen_user": "ging33rr",
-          "command": "!кусь за жепу",
-          "bot_time": "2:23:28",
-          "bot_reply": "КУСЬ и у ging33rr ( . Y . ) стали больше!",
-          "adjective": "за",
-          "popka_form": "жепу",
-          "kus_text": "за жепу",
-          "mode": "popki",
-          "source": "https://www.twitch.tv/videos/2783750632"
         }
       ]
     },
@@ -1936,6 +2076,32 @@
           "adjective": "мытую",
           "popka_form": "попку",
           "source": "https://www.twitch.tv/videos/2775862699"
+        }
+      ]
+    },
+    {
+      "title": "Мягкая попка",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "risele",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "2:28:37",
+          "seconds": 8917,
+          "chooser": "TheDolten",
+          "chosen_user": "risele",
+          "command": "!кусь мягкую попку",
+          "bot_time": "2:28:37",
+          "bot_reply": "КУСЬ и у risele ( . Y . ) стали больше!",
+          "adjective": "мягкую",
+          "popka_form": "попку",
+          "kus_text": "мягкую попку",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2793362567"
         }
       ]
     },

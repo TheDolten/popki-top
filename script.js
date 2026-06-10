@@ -1,12 +1,12 @@
 const body = document.body;
 const DATA_URL = body?.dataset?.file || "data/kus_site_data.json";
-const PAGE = body?.dataset?.page || "kus"; 
+const PAGE = body?.dataset?.page || "kus";
 let DATA = null;
 let DETAILS_OPEN = false;
 
 const TWITCH_CLIENT_ID = "lrvv741h9kzldosuxd5aw0k6jir7hv";
 const TWITCH_SCOPES = "";
-const ACHIEVEMENTS_API_URL = "https://script.google.com/macros/s/AKfycbyqHLfvWLv6b6Txxh1MfmpERO8ISN9AaeCd78s-nTFDbY9i_pO4Yhp16Nz2HXyC6FL4/exec";
+const ACHIEVEMENTS_API_URL = "https://script.google.com/macros/s/AKfycbxRB_4X8-a11DIA0uVQ5X4jL__LfHseel1ObnHmYaXihWJa1EWI9YIcN3RgLNovm5tr/exec";
 let AUTH_USER = null;
 let USER_STATE = null;
 let LAST_RANK_SYNC_KEY = "";
@@ -23,6 +23,10 @@ const ACHIEVEMENT_DEFS = [
   { id: "cat_20", icon: "😺", title: "Любимчик кота", desc: "Погладить кота 20 раз.", hidden: false },
   { id: "hidden_cat_100", icon: "🐈‍⬛", title: "Тайный кошачий друг", desc: "Скрытое достижение: погладить кота 100 раз.", hidden: true },
   { id: "hidden_three_20", icon: "🎲", title: "Критическая удача", desc: "Скрытое достижение: выбросить 20 три раза подряд за 5 минут.", hidden: true },
+  { id: "hidden_lilanei_warmth", icon: "🌙", title: "Тёплая искра", desc: "Скрытое достижение: lilanei стала мягче рядом с тобой.", hidden: true },
+  { id: "hidden_lilanei_trust", icon: "🕯️", title: "Тихое доверие", desc: "Скрытое достижение: lilanei начала доверять тебе.", hidden: true },
+  { id: "hidden_lilanei_close", icon: "🖤", title: "Она остаётся рядом", desc: "Скрытое достижение: особая концовка lilanei.", hidden: true },
+  { id: "hidden_lilanei_distance", icon: "❄️", title: "Закрытая дверь", desc: "Скрытое достижение: lilanei отдалилась.", hidden: true },
 ];
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, m => ({

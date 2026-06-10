@@ -1547,3 +1547,183 @@ input,select,button{background:#0b0c19;color:var(--text);border:1px solid rgba(1
     top: 104px;
   }
 }
+
+/* romance page */
+.romance-wrap{max-width:1180px}
+.romance-hero-card{grid-template-columns:auto minmax(0,1fr) minmax(240px,320px)}
+.romance-heart{animation:romancePulse 2.4s ease-in-out infinite}
+@keyframes romancePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.romance-mini-card{
+  justify-self:end;
+  width:100%;
+  padding:18px;
+  border-radius:24px;
+  border:1px solid rgba(255,92,168,.26);
+  background:linear-gradient(135deg,rgba(255,92,168,.16),rgba(141,95,255,.14));
+  box-shadow:var(--shadow-soft);
+  position:relative;
+  z-index:2;
+}
+.romance-mini-card span{display:block;color:var(--muted-2);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.romance-mini-card b{display:block;font-family:'Unbounded',sans-serif;font-size:18px;color:#fff;line-height:1.35}
+.romance-mini-card small{display:block;margin-top:8px;color:#d9cffc;line-height:1.5}
+.romance-layout{display:grid;grid-template-columns:330px minmax(0,1fr);gap:18px;align-items:start}
+.romance-profile{position:sticky;top:22px;text-align:center;overflow:hidden}
+.romance-profile h2{font-size:30px;margin-top:16px}
+.romance-profile p{color:var(--muted);line-height:1.65;margin:10px 0 0}
+.romance-character{position:relative;display:grid;place-items:center;min-height:190px}
+.romance-aura{position:absolute;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,168,.34),rgba(141,95,255,.16) 48%,transparent 70%);filter:blur(4px);animation:romanceAura 3.2s ease-in-out infinite}
+@keyframes romanceAura{0%,100%{transform:scale(.96);opacity:.78}50%{transform:scale(1.08);opacity:1}}
+.romance-avatar{position:relative;width:138px;height:138px;display:grid;place-items:center;border-radius:42px;font-size:66px;background:linear-gradient(160deg,rgba(18,20,40,.94),rgba(50,25,70,.9));border:1px solid rgba(255,255,255,.12);box-shadow:0 25px 70px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.1)}
+.romance-bars{display:grid;gap:15px;margin-top:22px;text-align:left}
+.romance-bar{padding:14px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07)}
+.bar-head{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:13px;color:#e8deff;margin-bottom:9px}
+.bar-head b{color:#ffd2e8}
+.bar-track{height:10px;border-radius:999px;background:#0b0d1c;overflow:hidden;border:1px solid rgba(255,255,255,.06)}
+.bar-track i{display:block;height:100%;width:0%;border-radius:inherit;background:linear-gradient(90deg,var(--violet),var(--pink));transition:width .25s ease}
+#trustBar{background:linear-gradient(90deg,#7ce7ff,var(--violet))}
+#chaosBar{background:linear-gradient(90deg,#ffd166,#ff5ca8)}
+.romance-actions-small{margin-top:18px}.romance-actions-small button{width:100%}
+.romance-story-panel{min-height:560px;overflow:hidden;position:relative}
+.romance-story-panel::before{content:"";position:absolute;right:-70px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,168,.13),transparent 70%);pointer-events:none}
+.romance-progress{display:flex;gap:14px;align-items:center;margin-bottom:18px;color:#d8ccff;font-size:13px;font-weight:700;position:relative;z-index:1}
+.romance-progress-track{height:10px;flex:1;border-radius:999px;background:#0b0d1c;border:1px solid rgba(255,255,255,.07);overflow:hidden}
+.romance-progress-track i{display:block;height:100%;width:0%;border-radius:inherit;background:linear-gradient(90deg,var(--violet),var(--pink));transition:width .25s ease}
+.romance-scene{padding:24px;border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.08);position:relative;z-index:1}
+.romance-scene-kicker{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(255,92,168,.13);border:1px solid rgba(255,92,168,.22);color:#ffd1e6;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.romance-scene h2{font-size:32px;line-height:1.2;margin-bottom:12px;color:#fff}
+.romance-scene p{margin:0;color:#d9cffc;font-size:16px;line-height:1.8}
+.romance-choices{display:grid;gap:12px;margin-top:18px;position:relative;z-index:1}
+.romance-choice{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;padding:17px 18px;border-radius:20px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(135deg,rgba(13,15,32,.95),rgba(24,18,42,.94));box-shadow:var(--shadow-soft);color:#fff}
+.romance-choice:hover{border-color:rgba(255,92,168,.42);transform:translateY(-1px)}
+.romance-choice span{line-height:1.55;font-weight:700}
+.romance-choice small{white-space:nowrap;color:#ffd4e8;font-weight:700}
+.romance-choice.primary{justify-content:center;background:linear-gradient(135deg,var(--violet),var(--pink));text-align:center}
+.romance-log{margin-top:18px;padding:16px;border-radius:20px;background:#0b0d1c;border:1px solid rgba(255,255,255,.07);color:var(--muted);display:grid;gap:8px;font-size:12px;line-height:1.55;position:relative;z-index:1}
+.romance-log b{color:#fff}.romance-log span{display:block;padding-left:12px;border-left:2px solid rgba(255,92,168,.22)}
+@media(max-width:980px){.romance-layout{grid-template-columns:1fr}.romance-profile{position:relative;top:0}.romance-hero-card{grid-template-columns:1fr}.romance-mini-card{justify-self:stretch}}
+@media(max-width:620px){.romance-choice{align-items:flex-start;flex-direction:column}.romance-choice small{white-space:normal}.romance-scene h2{font-size:25px}}
+
+
+/* lilanei romance refresh */
+.romance-hardmode .romance-mini-card{min-height:unset}
+.romance-layout-clean{grid-template-columns:340px minmax(0,1fr)}
+.romance-profile-clean{display:flex;flex-direction:column;align-items:center;text-align:center}
+.romance-profile-clean p{max-width:280px}
+.romance-character-photo{min-height:220px}
+.romance-photo-shell{
+  position:relative;
+  width: 300px;
+  height: 420px;
+  max-width: 100%;
+  border-radius:30px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(160deg,rgba(18,20,40,.94),rgba(50,25,70,.9));
+  box-shadow:0 25px 70px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+}
+.romance-photo{width:100%;height:100%;display:block;object-fit:cover}
+.romance-side-note{
+  margin-top:20px;
+  padding:14px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+  text-align:left;
+  line-height:1.6;
+  font-size:13px;
+}
+.romance-side-note b{display:block;margin-bottom:6px;color:#fff}
+.romance-side-note code{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  color:#ffd6ea;
+  background:rgba(255,255,255,.06);
+  padding:2px 6px;
+  border-radius:8px;
+}
+.romance-story-panel-clean{min-height:520px}
+.romance-choices-clean{margin-top:18px}
+.romance-choice-clean{justify-content:flex-start}
+.romance-choice-clean span{font-weight:700;line-height:1.65}
+.romance-choice-clean.primary{justify-content:center}
+.romance-choice small{display:none!important}
+.romance-log{display:none!important}
+.romance-bars{display:none!important}
+@media(max-width:980px){
+  .romance-layout-clean{grid-template-columns:1fr}
+}
+
+/* free chat romance mode */
+.chat-romance-layout{grid-template-columns:340px minmax(0,1fr)}
+.chat-panel{display:flex;flex-direction:column;min-height:680px}
+.chat-topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;color:#d9cffc;font-size:13px;font-weight:800}
+.tiny-btn{padding:10px 13px;border-radius:14px;font-size:12px}
+.chat-window{flex:1;min-height:360px;max-height:520px;overflow:auto;padding:18px;border-radius:24px;background:rgba(5,7,18,.54);border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.chat-empty{height:100%;min-height:320px;display:grid;place-items:center;text-align:center;color:#d9cffc;line-height:1.8;padding:20px;border:1px dashed rgba(255,255,255,.13);border-radius:20px}
+.chat-bubble{max-width:78%;margin:0 0 12px;padding:13px 15px;border-radius:18px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.chat-bubble span{display:block;margin-bottom:5px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#a99ee0}
+.chat-bubble p{margin:0;color:#f3eeff;line-height:1.65;font-size:14px}
+.chat-bubble.from-user{margin-left:auto;background:linear-gradient(135deg,rgba(141,95,255,.22),rgba(255,92,168,.14));border-color:rgba(255,92,168,.2)}
+.chat-bubble.from-user span{color:#ffd1e6}
+.chat-bubble.from-lilanei{margin-right:auto;background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(124,231,255,.045));border-color:rgba(124,231,255,.13)}
+.chat-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.chat-topic-grid button{padding:12px 11px;border-radius:16px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.045);color:#fff;font-weight:800;line-height:1.35;cursor:pointer;transition:.18s ease}
+.chat-topic-grid button:hover{transform:translateY(-1px);border-color:rgba(255,92,168,.38);background:rgba(255,92,168,.09)}
+.chat-input-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;margin-top:14px;align-items:end}
+.chat-input-row textarea{width:100%;resize:vertical;min-height:58px;max-height:150px;padding:14px 15px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:#0b0d1c;color:#fff;font:inherit;line-height:1.45;outline:none}
+.chat-input-row textarea:focus{border-color:rgba(255,92,168,.42);box-shadow:0 0 0 4px rgba(255,92,168,.1)}
+.chat-input-row button{height:58px;padding:0 20px;border-radius:18px;border:0;background:linear-gradient(135deg,var(--violet),var(--pink));color:#fff;font-weight:900;cursor:pointer;box-shadow:var(--shadow-soft)}
+.chat-input-row button:hover{transform:translateY(-1px)}
+@media(max-width:980px){.chat-romance-layout{grid-template-columns:1fr}.chat-panel{min-height:620px}}
+@media(max-width:720px){.chat-topic-grid{grid-template-columns:1fr 1fr}.chat-input-row{grid-template-columns:1fr}.chat-input-row button{height:52px}.chat-bubble{max-width:92%}}
+@media(max-width:430px){.chat-topic-grid{grid-template-columns:1fr}}
+
+
+/* lilanei AI mode */
+.chat-status-stack{display:grid;gap:4px}
+.chat-status-stack small{color:var(--muted-2);font-size:11px;font-weight:700;line-height:1.35}
+.chat-login-hint{
+  margin:0 0 12px;
+  padding:12px 14px;
+  border-radius:16px;
+  background:rgba(255,92,168,.09);
+  border:1px solid rgba(255,92,168,.18);
+  color:#ffd6ea;
+  line-height:1.55;
+  font-size:13px;
+}
+.chat-bubble.is-system{opacity:.86}
+.chat-input-row textarea:disabled,
+.chat-input-row button:disabled,
+.chat-topic-grid button:disabled{
+  opacity:.62;
+  cursor:wait;
+  transform:none!important;
+}
+
+
+/* solo AI chat cleanup */
+.solo-ai-topbar{justify-content:flex-start}
+.from-system{margin-right:auto;background:linear-gradient(135deg,rgba(255,214,120,.08),rgba(255,255,255,.04));border-color:rgba(255,214,120,.18)}
+.from-system span{color:#ffe2a3}
+.chat-panel .tiny-btn,.chat-topic-grid,#topicButtons,#endingBtn{display:none!important}
+
+
+/* lilanei offline separator */
+.chat-offline-separator{
+  margin:18px auto;
+  padding:8px 14px;
+  width:fit-content;
+  max-width:90%;
+  text-align:center;
+  color:#bdb4df;
+  border:1px solid rgba(255,255,255,.12);
+  border-left:0;
+  border-right:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.055),transparent);
+  letter-spacing:.04em;
+  font-size:12px;
+  opacity:.9;
+}
