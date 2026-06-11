@@ -1142,7 +1142,12 @@ async function loadSchedulePage() {
   let loading = false;
 
   function isAchievementsPage() {
-    return document.body?.dataset?.page === "achievements" || /achievements\.html$/i.test(location.pathname);
+    return Boolean(
+      document.getElementById("achievementsGrid") ||
+      document.getElementById("achUnlockedCount") ||
+      document.body?.dataset?.page === "achievements" ||
+      /achievements(\.html)?$/i.test(location.pathname)
+    );
   }
 
   function esc2(value) {
@@ -1183,9 +1188,9 @@ async function loadSchedulePage() {
     return Boolean(
       typeof ACHIEVEMENTS_API_URL !== "undefined" &&
       ACHIEVEMENTS_API_URL &&
-      !ACHIEVEMENTS_API_URL.includes("__ACHIEVEMENTS_API_URL__") &&
-      !ACHIEVEMENTS_API_URL.includes("PASTE_GOOGLE_APPS_SCRIPT") &&
-      /^https?:\/\//i.test(ACHIEVEMENTS_API_URL)
+      !String(ACHIEVEMENTS_API_URL).includes("__ACHIEVEMENTS_API_URL__") &&
+      !String(ACHIEVEMENTS_API_URL).includes("PASTE_GOOGLE_APPS_SCRIPT") &&
+      /^https?:\/\//i.test(String(ACHIEVEMENTS_API_URL))
     );
   }
 
@@ -1508,19 +1513,52 @@ async function loadSchedulePage() {
 })();
 
 
-
-/* ===== GitHub Pages achievements diagnostics ===== */
+/* ===== GitHub Pages achievements diagnostics v2 ===== */
 function debugAchievementsGitState() {
+  const url = (typeof ACHIEVEMENTS_API_URL !== "undefined" ? String(ACHIEVEMENTS_API_URL || "") : "");
+  const isRealPlaceholder =
+    !url ||
+    url.includes("__ACHIEVEMENTS_API_URL__") ||
+    url.includes("PASTE_GOOGLE_APPS_SCRIPT") ||
+    !/^https?:\/\//i.test(url);
+
+  const authUser = (() => {
+    try { return JSON.parse(localStorage.getItem("twitch_user") || "null"); } catch (_) { return null; }
+  })();
+
   const info = {
     page: location.href,
-    achievementsApiUrl: (typeof ACHIEVEMENTS_API_URL !== "undefined" ? ACHIEVEMENTS_API_URL : null),
-    hasPlaceholder: (typeof ACHIEVEMENTS_API_URL !== "undefined" ? String(ACHIEVEMENTS_API_URL).includes("__ACHIEVEMENTS_API_URL__") : true),
-    authUser: (() => {
-      try { return JSON.parse(localStorage.getItem("twitch_user") || "null"); } catch (_) { return null; }
-    })(),
-    localStateKeys: Object.keys(localStorage).filter(k => k.startsWith("achievements_state_"))
+    achievementsApiUrl: url,
+    hasPlaceholder: isRealPlaceholder,
+    authUser,
+    localStateKeys: Object.keys(localStorage).filter(k => k.startsWith("achievements_state_")),
+    testUrl: authUser && url && !isRealPlaceholder
+      ? url + (url.includes("?") ? "&" : "?") + "action=get&login=" + encodeURIComponent(authUser.login) + "&callback=testCallback"
+      : null
   };
+
   console.log("Achievements Git debug:", info);
   return info;
 }
+
+function testAchievementsJsonp() {
+  const info = debugAchievementsGitState();
+
+  if (info.hasPlaceholder || !info.testUrl) {
+    console.error("ACHIEVEMENTS_API_URL не готов:", info);
+    return;
+  }
+
+  window.testCallback = (data) => {
+    console.log("Achievements JSONP OK:", data);
+  };
+
+  const s = document.createElement("script");
+  s.src = info.testUrl + "&_=" + Date.now();
+  s.onerror = () => console.error("Achievements JSONP SCRIPT ERROR:", s.src);
+  document.body.appendChild(s);
+}
+
 window.debugAchievementsGitState = debugAchievementsGitState;
+window.testAchievementsJsonp = testAchievementsJsonp;
+
