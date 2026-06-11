@@ -72,6 +72,95 @@ function setLocalReplyCount(user, n) {
   localStorage.setItem(localReplyKey(user), String(Math.max(0, Number(n || 0))));
 }
 
+function lilaneiJsonp(url, timeoutMs = 7000) {
+  return new Promise((resolve, reject) => {
+    const cbName = "__lilanei_state_cb_" + Date.now() + "_" + Math.random().toString(16).slice(2);
+    const sep = url.includes("?") ? "&" : "?";
+    const fullUrl = url + sep + "callback=" + encodeURIComponent(cbName);
+
+    const tag = document.createElement("script");
+    tag.async = true;
+    let done = false;
+
+    function cleanup() {
+      try { delete window[cbName]; } catch (_) { window[cbName] = undefined; }
+      tag.remove();
+    }
+
+    const timer = setTimeout(() => {
+      if (done) return;
+      done = true;
+      cleanup();
+      reject(new Error("timeout"));
+    }, timeoutMs);
+
+    window[cbName] = (data) => {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      cleanup();
+      resolve(data);
+    };
+
+    tag.onerror = () => {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      cleanup();
+      reject(new Error("script load error"));
+    };
+
+    tag.src = fullUrl;
+    document.head.appendChild(tag);
+  });
+}
+
+function lilaneiEndpointReadyForState() {
+  return Boolean(
+    LILANEI_ENDPOINT &&
+    !LILANEI_ENDPOINT.includes("__LILANEI_AI_ENDPOINT__") &&
+    !LILANEI_ENDPOINT.includes("PASTE_GOOGLE_APPS_SCRIPT") &&
+    /^https?:\/\//i.test(LILANEI_ENDPOINT)
+  );
+}
+
+async function syncLilaneiReplyCountFromServer() {
+  const user = getAuthUser();
+  if (!user || !lilaneiEndpointReadyForState()) return null;
+
+  try {
+    const params = new URLSearchParams({
+      action: "lilanei_state",
+      login: user.login,
+      display_name: user.display_name || user.login,
+      profile_image_url: user.profile_image_url || "",
+      _: String(Date.now())
+    });
+
+    const url = LILANEI_ENDPOINT + (LILANEI_ENDPOINT.includes("?") ? "&" : "?") + params.toString();
+    const data = await lilaneiJsonp(url);
+
+    if (!data || data.ok === false || data.service !== "lilanei") {
+      throw new Error(data && data.error ? data.error : "bad lilanei state response");
+    }
+
+    const today = new Date().toISOString().slice(0, 10);
+    const serverDate = String(data.date || data.today || today);
+    const used = serverDate === today ? Number(data.used || 0) : 0;
+
+    setLocalReplyCount(user, used);
+    localStorage.setItem("lilanei_reply_count_server_date_" + String(user.login || "guest").toLowerCase(), serverDate);
+
+    updateReplyUi();
+    return data;
+  } catch (err) {
+    console.warn("sync lilanei reply count failed", err);
+    return null;
+  }
+}
+
+
+
 function endpointReady() {
   return LILANEI_ENDPOINT && !LILANEI_ENDPOINT.includes("PASTE_GOOGLE_APPS_SCRIPT");
 }
@@ -153,6 +242,7 @@ async function askLilanei(text) {
   if (localCount >= DAILY_REPLY_LIMIT) throw new Error("DAILY_LIMIT_LOCAL");
 
   const payload = {
+    action: "chat",
     message: text,
     user: {
       login: user.login,
@@ -190,8 +280,13 @@ async function askLilanei(text) {
 
   if (!data?.reply) throw new Error(`EMPTY_REPLY_LOCAL:${JSON.stringify(data || {}).slice(0, 240)}`);
 
-  if (typeof data.used === "number") setLocalReplyCount(user, data.used);
-  else setLocalReplyCount(user, localCount + 1);
+  if (typeof data.used === "number") {
+    setLocalReplyCount(user, data.used);
+  } else {
+    setLocalReplyCount(user, localCount + 1);
+  }
+
+  updateReplyUi();
 
   return String(data.reply).trim();
 }
@@ -547,6 +642,9 @@ async function sendText(text) {
     return;
   }
 
+  // Перед проверкой лимита обновляем счётчик из таблицы.
+  await syncLilaneiReplyCountFromServer();
+
   if (isLimitOverLocal()) {
     showOfflineSeparator();
     saveState();
@@ -582,10 +680,38 @@ async function sendText(text) {
   }
 }
 
+
+async function clearRemoteLilaneiHistory() {
+  const user = getAuthUser();
+  if (!user || !endpointReady()) return;
+
+  try {
+    await fetch(LILANEI_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({
+        action: "lilanei_clear_history",
+        user: {
+          login: user.login,
+          display_name: user.display_name || user.login,
+          profile_image_url: user.profile_image_url || ""
+        }
+      })
+    });
+  } catch (err) {
+    console.warn("clear lilanei history failed", err);
+  }
+}
+
 function reset() {
+  const remoteClear = clearRemoteLilaneiHistory();
+
   state = defaultState();
   saveState();
   render();
+
+  // Не ждём медленную очистку таблицы, чтобы интерфейс не зависал.
+  remoteClear.catch((err) => console.warn("remote lilanei clear failed", err));
 }
 
 function initButtons() {
@@ -668,4 +794,9 @@ initPhoto();
 handleTwitchCallback().finally(() => {
   updateAuthPanel();
   render();
+
+  // При входе на страницу берём daily_count из таблицы lilanei_users.
+  syncLilaneiReplyCountFromServer().then(() => {
+    render();
+  });
 });
