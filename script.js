@@ -4,9 +4,9 @@ const PAGE = body?.dataset?.page || "kus";
 let DATA = null;
 let DETAILS_OPEN = false;
 
-const TWITCH_CLIENT_ID = "lrvv741h9kzldosuxd5aw0k6jir7hv";
+const TWITCH_CLIENT_ID = window.APP_CONFIG?.TWITCH_CLIENT_ID || "";
 const TWITCH_SCOPES = "";
-const ACHIEVEMENTS_API_URL = "https://script.google.com/macros/s/AKfycbxRB_4X8-a11DIA0uVQ5X4jL__LfHseel1ObnHmYaXihWJa1EWI9YIcN3RgLNovm5tr/exec";
+const ACHIEVEMENTS_API_URL = window.APP_CONFIG?.ACHIEVEMENTS_API_URL || "";
 let AUTH_USER = null;
 let USER_STATE = null;
 let LAST_RANK_SYNC_KEY = "";
