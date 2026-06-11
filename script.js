@@ -22,8 +22,8 @@ const ACHIEVEMENT_DEFS = [
   { id: "top_20", icon: "⭐", title: "Топ-20", desc: "Попасть в первые 20 мест общего топа.", hidden: false },
   { id: "cat_10", icon: "🐾", title: "Котик доверяет", desc: "Погладить кота 10 раз.", hidden: false },
   { id: "cat_20", icon: "😺", title: "Любимчик кота", desc: "Погладить кота 20 раз.", hidden: false },
-  { id: "hidden_cat_100", icon: "🐈‍⬛", title: "Тайный кошачий друг", desc: "Скрытое достижение: погладить кота 100 раз.", hidden: true },
   { id: "hidden_jump_lila", icon: "🖤", title: "Сначала нужно прыгнуть", desc: "Скрытое достижение: За великолепные прыжки в пустоту. DMC", hidden: true },
+  { id: "hidden_cat_100", icon: "🐈‍⬛", title: "Тайный кошачий друг", desc: "Скрытое достижение: погладить кота 100 раз.", hidden: true },
   { id: "hidden_three_20", icon: "🎲", title: "Критическая удача", desc: "Скрытое достижение: выбросить 20 три раза подряд за 5 минут.", hidden: true },
   { id: "hidden_lilanei_warmth", icon: "🌙", title: "Тёплая искра", desc: "Скрытое достижение: lilanei стала мягче рядом с тобой.", hidden: true },
   { id: "hidden_lilanei_trust", icon: "🕯️", title: "Тихое доверие", desc: "Скрытое достижение: lilanei начала доверять тебе.", hidden: true },
@@ -1137,16 +1137,15 @@ async function loadSchedulePage() {
 }
 
 
-/* ===== HARD OVERRIDE: achievements page fetch render ===== */
-(function hardAchievementsFetchOverride() {
-  let achievementsLoading = false;
-  let achievementsLoaded = false;
+/* ===== Achievements: main localStorage key + table merge ===== */
+(function achievementsMainStorageMergeRender() {
+  let loading = false;
 
   function isAchievementsPage() {
     return document.body?.dataset?.page === "achievements" || /achievements\.html$/i.test(location.pathname);
   }
 
-  function hEsc(value) {
+  function esc2(value) {
     return String(value ?? "")
       .replaceAll("&", "&amp;")
       .replaceAll("<", "&lt;")
@@ -1154,12 +1153,12 @@ async function loadSchedulePage() {
       .replaceAll('"', "&quot;");
   }
 
-  function hSet(id, value) {
+  function setText2(id, value) {
     const el = document.getElementById(id);
     if (el) el.textContent = String(value);
   }
 
-  function hMsg(text, isError = false) {
+  function showMsg(text, isError = false) {
     const msg = document.getElementById("achievementsMessage");
     if (!msg) return;
 
@@ -1168,20 +1167,19 @@ async function loadSchedulePage() {
       return;
     }
 
-    msg.innerHTML = `<div class="${isError ? "error" : "debug-box"}">${hEsc(text)}</div>`;
+    msg.innerHTML = `<div class="${isError ? "error" : "debug-box"}">${esc2(text)}</div>`;
   }
 
-  function hGetUser() {
+  function getStoredTwitchUser() {
     try {
       const user = JSON.parse(localStorage.getItem("twitch_user") || "null");
       return user && user.login ? user : null;
-    } catch (err) {
-      hMsg("localStorage twitch_user не читается: " + err.message, true);
+    } catch (_) {
       return null;
     }
   }
 
-  function hApiReady() {
+  function apiReady2() {
     return Boolean(
       typeof ACHIEVEMENTS_API_URL !== "undefined" &&
       ACHIEVEMENTS_API_URL &&
@@ -1191,7 +1189,123 @@ async function loadSchedulePage() {
     );
   }
 
-  const hDefs = [
+  // ВАЖНО: это основной ключ старой логики страницы достижений.
+  function mainStateKey(user) {
+    return "achievements_state_" + String(user?.login || "guest").toLowerCase();
+  }
+
+  // Старый дополнительный ключ оставляем только для миграции, но больше не используем как основной.
+  function extraStateKey(user) {
+    return "achievements_local_state_" + String(user?.login || "guest").toLowerCase();
+  }
+
+  function normalizeState(raw, user) {
+    raw = raw || {};
+    const achievements = Array.isArray(raw.achievements) ? raw.achievements : [];
+
+    return {
+      login: String(raw.login || user?.login || "").toLowerCase(),
+      display_name: String(raw.display_name || user?.display_name || user?.login || ""),
+      profile_image_url: String(raw.profile_image_url || user?.profile_image_url || ""),
+      cat_pets: Number(raw.cat_pets || 0),
+      d20_rolls: Number(raw.d20_rolls || 0),
+      best_d20: Number(raw.best_d20 || 0),
+      last_d20: raw.last_d20 ?? "",
+      recent20: Array.isArray(raw.recent20) ? raw.recent20 : [],
+      achievements: [...new Set(achievements)],
+      updated_at: raw.updated_at || new Date().toISOString(),
+    };
+  }
+
+  function readJsonKey(key) {
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function readLocalState(user) {
+    // Сначала основной ключ, который использует страница.
+    const main = readJsonKey(mainStateKey(user));
+    if (main) return normalizeState(main, user);
+
+    // Потом миграция из моего старого дополнительного ключа.
+    const extra = readJsonKey(extraStateKey(user));
+    if (extra) return normalizeState(extra, user);
+
+    return null;
+  }
+
+  function saveLocalState(user, state) {
+    state = normalizeState(state, user);
+
+    try {
+      // Главное: перезаписываем именно achievements_state_<login>
+      localStorage.setItem(mainStateKey(user), JSON.stringify(state));
+
+      // Дополнительно обновляем старые общие значения, чтобы котик и d20 тоже сразу видели данные.
+      localStorage.setItem("catPets", String(Number(state.cat_pets || 0)));
+      localStorage.setItem("d20Rolls", String(Number(state.d20_rolls || 0)));
+      localStorage.setItem("bestD20", String(Number(state.best_d20 || 0)));
+
+      // Можно удалить старый дополнительный ключ, чтобы больше не путался.
+      localStorage.removeItem(extraStateKey(user));
+    } catch (_) {}
+  }
+
+  function updateVisibleCatAndD20(state) {
+    const catCount = document.getElementById("catCount");
+    if (catCount) catCount.textContent = String(Number(state.cat_pets || 0));
+
+    const d20Main = document.getElementById("d20Main");
+    if (d20Main && Number(state.last_d20 || 0)) {
+      d20Main.textContent = String(Number(state.last_d20 || 0));
+    }
+  }
+
+  function extractServerState(payload, user) {
+    const serverUser = payload?.user || payload?.public_user || payload?.record || payload?.state || {};
+    const achievements = Array.isArray(serverUser.achievements)
+      ? serverUser.achievements
+      : Array.isArray(payload?.achievements)
+        ? payload.achievements
+        : [];
+
+    return normalizeState({
+      ...serverUser,
+      achievements,
+    }, user);
+  }
+
+  function mergeStates(localState, tableState, user) {
+    localState = normalizeState(localState || {}, user);
+    tableState = normalizeState(tableState || {}, user);
+
+    const mergedAchievements = [
+      ...new Set([
+        ...(Array.isArray(localState.achievements) ? localState.achievements : []),
+        ...(Array.isArray(tableState.achievements) ? tableState.achievements : []),
+      ])
+    ];
+
+    return normalizeState({
+      ...localState,
+      ...tableState,
+
+      // Таблица считается главным источником, но пустота из таблицы не должна затирать локальный прогресс.
+      cat_pets: Math.max(Number(localState.cat_pets || 0), Number(tableState.cat_pets || 0)),
+      d20_rolls: Math.max(Number(localState.d20_rolls || 0), Number(tableState.d20_rolls || 0)),
+      best_d20: Math.max(Number(localState.best_d20 || 0), Number(tableState.best_d20 || 0)),
+      last_d20: tableState.last_d20 || localState.last_d20 || "",
+      recent20: Array.isArray(localState.recent20) ? localState.recent20 : [],
+      achievements: mergedAchievements,
+      updated_at: new Date().toISOString(),
+    }, user);
+  }
+
+  const defs = [
     { id: "top_1", icon: "👑", title: "Король топа", desc: "Попасть на 1 место в общем топе.", hidden: false },
     { id: "top_5", icon: "💎", title: "Топ-5", desc: "Попасть в первые 5 мест общего топа.", hidden: false },
     { id: "top_10", icon: "🏆", title: "Топ-10", desc: "Попасть в первые 10 мест общего топа.", hidden: false },
@@ -1200,15 +1314,15 @@ async function loadSchedulePage() {
     { id: "cat_20", icon: "😺", title: "Любимчик кота", desc: "Погладить кота 20 раз.", hidden: false },
     { id: "hidden_cat_100", icon: "🐈‍⬛", title: "Тайный кошачий друг", desc: "Скрытое достижение.", hidden: true },
     { id: "hidden_three_20", icon: "🎲", title: "Критическая удача", desc: "Скрытое достижение.", hidden: true },
-    { id: "hidden_jump_lila", icon: "🖤", title: "Прыжок к lilanei", desc: "Скрытое достижение.", hidden: true },
+    { id: "hidden_jump_lila", icon: "🖤", title: "Сначала нужно прыгнуть", desc: "Скрытое достижение: За великолепные прыжки в пустоту. DMC", hidden: true },
     { id: "hidden_lilanei_warmth", icon: "🖤", title: "Тёплая искра", desc: "Скрытое достижение.", hidden: true },
     { id: "hidden_lilanei_trust", icon: "🌙", title: "Тихое доверие", desc: "Скрытое достижение.", hidden: true },
     { id: "hidden_lilanei_close", icon: "💜", title: "Она остаётся рядом", desc: "Скрытое достижение.", hidden: true },
     { id: "hidden_lilanei_distance", icon: "🕯️", title: "Закрытая дверь", desc: "Скрытое достижение.", hidden: true },
   ];
 
-  function hDef(id) {
-    return hDefs.find((a) => a.id === id) || {
+  function defById(id) {
+    return defs.find((item) => item.id === id) || {
       id,
       icon: "🏅",
       title: id,
@@ -1217,132 +1331,179 @@ async function loadSchedulePage() {
     };
   }
 
-  function hNormalizePayload(payload) {
-    const user = payload?.user || payload?.public_user || payload?.record || payload?.state || {};
-    const achievements = Array.isArray(user.achievements)
-      ? user.achievements
-      : Array.isArray(payload?.achievements)
-        ? payload.achievements
-        : Array.isArray(payload?.parsed_achievements)
-          ? payload.parsed_achievements
-          : [];
+  function jsonp(url, timeoutMs = 7000) {
+    return new Promise((resolve, reject) => {
+      const cbName = "__achievements_cb_" + Date.now() + "_" + Math.random().toString(16).slice(2);
+      const sep = url.includes("?") ? "&" : "?";
+      const fullUrl = url + sep + "callback=" + encodeURIComponent(cbName);
 
-    return { user, achievements };
+      const tag = document.createElement("script");
+      tag.async = true;
+      let done = false;
+
+      function cleanup() {
+        try { delete window[cbName]; } catch (_) { window[cbName] = undefined; }
+        tag.remove();
+      }
+
+      const timer = setTimeout(() => {
+        if (done) return;
+        done = true;
+        cleanup();
+        reject(new Error("timeout"));
+      }, timeoutMs);
+
+      window[cbName] = (data) => {
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        cleanup();
+        resolve(data);
+      };
+
+      tag.onerror = () => {
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        cleanup();
+        reject(new Error("script load error"));
+      };
+
+      tag.src = fullUrl;
+      document.head.appendChild(tag);
+    });
   }
 
-  function hPaint(payload) {
+  function paintAchievements(state) {
     const grid = document.getElementById("achievementsGrid");
     const locked = document.getElementById("achLocked");
+    if (!grid) return;
 
-    if (!grid) {
-      hMsg("Не найден блок achievementsGrid в HTML", true);
-      return;
-    }
+    state = normalizeState(state, getStoredTwitchUser());
 
-    const normalized = hNormalizePayload(payload);
-    const serverUser = normalized.user;
-    const achievements = normalized.achievements;
-
+    const achievements = Array.isArray(state.achievements) ? state.achievements : [];
     const earned = new Set(achievements);
-    const allIds = new Set(hDefs.map((a) => a.id));
+    const allIds = new Set(defs.map((item) => item.id));
     achievements.forEach((id) => allIds.add(id));
 
     const visible = [...allIds]
-      .map(hDef)
-      .filter((a) => !a.hidden || earned.has(a.id));
+      .map(defById)
+      .filter((item) => !item.hidden || earned.has(item.id));
 
     if (locked) locked.hidden = true;
-    hMsg("");
 
-    hSet("achUnlockedCount", earned.size);
-    hSet("achCatPets", Number(serverUser.cat_pets || 0));
-    hSet("achBestD20", Number(serverUser.best_d20 || 0) || "—");
+    setText2("achUnlockedCount", earned.size);
+    setText2("achCatPets", Number(state.cat_pets || 0));
+    setText2("achBestD20", Number(state.best_d20 || 0) || "—");
 
-    grid.innerHTML = visible.map((a) => {
-      const opened = earned.has(a.id);
+    updateVisibleCatAndD20(state);
+
+    grid.innerHTML = visible.map((item) => {
+      const opened = earned.has(item.id);
       return `
         <article class="achievement-card ${opened ? "unlocked" : "locked"}">
-          <div class="achievement-icon">${hEsc(a.icon)}</div>
+          <div class="achievement-icon">${esc2(item.icon)}</div>
           <div>
-            <div class="achievement-title">${hEsc(a.title)}</div>
-            <div class="achievement-desc">${hEsc(a.desc)}</div>
+            <div class="achievement-title">${esc2(item.title)}</div>
+            <div class="achievement-desc">${esc2(item.desc)}</div>
             <div class="achievement-state">${opened ? "Открыто" : "Не открыто"}</div>
           </div>
         </article>
       `;
     }).join("");
 
-    window.__ACHIEVEMENTS_SERVER_PAYLOAD__ = payload;
+    showMsg("");
+    window.__ACHIEVEMENTS_LOCAL_STATE__ = state;
   }
 
-  async function hLoad() {
-    if (!isAchievementsPage()) return;
-    if (achievementsLoading || achievementsLoaded) return;
-
-    achievementsLoading = true;
-
-    const user = hGetUser();
-    if (!user) {
-      achievementsLoading = false;
-      hMsg("Нет Twitch пользователя. Выйди и войди через Twitch заново.", true);
+  async function loadFromTableAndMerge(user, localState) {
+    if (!apiReady2()) {
+      if (!localState) showMsg("ACHIEVEMENTS_API_URL не подставился.", true);
       return;
     }
 
-    if (!hApiReady()) {
-      achievementsLoading = false;
-      hMsg("ACHIEVEMENTS_API_URL не подставился или неправильный.", true);
-      return;
-    }
+    if (loading) return;
+    loading = true;
 
     try {
-      hMsg("Загружаю достижения...");
-
       const params = new URLSearchParams({
         action: "get",
         page: "achievements",
         login: user.login,
         display_name: user.display_name || user.login,
-        profile_image_url: user.profile_image_url || ""
+        profile_image_url: user.profile_image_url || "",
+        _: String(Date.now())
       });
 
       const url = ACHIEVEMENTS_API_URL + (ACHIEVEMENTS_API_URL.includes("?") ? "&" : "?") + params.toString();
+      const payload = await jsonp(url);
 
-      const res = await fetch(url, {
-        method: "GET",
-        cache: "no-store",
-      });
-
-      const text = await res.text();
-
-      if (!res.ok) {
-        throw new Error("HTTP " + res.status + ": " + text.slice(0, 240));
+      if (!payload || payload.ok === false) {
+        throw new Error(payload && payload.error ? payload.error : "bad response");
       }
 
-      let json = null;
+      const tableState = extractServerState(payload, user);
+      const merged = mergeStates(readLocalState(user) || localState, tableState, user);
+
+      // Главное изменение: пишем именно achievements_state_<login>
+      saveLocalState(user, merged);
+      paintAchievements(merged);
+
+      // Обновляем глобальные переменные старого кода, если они есть.
       try {
-        json = JSON.parse(text);
-      } catch (_) {
-        throw new Error("Ответ не JSON: " + text.slice(0, 240));
-      }
+        USER_STATE = merged;
+      } catch (_) {}
 
-      if (!json || json.ok === false) {
-        throw new Error("Apps Script вернул ошибку: " + JSON.stringify(json).slice(0, 240));
-      }
-
-      achievementsLoaded = true;
-      hPaint(json);
+      window.__ACHIEVEMENTS_TABLE_PAYLOAD__ = payload;
     } catch (err) {
-      console.warn("fetch achievements load failed:", err);
-      hMsg("Ошибка загрузки: " + (err && err.message ? err.message : String(err)), true);
+      console.warn("Achievements table merge failed:", err);
+
+      if (!localState) {
+        showMsg("Ошибка загрузки достижений: " + (err && err.message ? err.message : String(err)), true);
+      }
     } finally {
-      achievementsLoading = false;
+      loading = false;
     }
   }
 
+  function initAchievements() {
+    if (!isAchievementsPage()) return;
+
+    const user = getStoredTwitchUser();
+    if (!user) {
+      showMsg("Войди через Twitch, чтобы увидеть достижения.", true);
+      return;
+    }
+
+    const localState = readLocalState(user);
+
+    // Сразу рисуем achievements_state_<login>, если там уже есть данные.
+    if (localState && Array.isArray(localState.achievements)) {
+      paintAchievements(localState);
+    } else {
+      showMsg("Загружаю достижения...");
+    }
+
+    // Потом проверяем таблицу и перезаписываем achievements_state_<login>.
+    loadFromTableAndMerge(user, localState);
+  }
+
+  // Ручное полное обновление из таблицы:
+  window.reloadAchievementsFromTable = function() {
+    const user = getStoredTwitchUser();
+    if (!user) return;
+
+    localStorage.removeItem(mainStateKey(user));
+    localStorage.removeItem(extraStateKey(user));
+
+    showMsg("Обновляю достижения...");
+    loadFromTableAndMerge(user, null);
+  };
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", hLoad, { once: true });
+    document.addEventListener("DOMContentLoaded", initAchievements, { once: true });
   } else {
-    hLoad();
+    initAchievements();
   }
 })();
 
