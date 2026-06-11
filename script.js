@@ -1513,52 +1513,66 @@ async function loadSchedulePage() {
 })();
 
 
-/* ===== GitHub Pages achievements diagnostics v2 ===== */
-function debugAchievementsGitState() {
-  const url = (typeof ACHIEVEMENTS_API_URL !== "undefined" ? String(ACHIEVEMENTS_API_URL || "") : "");
-  const isRealPlaceholder =
-    !url ||
-    url.includes("__ACHIEVEMENTS_API_URL__") ||
-    url.includes("PASTE_GOOGLE_APPS_SCRIPT") ||
-    !/^https?:\/\//i.test(url);
+/* ===== HARD FINAL diagnostics: achievements ===== */
+window.debugAchievementsGitState = function debugAchievementsGitState() {
+  const url = String(
+    typeof ACHIEVEMENTS_API_URL !== "undefined"
+      ? ACHIEVEMENTS_API_URL || ""
+      : ""
+  ).trim();
 
   const authUser = (() => {
-    try { return JSON.parse(localStorage.getItem("twitch_user") || "null"); } catch (_) { return null; }
+    try {
+      return JSON.parse(localStorage.getItem("twitch_user") || "null");
+    } catch (_) {
+      return null;
+    }
   })();
+
+  const hasPlaceholder = (
+    url === "" ||
+    url === "__ACHIEVEMENTS_API_URL__" ||
+    url.includes("__ACHIEVEMENTS_API_URL__") ||
+    url.includes("PASTE_GOOGLE_APPS_SCRIPT") ||
+    !url.startsWith("http")
+  );
+
+  const testUrl = (!hasPlaceholder && authUser && authUser.login)
+    ? url + (url.includes("?") ? "&" : "?") +
+      "action=get&login=" + encodeURIComponent(authUser.login) +
+      "&callback=testCallback"
+    : null;
 
   const info = {
     page: location.href,
     achievementsApiUrl: url,
-    hasPlaceholder: isRealPlaceholder,
+    hasPlaceholder,
     authUser,
-    localStateKeys: Object.keys(localStorage).filter(k => k.startsWith("achievements_state_")),
-    testUrl: authUser && url && !isRealPlaceholder
-      ? url + (url.includes("?") ? "&" : "?") + "action=get&login=" + encodeURIComponent(authUser.login) + "&callback=testCallback"
-      : null
+    localStateKeys: Object.keys(localStorage).filter((k) => k.startsWith("achievements_state_")),
+    testUrl
   };
 
-  console.log("Achievements Git debug:", info);
+  console.log("Achievements Git debug HARD FINAL:", info);
   return info;
-}
+};
 
-function testAchievementsJsonp() {
-  const info = debugAchievementsGitState();
+window.testAchievementsJsonp = function testAchievementsJsonp() {
+  const info = window.debugAchievementsGitState();
 
   if (info.hasPlaceholder || !info.testUrl) {
     console.error("ACHIEVEMENTS_API_URL не готов:", info);
     return;
   }
 
-  window.testCallback = (data) => {
+  window.testCallback = function(data) {
     console.log("Achievements JSONP OK:", data);
   };
 
   const s = document.createElement("script");
   s.src = info.testUrl + "&_=" + Date.now();
-  s.onerror = () => console.error("Achievements JSONP SCRIPT ERROR:", s.src);
+  s.onerror = function() {
+    console.error("Achievements JSONP SCRIPT ERROR:", s.src);
+  };
   document.body.appendChild(s);
-}
-
-window.debugAchievementsGitState = debugAchievementsGitState;
-window.testAchievementsJsonp = testAchievementsJsonp;
+};
 
