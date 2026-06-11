@@ -761,11 +761,15 @@ function initPhoto() {
   if (!img) return;
 
   const photos = [
-    "assets/lilanei.png",
-    "assets/lilanei2.png",
-    "assets/lilanei3.png",
-    "assets/lilanei4.png",
-    "assets/lilanei5.png"
+    "assets/lilanei8.png",
+    "assets/lilanei9.png",
+    "assets/lilanei10.png",
+    "assets/lilanei11.png",
+    "assets/lilanei12.png",
+    "assets/lilanei13.png",
+    "assets/lilanei14.png",
+    "assets/lilanei15.png",
+    "assets/lilanei16.png"
   ];
 
   const fallback = "assets/lilanei_placeholder.svg";
