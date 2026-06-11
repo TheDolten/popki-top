@@ -1418,7 +1418,7 @@ async function loadSchedulePage() {
 
   async function loadFromTableAndMerge(user, localState) {
     if (!apiReady2()) {
-      if (!localState) showMsg("ACHIEVEMENTS_API_URL не подставился.", true);
+      if (!localState) showMsg("ACHIEVEMENTS_API_URL не подставился. На GitHub проверь Secret ACHIEVEMENTS_API_URL и Actions deploy.", true);
       return;
     }
 
@@ -1507,3 +1507,20 @@ async function loadSchedulePage() {
   }
 })();
 
+
+
+/* ===== GitHub Pages achievements diagnostics ===== */
+function debugAchievementsGitState() {
+  const info = {
+    page: location.href,
+    achievementsApiUrl: (typeof ACHIEVEMENTS_API_URL !== "undefined" ? ACHIEVEMENTS_API_URL : null),
+    hasPlaceholder: (typeof ACHIEVEMENTS_API_URL !== "undefined" ? String(ACHIEVEMENTS_API_URL).includes("__ACHIEVEMENTS_API_URL__") : true),
+    authUser: (() => {
+      try { return JSON.parse(localStorage.getItem("twitch_user") || "null"); } catch (_) { return null; }
+    })(),
+    localStateKeys: Object.keys(localStorage).filter(k => k.startsWith("achievements_state_"))
+  };
+  console.log("Achievements Git debug:", info);
+  return info;
+}
+window.debugAchievementsGitState = debugAchievementsGitState;

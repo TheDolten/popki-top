@@ -691,6 +691,7 @@ async function clearRemoteLilaneiHistory() {
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify({
         action: "lilanei_clear_history",
+        counter_unchanged: true,
         user: {
           login: user.login,
           display_name: user.display_name || user.login,
@@ -704,13 +705,22 @@ async function clearRemoteLilaneiHistory() {
 }
 
 function reset() {
+  const user = getAuthUser();
+  const currentReplyCount = user ? getLocalReplyCount(user) : 0;
+
+  // Удаляем историю на сервере в фоне, но лимит сообщений не трогаем.
   const remoteClear = clearRemoteLilaneiHistory();
 
   state = defaultState();
   saveState();
-  render();
 
-  // Не ждём медленную очистку таблицы, чтобы интерфейс не зависал.
+  if (user) {
+    setLocalReplyCount(user, currentReplyCount);
+  }
+
+  render();
+  updateReplyUi();
+
   remoteClear.catch((err) => console.warn("remote lilanei clear failed", err));
 }
 
