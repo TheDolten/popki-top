@@ -1,5 +1,8 @@
 name: Deploy GitHub Pages
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches: ["main", "master"]
@@ -26,28 +29,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate config.js from repository variables
+      - name: Insert GitHub Secrets into JS files
         shell: bash
+        env:
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          ACHIEVEMENTS_API_URL: ${{ secrets.ACHIEVEMENTS_API_URL }}
+          LILANEI_AI_ENDPOINT: ${{ secrets.LILANEI_AI_ENDPOINT }}
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import os, json
+          import os
 
-          config = {
-              "TWITCH_CLIENT_ID": os.environ.get("TWITCH_CLIENT_ID", ""),
-              "ACHIEVEMENTS_API_URL": os.environ.get("ACHIEVEMENTS_API_URL", ""),
-              "LILANEI_AI_ENDPOINT": os.environ.get("LILANEI_AI_ENDPOINT", ""),
+          values = {
+              "__TWITCH_CLIENT_ID__": os.environ.get("TWITCH_CLIENT_ID", ""),
+              "__ACHIEVEMENTS_API_URL__": os.environ.get("ACHIEVEMENTS_API_URL", ""),
+              "__LILANEI_AI_ENDPOINT__": os.environ.get("LILANEI_AI_ENDPOINT", ""),
           }
 
-          Path("config.js").write_text(
-              "window.APP_CONFIG = " + json.dumps(config, ensure_ascii=False, indent=2) + ";\n",
-              encoding="utf-8"
-          )
+          missing = [k for k, v in values.items() if not v]
+          if missing:
+              raise SystemExit("Missing GitHub Secrets for: " + ", ".join(missing))
+
+          for filename in ["script.js", "romance.js"]:
+              path = Path(filename)
+              text = path.read_text(encoding="utf-8")
+
+              for placeholder, value in values.items():
+                  text = text.replace(placeholder, value)
+
+              path.write_text(text, encoding="utf-8")
           PY
-        env:
-          TWITCH_CLIENT_ID: ${{ vars.TWITCH_CLIENT_ID }}
-          ACHIEVEMENTS_API_URL: ${{ vars.ACHIEVEMENTS_API_URL }}
-          LILANEI_AI_ENDPOINT: ${{ vars.LILANEI_AI_ENDPOINT }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
