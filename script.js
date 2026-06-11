@@ -23,6 +23,7 @@ const ACHIEVEMENT_DEFS = [
   { id: "cat_10", icon: "🐾", title: "Котик доверяет", desc: "Погладить кота 10 раз.", hidden: false },
   { id: "cat_20", icon: "😺", title: "Любимчик кота", desc: "Погладить кота 20 раз.", hidden: false },
   { id: "hidden_cat_100", icon: "🐈‍⬛", title: "Тайный кошачий друг", desc: "Скрытое достижение: погладить кота 100 раз.", hidden: true },
+  { id: "hidden_jump_lila", icon: "🖤", title: "Сначала нужно прыгнуть", desc: "Скрытое достижение: За великолепные прыжки в пустоту. DMC", hidden: true },
   { id: "hidden_three_20", icon: "🎲", title: "Критическая удача", desc: "Скрытое достижение: выбросить 20 три раза подряд за 5 минут.", hidden: true },
   { id: "hidden_lilanei_warmth", icon: "🌙", title: "Тёплая искра", desc: "Скрытое достижение: lilanei стала мягче рядом с тобой.", hidden: true },
   { id: "hidden_lilanei_trust", icon: "🕯️", title: "Тихое доверие", desc: "Скрытое достижение: lilanei начала доверять тебе.", hidden: true },
