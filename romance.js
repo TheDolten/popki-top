@@ -1,7 +1,7 @@
 const ROMANCE_KEY = "romance_lilanei_chat_state_v4";
 const LILANEI_ENDPOINT = "__LILANEI_AI_ENDPOINT__";
 const DAILY_REPLY_LIMIT = 5;
-const ACHIEVEMENTS_API_URL = "__ACHIEVEMENTS_API_URL__";
+const ACHIEVEMENTS_API_URL = "https://script.google.com/macros/s/AKfycbz5H4RmAuAUAlJ3AXzhYAZyAwO7vwZc-m6HRJhvbOJtgRMlMubLSxEeA77TNojtpfHg/exec";
 const TWITCH_CLIENT_ID = "__TWITCH_CLIENT_ID__";
 
 const $ = (id) => document.getElementById(id);

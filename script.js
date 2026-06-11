@@ -7,7 +7,7 @@ let DETAILS_OPEN = false;
 
 const TWITCH_CLIENT_ID = "__TWITCH_CLIENT_ID__";
 const TWITCH_SCOPES = "";
-const ACHIEVEMENTS_API_URL = "__ACHIEVEMENTS_API_URL__";
+const ACHIEVEMENTS_API_URL = "https://script.google.com/macros/s/AKfycbz5H4RmAuAUAlJ3AXzhYAZyAwO7vwZc-m6HRJhvbOJtgRMlMubLSxEeA77TNojtpfHg/exec";
 let AUTH_USER = null;
 let USER_STATE = null;
 let LAST_RANK_SYNC_KEY = "";
