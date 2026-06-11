@@ -1,7 +1,7 @@
 const ROMANCE_KEY = "romance_lilanei_chat_state_v4";
-const LILANEI_AI_ENDPOINT = window.APP_CONFIG?.LILANEI_AI_ENDPOINT || "";
+const LILANEI_AI_ENDPOINT = "__LILANEI_AI_ENDPOINT__";
 const DAILY_AI_LIMIT = 5;
-const ACHIEVEMENTS_API_URL = window.APP_CONFIG?.ACHIEVEMENTS_API_URL || "";
+const ACHIEVEMENTS_API_URL = "__ACHIEVEMENTS_API_URL__";
 
 const $ = (id) => document.getElementById(id);
 
