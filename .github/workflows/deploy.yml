@@ -1,0 +1,62 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate config.js from repository variables
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os, json
+
+          config = {
+              "TWITCH_CLIENT_ID": os.environ.get("TWITCH_CLIENT_ID", ""),
+              "ACHIEVEMENTS_API_URL": os.environ.get("ACHIEVEMENTS_API_URL", ""),
+              "LILANEI_AI_ENDPOINT": os.environ.get("LILANEI_AI_ENDPOINT", ""),
+          }
+
+          Path("config.js").write_text(
+              "window.APP_CONFIG = " + json.dumps(config, ensure_ascii=False, indent=2) + ";\n",
+              encoding="utf-8"
+          )
+          PY
+        env:
+          TWITCH_CLIENT_ID: ${{ vars.TWITCH_CLIENT_ID }}
+          ACHIEVEMENTS_API_URL: ${{ vars.ACHIEVEMENTS_API_URL }}
+          LILANEI_AI_ENDPOINT: ${{ vars.LILANEI_AI_ENDPOINT }}
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
