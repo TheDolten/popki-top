@@ -2474,3 +2474,81 @@ input,select,button{background:#0b0c19;color:var(--text);border:1px solid rgba(1
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
+
+
+/* ===== Final JSONP achievements css ===== */
+.debug-box {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 16px;
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.86);
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.achievements-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+.achievement-card {
+  display: grid !important;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+  min-width: 0;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.055);
+}
+
+.achievement-card.unlocked {
+  opacity: 1 !important;
+  filter: none !important;
+  border-color: rgba(168, 92, 255, .55) !important;
+  background: linear-gradient(135deg, rgba(168,92,255,.18), rgba(255,255,255,.055)) !important;
+}
+
+.achievement-card.locked {
+  opacity: .48;
+  filter: grayscale(.35);
+}
+
+.achievement-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.09);
+  font-size: 25px;
+}
+
+.achievement-title,
+.achievement-desc,
+.achievement-state {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.achievement-title {
+  font-weight: 900;
+}
+
+.achievement-desc,
+.achievement-state {
+  margin-top: 5px;
+  color: rgba(255,255,255,.68);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.achievement-card.unlocked .achievement-state {
+  color: rgba(255,255,255,.92);
+}
