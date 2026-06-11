@@ -83,7 +83,7 @@ function saveUser(user) {
 }
 
 function baseRedirectUri() {
-  const path = window.location.pathname.replace(/\/(index|popki)\.html$/i, "/");
+  const path = window.location.pathname.replace(/\/(index|popki|schedule|achievements|romance)\.html$/i, "/");
   return window.location.origin + path;
 }
 
@@ -223,7 +223,12 @@ function setupAuthButtons() {
 }
 
 function achievementsApiReady() {
-  return ACHIEVEMENTS_API_URL && ACHIEVEMENTS_API_URL !== "PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+  return Boolean(
+    ACHIEVEMENTS_API_URL &&
+    !ACHIEVEMENTS_API_URL.includes("__ACHIEVEMENTS_API_URL__") &&
+    !ACHIEVEMENTS_API_URL.includes("PASTE_GOOGLE_APPS_SCRIPT") &&
+    /^https?:\/\//i.test(ACHIEVEMENTS_API_URL)
+  );
 }
 
 function userAchievementsSet() {
@@ -1129,4 +1134,214 @@ async function loadSchedulePage() {
     if (next) next.textContent = "Ошибка загрузки";
   }
 }
+
+
+/* ===== HARD OVERRIDE: achievements page fetch render ===== */
+(function hardAchievementsFetchOverride() {
+  let achievementsLoading = false;
+  let achievementsLoaded = false;
+
+  function isAchievementsPage() {
+    return document.body?.dataset?.page === "achievements" || /achievements\.html$/i.test(location.pathname);
+  }
+
+  function hEsc(value) {
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;");
+  }
+
+  function hSet(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = String(value);
+  }
+
+  function hMsg(text, isError = false) {
+    const msg = document.getElementById("achievementsMessage");
+    if (!msg) return;
+
+    if (!text) {
+      msg.innerHTML = "";
+      return;
+    }
+
+    msg.innerHTML = `<div class="${isError ? "error" : "debug-box"}">${hEsc(text)}</div>`;
+  }
+
+  function hGetUser() {
+    try {
+      const user = JSON.parse(localStorage.getItem("twitch_user") || "null");
+      return user && user.login ? user : null;
+    } catch (err) {
+      hMsg("localStorage twitch_user не читается: " + err.message, true);
+      return null;
+    }
+  }
+
+  function hApiReady() {
+    return Boolean(
+      typeof ACHIEVEMENTS_API_URL !== "undefined" &&
+      ACHIEVEMENTS_API_URL &&
+      !ACHIEVEMENTS_API_URL.includes("__ACHIEVEMENTS_API_URL__") &&
+      !ACHIEVEMENTS_API_URL.includes("PASTE_GOOGLE_APPS_SCRIPT") &&
+      /^https?:\/\//i.test(ACHIEVEMENTS_API_URL)
+    );
+  }
+
+  const hDefs = [
+    { id: "top_1", icon: "👑", title: "Король топа", desc: "Попасть на 1 место в общем топе.", hidden: false },
+    { id: "top_5", icon: "💎", title: "Топ-5", desc: "Попасть в первые 5 мест общего топа.", hidden: false },
+    { id: "top_10", icon: "🏆", title: "Топ-10", desc: "Попасть в первые 10 мест общего топа.", hidden: false },
+    { id: "top_20", icon: "⭐", title: "Топ-20", desc: "Попасть в первые 20 мест общего топа.", hidden: false },
+    { id: "cat_10", icon: "🐾", title: "Котик доверяет", desc: "Погладить кота 10 раз.", hidden: false },
+    { id: "cat_20", icon: "😺", title: "Любимчик кота", desc: "Погладить кота 20 раз.", hidden: false },
+    { id: "hidden_cat_100", icon: "🐈‍⬛", title: "Тайный кошачий друг", desc: "Скрытое достижение.", hidden: true },
+    { id: "hidden_three_20", icon: "🎲", title: "Критическая удача", desc: "Скрытое достижение.", hidden: true },
+    { id: "hidden_jump_lila", icon: "🖤", title: "Прыжок к lilanei", desc: "Скрытое достижение.", hidden: true },
+    { id: "hidden_lilanei_warmth", icon: "🖤", title: "Тёплая искра", desc: "Скрытое достижение.", hidden: true },
+    { id: "hidden_lilanei_trust", icon: "🌙", title: "Тихое доверие", desc: "Скрытое достижение.", hidden: true },
+    { id: "hidden_lilanei_close", icon: "💜", title: "Она остаётся рядом", desc: "Скрытое достижение.", hidden: true },
+    { id: "hidden_lilanei_distance", icon: "🕯️", title: "Закрытая дверь", desc: "Скрытое достижение.", hidden: true },
+  ];
+
+  function hDef(id) {
+    return hDefs.find((a) => a.id === id) || {
+      id,
+      icon: "🏅",
+      title: id,
+      desc: "Скрытое достижение.",
+      hidden: true
+    };
+  }
+
+  function hNormalizePayload(payload) {
+    const user = payload?.user || payload?.public_user || payload?.record || payload?.state || {};
+    const achievements = Array.isArray(user.achievements)
+      ? user.achievements
+      : Array.isArray(payload?.achievements)
+        ? payload.achievements
+        : Array.isArray(payload?.parsed_achievements)
+          ? payload.parsed_achievements
+          : [];
+
+    return { user, achievements };
+  }
+
+  function hPaint(payload) {
+    const grid = document.getElementById("achievementsGrid");
+    const locked = document.getElementById("achLocked");
+
+    if (!grid) {
+      hMsg("Не найден блок achievementsGrid в HTML", true);
+      return;
+    }
+
+    const normalized = hNormalizePayload(payload);
+    const serverUser = normalized.user;
+    const achievements = normalized.achievements;
+
+    const earned = new Set(achievements);
+    const allIds = new Set(hDefs.map((a) => a.id));
+    achievements.forEach((id) => allIds.add(id));
+
+    const visible = [...allIds]
+      .map(hDef)
+      .filter((a) => !a.hidden || earned.has(a.id));
+
+    if (locked) locked.hidden = true;
+    hMsg("");
+
+    hSet("achUnlockedCount", earned.size);
+    hSet("achCatPets", Number(serverUser.cat_pets || 0));
+    hSet("achBestD20", Number(serverUser.best_d20 || 0) || "—");
+
+    grid.innerHTML = visible.map((a) => {
+      const opened = earned.has(a.id);
+      return `
+        <article class="achievement-card ${opened ? "unlocked" : "locked"}">
+          <div class="achievement-icon">${hEsc(a.icon)}</div>
+          <div>
+            <div class="achievement-title">${hEsc(a.title)}</div>
+            <div class="achievement-desc">${hEsc(a.desc)}</div>
+            <div class="achievement-state">${opened ? "Открыто" : "Не открыто"}</div>
+          </div>
+        </article>
+      `;
+    }).join("");
+
+    window.__ACHIEVEMENTS_SERVER_PAYLOAD__ = payload;
+  }
+
+  async function hLoad() {
+    if (!isAchievementsPage()) return;
+    if (achievementsLoading || achievementsLoaded) return;
+
+    achievementsLoading = true;
+
+    const user = hGetUser();
+    if (!user) {
+      achievementsLoading = false;
+      hMsg("Нет Twitch пользователя. Выйди и войди через Twitch заново.", true);
+      return;
+    }
+
+    if (!hApiReady()) {
+      achievementsLoading = false;
+      hMsg("ACHIEVEMENTS_API_URL не подставился или неправильный.", true);
+      return;
+    }
+
+    try {
+      hMsg("Загружаю достижения...");
+
+      const params = new URLSearchParams({
+        action: "get",
+        page: "achievements",
+        login: user.login,
+        display_name: user.display_name || user.login,
+        profile_image_url: user.profile_image_url || ""
+      });
+
+      const url = ACHIEVEMENTS_API_URL + (ACHIEVEMENTS_API_URL.includes("?") ? "&" : "?") + params.toString();
+
+      const res = await fetch(url, {
+        method: "GET",
+        cache: "no-store",
+      });
+
+      const text = await res.text();
+
+      if (!res.ok) {
+        throw new Error("HTTP " + res.status + ": " + text.slice(0, 240));
+      }
+
+      let json = null;
+      try {
+        json = JSON.parse(text);
+      } catch (_) {
+        throw new Error("Ответ не JSON: " + text.slice(0, 240));
+      }
+
+      if (!json || json.ok === false) {
+        throw new Error("Apps Script вернул ошибку: " + JSON.stringify(json).slice(0, 240));
+      }
+
+      achievementsLoaded = true;
+      hPaint(json);
+    } catch (err) {
+      console.warn("fetch achievements load failed:", err);
+      hMsg("Ошибка загрузки: " + (err && err.message ? err.message : String(err)), true);
+    } finally {
+      achievementsLoading = false;
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", hLoad, { once: true });
+  } else {
+    hLoad();
+  }
+})();
 
