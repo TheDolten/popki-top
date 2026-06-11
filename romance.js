@@ -1,7 +1,7 @@
 const ROMANCE_KEY = "romance_lilanei_chat_state_v4";
-const LILANEI_AI_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRB_4X8-a11DIA0uVQ5X4jL__LfHseel1ObnHmYaXihWJa1EWI9YIcN3RgLNovm5tr/exec";
+const LILANEI_AI_ENDPOINT = window.APP_CONFIG?.LILANEI_AI_ENDPOINT || "";
 const DAILY_AI_LIMIT = 5;
-const ACHIEVEMENTS_API_URL = "https://script.google.com/macros/s/AKfycbxRB_4X8-a11DIA0uVQ5X4jL__LfHseel1ObnHmYaXihWJa1EWI9YIcN3RgLNovm5tr/exec";
+const ACHIEVEMENTS_API_URL = window.APP_CONFIG?.ACHIEVEMENTS_API_URL || "";
 
 const $ = (id) => document.getElementById(id);
 
