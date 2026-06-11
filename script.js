@@ -4,9 +4,9 @@ const PAGE = body?.dataset?.page || "kus";
 let DATA = null;
 let DETAILS_OPEN = false;
 
-const TWITCH_CLIENT_ID = window.APP_CONFIG?.TWITCH_CLIENT_ID || "";
+const TWITCH_CLIENT_ID =  "__TWITCH_CLIENT_ID__";
 const TWITCH_SCOPES = "";
-const ACHIEVEMENTS_API_URL = window.APP_CONFIG?.ACHIEVEMENTS_API_URL || "";
+const ACHIEVEMENTS_API_URL = "__ACHIEVEMENTS_API_URL__";
 let AUTH_USER = null;
 let USER_STATE = null;
 let LAST_RANK_SYNC_KEY = "";
