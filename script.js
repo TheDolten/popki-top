@@ -226,7 +226,7 @@ function setupAuthButtons() {
 function achievementsApiReady() {
   return Boolean(
     ACHIEVEMENTS_API_URL &&
-    !ACHIEVEMENTS_API_URL.includes("__ACHIEVEMENTS_API_URL__") &&
+    !ACHIEVEMENTS_API_URL.includes(("__" + "ACHIEVEMENTS_API_URL" + "__")) &&
     !ACHIEVEMENTS_API_URL.includes("PASTE_GOOGLE_APPS_SCRIPT") &&
     /^https?:\/\//i.test(ACHIEVEMENTS_API_URL)
   );
@@ -1188,7 +1188,7 @@ async function loadSchedulePage() {
     return Boolean(
       typeof ACHIEVEMENTS_API_URL !== "undefined" &&
       ACHIEVEMENTS_API_URL &&
-      !String(ACHIEVEMENTS_API_URL).includes("__ACHIEVEMENTS_API_URL__") &&
+      !String(ACHIEVEMENTS_API_URL).includes(("__" + "ACHIEVEMENTS_API_URL" + "__")) &&
       !String(ACHIEVEMENTS_API_URL).includes("PASTE_GOOGLE_APPS_SCRIPT") &&
       /^https?:\/\//i.test(String(ACHIEVEMENTS_API_URL))
     );
@@ -1513,13 +1513,17 @@ async function loadSchedulePage() {
 })();
 
 
-/* ===== HARD FINAL diagnostics: achievements ===== */
+/* ===== HARD FINAL diagnostics: achievements, placeholder-safe ===== */
 window.debugAchievementsGitState = function debugAchievementsGitState() {
   const url = String(
     typeof ACHIEVEMENTS_API_URL !== "undefined"
       ? ACHIEVEMENTS_API_URL || ""
       : ""
   ).trim();
+
+  // Важно: строка placeholder собрана кусками.
+  // GitHub Actions не должен заменить её на реальный URL.
+  const PLACEHOLDER = "__" + "ACHIEVEMENTS_API_URL" + "__";
 
   const authUser = (() => {
     try {
@@ -1531,8 +1535,8 @@ window.debugAchievementsGitState = function debugAchievementsGitState() {
 
   const hasPlaceholder = (
     url === "" ||
-    url === "__ACHIEVEMENTS_API_URL__" ||
-    url.includes("__ACHIEVEMENTS_API_URL__") ||
+    url === PLACEHOLDER ||
+    url.includes(PLACEHOLDER) ||
     url.includes("PASTE_GOOGLE_APPS_SCRIPT") ||
     !url.startsWith("http")
   );
@@ -1552,7 +1556,7 @@ window.debugAchievementsGitState = function debugAchievementsGitState() {
     testUrl
   };
 
-  console.log("Achievements Git debug HARD FINAL:", info);
+  console.log("Achievements Git debug HARD FINAL SAFE:", info);
   return info;
 };
 
