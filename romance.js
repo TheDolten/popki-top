@@ -1,7 +1,8 @@
 const ROMANCE_KEY = "romance_lilanei_chat_state_v4";
-const LILANEI_AI_ENDPOINT = "__LILANEI_AI_ENDPOINT__";
-const DAILY_AI_LIMIT = 5;
+const LILANEI_ENDPOINT = "__LILANEI_AI_ENDPOINT__";
+const DAILY_REPLY_LIMIT = 5;
 const ACHIEVEMENTS_API_URL = "__ACHIEVEMENTS_API_URL__";
+const TWITCH_CLIENT_ID = "__TWITCH_CLIENT_ID__";
 
 const $ = (id) => document.getElementById(id);
 
@@ -57,22 +58,22 @@ function getAuthUser() {
   }
 }
 
-function localAiKey(user) {
+function localReplyKey(user) {
   const login = String(user?.login || "guest").toLowerCase();
   const day = new Date().toISOString().slice(0, 10);
-  return `lilanei_ai_count_${login}_${day}`;
+  return `lilanei_reply_count_${login}_${day}`;
 }
 
-function getLocalAiCount(user) {
-  return Number(localStorage.getItem(localAiKey(user)) || 0);
+function getLocalReplyCount(user) {
+  return Number(localStorage.getItem(localReplyKey(user)) || 0);
 }
 
-function setLocalAiCount(user, n) {
-  localStorage.setItem(localAiKey(user), String(Math.max(0, Number(n || 0))));
+function setLocalReplyCount(user, n) {
+  localStorage.setItem(localReplyKey(user), String(Math.max(0, Number(n || 0))));
 }
 
 function endpointReady() {
-  return LILANEI_AI_ENDPOINT && !LILANEI_AI_ENDPOINT.includes("PASTE_GOOGLE_APPS_SCRIPT");
+  return LILANEI_ENDPOINT && !LILANEI_ENDPOINT.includes("PASTE_GOOGLE_APPS_SCRIPT");
 }
 
 function escapeHtml(text) {
@@ -133,7 +134,7 @@ function applyAnalysis(text) {
   state.turns += 1;
 }
 
-function getAiHistory() {
+function getReplyHistory() {
   return state.messages
     .filter((m) => m.who === "user" || m.who === "lilanei")
     .slice(-12)
@@ -143,13 +144,13 @@ function getAiHistory() {
     }));
 }
 
-async function askAi(text) {
+async function askLilanei(text) {
   const user = getAuthUser();
-  if (!user) throw new Error("AI_AUTH_REQUIRED");
-  if (!endpointReady()) throw new Error("AI_ENDPOINT_NOT_READY");
+  if (!user) throw new Error("AUTH_REQUIRED_LOCAL");
+  if (!endpointReady()) throw new Error("ENDPOINT_NOT_READY_LOCAL");
 
-  const localCount = getLocalAiCount(user);
-  if (localCount >= DAILY_AI_LIMIT) throw new Error("AI_DAILY_LIMIT");
+  const localCount = getLocalReplyCount(user);
+  if (localCount >= DAILY_REPLY_LIMIT) throw new Error("DAILY_LIMIT_LOCAL");
 
   const payload = {
     message: text,
@@ -164,10 +165,10 @@ async function askAi(text) {
       pressure: state.pressure,
       turns: state.turns
     },
-    history: getAiHistory()
+    history: getReplyHistory()
   };
 
-  const res = await fetch(LILANEI_AI_ENDPOINT, {
+  const res = await fetch(LILANEI_ENDPOINT, {
     method: "POST",
     headers: { "Content-Type": "text/plain;charset=utf-8" },
     body: JSON.stringify(payload)
@@ -176,34 +177,32 @@ async function askAi(text) {
   let data = null;
   try { data = await res.json(); } catch (_) {}
 
-  // Google Apps Script часто возвращает HTTP 200 даже для ошибок,
-  // поэтому проверяем data.error отдельно, а не только res.ok.
-  if (!res.ok || data?.error) {
-    const code = data?.error || "AI_ERROR";
-    if (code === "DAILY_LIMIT") throw new Error("AI_DAILY_LIMIT");
-    if (code === "AUTH_REQUIRED") throw new Error("AI_AUTH_REQUIRED");
-    if (code === "NO_OPENROUTER_KEY") throw new Error("AI_NO_OPENROUTER_KEY");
-    if (code === "OPENROUTER_ERROR") throw new Error(`OPENROUTER_ERROR:${data?.detail || ''}`);
+    if (!res.ok || data?.error) {
+    const code = data?.error || "CONNECTION_ERROR";
+    if (code === "DAILY_LIMIT") throw new Error("DAILY_LIMIT_LOCAL");
+    if (code === "AUTH_REQUIRED") throw new Error("AUTH_REQUIRED_LOCAL");
+    if (code === "NO_OPENROUTER_KEY") throw new Error("CONNECTION_KEY_MISSING");
+    if (code === "REMOTE_CONNECTION_ERROR") throw new Error(`REMOTE_CONNECTION_ERROR:${data?.detail || ''}`);
     if (code === "SCRIPT_ERROR") throw new Error(`SCRIPT_ERROR:${data?.detail || ''}`);
-    if (code === "EMPTY_REPLY") throw new Error(`AI_EMPTY_REPLY:${data?.detail || ''}`);
+    if (code === "EMPTY_REPLY") throw new Error(`EMPTY_REPLY_LOCAL:${data?.detail || ''}`);
     throw new Error(`${code}:${data?.detail || ''}`);
   }
 
-  if (!data?.reply) throw new Error(`AI_EMPTY_REPLY:${JSON.stringify(data || {}).slice(0, 240)}`);
+  if (!data?.reply) throw new Error(`EMPTY_REPLY_LOCAL:${JSON.stringify(data || {}).slice(0, 240)}`);
 
-  if (typeof data.used === "number") setLocalAiCount(user, data.used);
-  else setLocalAiCount(user, localCount + 1);
+  if (typeof data.used === "number") setLocalReplyCount(user, data.used);
+  else setLocalReplyCount(user, localCount + 1);
 
   return String(data.reply).trim();
 }
 
-function aiStatusText() {
+function replyStatusText() {
   const user = getAuthUser();
-  if (!user) return "ИИ-ответы только после входа через Twitch";
-  if (!endpointReady()) return "ИИ выключен: вставь ссылку Google Apps Script Web App в romance.js";
-  const used = getLocalAiCount(user);
-  const left = Math.max(0, DAILY_AI_LIMIT - used);
-  return `ИИ-ответы: ${left}/${DAILY_AI_LIMIT} сегодня для ${user.display_name || user.login}`;
+  if (!user) return "Доступно после входа через Twitch";
+  if (!endpointReady()) return "Связь временно недоступна";
+  const used = getLocalReplyCount(user);
+  const left = Math.max(0, DAILY_REPLY_LIMIT - used);
+  return `Ответы: ${left}/${DAILY_REPLY_LIMIT} сегодня для ${user.display_name || user.login}`;
 }
 
 function render() {
@@ -231,7 +230,7 @@ function render() {
   }
 
   updateMood();
-  updateAiUi();
+  updateReplyUi();
 }
 
 function updateMood() {
@@ -254,11 +253,11 @@ function updateMood() {
   }
 }
 
-function updateAiUi() {
-  const aiStatus = $("aiStatus");
+function updateReplyUi() {
+  const replyStatus = $("replyStatus");
   const loginHint = $("loginHint");
   const user = getAuthUser();
-  if (aiStatus) aiStatus.textContent = aiStatusText();
+  if (replyStatus) replyStatus.textContent = replyStatusText();
   if (loginHint) loginHint.hidden = Boolean(user && endpointReady());
 
   if (user && endpointReady()) {
@@ -278,19 +277,145 @@ function setFormBusy(isBusy) {
   }
 }
 
-function explainAiError(err) {
+function explainConnectionError(err) {
   const code = String(err?.message || "");
-  if (code === "AI_AUTH_REQUIRED") return "Чтобы говорить с ИИ lilanei, сначала войди через Twitch на главной странице.";
-  if (code === "AI_ENDPOINT_NOT_READY") return "ИИ ещё не подключён: вставь ссылку Google Apps Script Web App в romance.js вместо PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE.";
-  if (code === "AI_DAILY_LIMIT") return "Сегодняшний лимит ИИ-сообщений закончился. Завтра он обновится, либо можно вручную сбросить счётчик.";
-  if (code === "AI_NO_OPENROUTER_KEY") return "В Google Apps Script не найден OPENROUTER_KEY. Добавь его в Script properties.";
-  if (code.startsWith("OPENROUTER_ERROR:")) return "OpenRouter вернул ошибку: " + code.slice("OPENROUTER_ERROR:".length);
-  if (code.startsWith("SCRIPT_ERROR:")) return "Google Apps Script вернул ошибку: " + code.slice("SCRIPT_ERROR:".length);
-  if (code.startsWith("AI_EMPTY_REPLY:")) return "ИИ вернул пустой ответ. Детали: " + code.slice("AI_EMPTY_REPLY:".length);
-  if (code === "AI_EMPTY_REPLY") return "ИИ вернул пустой ответ. Скорее всего OpenRouter или модель вернули нестандартный формат ответа.";
-  return "Не удалось получить ответ от ИИ. Проверь Apps Script, OpenRouter и ссылку в romance.js.";
+  if (code === "AUTH_REQUIRED_LOCAL") return "Сначала войди через Twitch на главной странице.";
+  if (code === "ENDPOINT_NOT_READY_LOCAL") return "Связь с lilanei пока не настроена.";
+  if (code === "DAILY_LIMIT_LOCAL") return "lilanei сейчас вне сети. Попробуй вернуться позже.";
+  if (code === "CONNECTION_KEY_MISSING") return "Связь временно недоступна.";
+  if (code.startsWith("REMOTE_CONNECTION_ERROR:")) return "Связь оборвалась: " + code.slice("REMOTE_CONNECTION_ERROR:".length);
+  if (code.startsWith("SCRIPT_ERROR:")) return "Связь оборвалась: " + code.slice("SCRIPT_ERROR:".length);
+  if (code.startsWith("EMPTY_REPLY_LOCAL:")) return "lilanei промолчала. Детали: " + code.slice("EMPTY_REPLY_LOCAL:".length);
+  if (code === "EMPTY_REPLY_LOCAL") return "lilanei промолчала. Попробуй написать иначе.";
+  return "Не удалось связаться с lilanei. Попробуй позже.";
 }
 
+
+
+
+function cleanLogin(value) {
+  return String(value || "").trim().replace(/^@/, "").toLowerCase();
+}
+
+function baseRedirectUri() {
+  const path = window.location.pathname.replace(/\/(romance|index|popki|schedule|achievements)\.html$/i, "/");
+  return window.location.origin + path;
+}
+
+function currentPageFile() {
+  const last = window.location.pathname.split("/").pop();
+  return last && last.endsWith(".html") ? last : "romance.html";
+}
+
+function makeTwitchState() {
+  const stateValue = crypto?.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
+  localStorage.setItem("twitch_oauth_state", stateValue);
+  localStorage.setItem("twitch_return_page", currentPageFile());
+  return stateValue;
+}
+
+function twitchLoginUrl() {
+  const params = new URLSearchParams({
+    client_id: TWITCH_CLIENT_ID.trim(),
+    redirect_uri: baseRedirectUri(),
+    response_type: "token",
+    scope: "",
+    state: makeTwitchState(),
+  });
+
+  return "https://id.twitch.tv/oauth2/authorize?" + params.toString();
+}
+
+async function fetchTwitchUser(token) {
+  const res = await fetch("https://api.twitch.tv/helix/users", {
+    headers: {
+      "Client-ID": TWITCH_CLIENT_ID.trim(),
+      "Authorization": "Bearer " + token,
+    },
+  });
+
+  if (!res.ok) throw new Error("twitch_user_fetch_failed");
+
+  const json = await res.json();
+  return json?.data?.[0] || null;
+}
+
+function saveAuthUser(user) {
+  if (user) {
+    localStorage.setItem("twitch_user", JSON.stringify(user));
+  } else {
+    localStorage.removeItem("twitch_user");
+  }
+  updateAuthPanel();
+  updateReplyUi();
+}
+
+function renderAuthUserText(user) {
+  const title = $("authTitle");
+  const status = $("authStatus");
+  const loginBtn = $("loginTwitch");
+  const logoutBtn = $("logoutTwitch");
+
+  if (!title || !status) return;
+
+  if (!user) {
+    title.textContent = "Нужна авторизация";
+    status.textContent = "Войди через Twitch, чтобы сайт узнал твой ник.";
+    if (loginBtn) loginBtn.hidden = false;
+    if (logoutBtn) logoutBtn.hidden = true;
+    return;
+  }
+
+  const display = user.display_name || user.login;
+  title.textContent = "Ты вошёл как " + display;
+  status.textContent = "Можно продолжать общение с lilanei.";
+  if (loginBtn) loginBtn.hidden = true;
+  if (logoutBtn) logoutBtn.hidden = false;
+}
+
+function updateAuthPanel() {
+  renderAuthUserText(getAuthUser());
+}
+
+function setupAuthButtons() {
+  $("loginTwitch")?.addEventListener("click", () => {
+    if (!TWITCH_CLIENT_ID || TWITCH_CLIENT_ID.includes("__TWITCH_CLIENT_ID__")) {
+      alert("Вход через Twitch пока не настроен.");
+      return;
+    }
+
+    window.location.href = twitchLoginUrl();
+  });
+
+  $("logoutTwitch")?.addEventListener("click", () => {
+    saveAuthUser(null);
+  });
+}
+
+async function handleTwitchCallback() {
+  if (!location.hash || !location.hash.includes("access_token=")) return;
+
+  const params = new URLSearchParams(location.hash.slice(1));
+  const token = params.get("access_token");
+  const gotState = params.get("state");
+  const savedState = localStorage.getItem("twitch_oauth_state");
+
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+
+  if (!token || !savedState || gotState !== savedState) {
+    updateAuthPanel();
+    return;
+  }
+
+  localStorage.removeItem("twitch_oauth_state");
+
+  try {
+    const user = await fetchTwitchUser(token);
+    if (user?.login) saveAuthUser(user);
+  } catch (_) {
+    updateAuthPanel();
+  }
+}
 
 
 function relationshipStageLocal() {
@@ -308,8 +433,8 @@ function relationshipStageLocal() {
 
 function buildLocalProgressReply() {
   const user = getAuthUser();
-  const used = user ? getLocalAiCount(user) : 0;
-  const left = Math.max(0, DAILY_AI_LIMIT - used);
+  const used = user ? getLocalReplyCount(user) : 0;
+  const left = Math.max(0, DAILY_REPLY_LIMIT - used);
 
   return [
     "Скрытые показатели:",
@@ -318,14 +443,14 @@ function buildLocalProgressReply() {
     "Давление/настороженность: " + Number(state.pressure || 0),
     "Сообщения: " + Number(state.turns || 0),
     "Текущий путь: " + relationshipStageLocal(),
-    "ИИ-лимит сегодня: " + left + "/" + DAILY_AI_LIMIT
+    "Ответы сегодня: " + left + "/" + DAILY_REPLY_LIMIT
   ].join("\n");
 }
 
 function isLimitOverLocal() {
   const user = getAuthUser();
   if (!user) return false;
-  return getLocalAiCount(user) >= DAILY_AI_LIMIT;
+  return getLocalReplyCount(user) >= DAILY_REPLY_LIMIT;
 }
 
 function showOfflineSeparator() {
@@ -341,7 +466,7 @@ function lockChatInputByLimit() {
 
   if (input) {
     input.disabled = false;
-    input.placeholder = "lilanei вне сети. Команды всё ещё работают.";
+    input.placeholder = "lilanei вне сети.";
   }
   if (btn) {
     btn.disabled = false;
@@ -356,7 +481,7 @@ function unlockChatInputIfPossible() {
   if (input) {
     input.disabled = false;
     input.placeholder = isLimitOverLocal()
-      ? "lilanei вне сети. Команды всё ещё работают."
+      ? "lilanei вне сети."
       : "Напиши lilanei сообщение...";
   }
   if (btn) {
@@ -435,21 +560,21 @@ async function sendText(text) {
   setFormBusy(true);
 
   try {
-    const reply = await askAi(clean);
+    const reply = await askLilanei(clean);
     applyAnalysis(clean);
     await sendRomanceProgressAchievement();
     addMessage("lilanei", reply);
   } catch (err) {
     const code = String(err?.message || "");
 
-    if (code === "AI_DAILY_LIMIT") {
+    if (code === "DAILY_LIMIT_LOCAL") {
       const user = getAuthUser();
-      if (user) setLocalAiCount(user, DAILY_AI_LIMIT);
+      if (user) setLocalReplyCount(user, DAILY_REPLY_LIMIT);
       showOfflineSeparator();
       return;
     }
 
-    addMessage("system", explainAiError(err), "system");
+    addMessage("system", explainConnectionError(err), "system");
   } finally {
     saveState();
     setFormBusy(false);
@@ -536,7 +661,11 @@ function initPhoto() {
   tryNext();
 }
 
+setupAuthButtons();
 initButtons();
 initMusic();
 initPhoto();
-render();
+handleTwitchCallback().finally(() => {
+  updateAuthPanel();
+  render();
+});

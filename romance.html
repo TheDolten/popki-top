@@ -45,6 +45,18 @@
           <b>Без подсказок</b>
           <small>Только хардкор.</small>
         </div>
+
+        <section class="auth-panel hero-auth" id="authPanel">
+          <div class="auth-left">
+            <div class="auth-kicker">Twitch вход</div>
+            <div class="auth-title" id="authTitle">Нужна авторизация</div>
+            <div class="auth-sub" id="authStatus">Войди через Twitch, чтобы сайт узнал твой ник.</div>
+          </div>
+          <div class="auth-actions">
+            <button id="loginTwitch" type="button">Войти через Twitch</button>
+            <button id="logoutTwitch" class="ghost-btn" type="button" hidden>Выйти</button>
+          </div>
+        </section>
       </div>
     </header>
 
@@ -64,14 +76,14 @@
       </aside>
 
       <section class="panel romance-story-panel romance-story-panel-clean chat-panel">
-        <div class="chat-topbar solo-ai-topbar">
+        <div class="chat-topbar solo-chat-topbar">
           <div class="chat-status-stack">
             <span id="chatStatus">lilanei рядом</span>
-            <small id="aiStatus">ИИ-ответы только после входа через Twitch</small>
+            <small id="replyStatus">Доступно после входа через Twitch</small>
           </div>
         </div>
 
-        <div id="loginHint" class="chat-login-hint">Чтобы lilanei отвечала через ИИ, войди через Twitch на главной странице. Здесь остался только ИИ-чат без кнопок и без локальных ответов.</div>
+        <div id="loginHint" class="chat-login-hint">Войди через Twitch на главной странице, чтобы продолжить общение с lilanei.</div>
 
         <div class="chat-window" id="chatWindow" aria-live="polite"></div>
 
@@ -85,7 +97,7 @@
     <footer class="footer">
       <span>Сайт для веселья</span>
       <span class="footer-dot">•</span>
-      <span>Свободный романс lilanei</span>
+      <span>Романс lilanei</span>
     </footer>
   </main>
 

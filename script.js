@@ -4,7 +4,7 @@ const PAGE = body?.dataset?.page || "kus";
 let DATA = null;
 let DETAILS_OPEN = false;
 
-const TWITCH_CLIENT_ID =  "__TWITCH_CLIENT_ID__";
+const TWITCH_CLIENT_ID = "__TWITCH_CLIENT_ID__";
 const TWITCH_SCOPES = "";
 const ACHIEVEMENTS_API_URL = "__ACHIEVEMENTS_API_URL__";
 let AUTH_USER = null;
@@ -535,7 +535,7 @@ function renderAchievementsPage() {
   locked.hidden = true;
 
   if (!achievementsApiReady()) {
-    if (msg) msg.innerHTML = `<div class="error">В <code>script.js</code> нужно вставить URL Google Apps Script в <b>ACHIEVEMENTS_API_URL</b>, иначе достижения не будут сохраняться.</div>`;
+    if (msg) msg.innerHTML = `<div class="error">Сохранение достижений пока не настроено.</div>`;
   } else if (msg) {
     msg.innerHTML = "";
   }
