@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🖼️ Галерея</title>
+  <link rel="preconnect" href="https://script.google.com">
+  <link rel="dns-prefetch" href="https://script.google.com">
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <link rel="dns-prefetch" href="https://res.cloudinary.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="gallery" data-active="gallery">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <button id="musicToggle" class="music-toggle" type="button" title="Музыка" aria-label="Включить или выключить музыку">🎵</button>
+  <audio id="bgMusic" src="assets/music.mp3" loop preload="auto"></audio>
+
+  <main class="wrap gallery-page">
+    <header class="hero">
+      <div class="hero-topline">
+        <span class="eyebrow">community gallery</span>
+        <nav class="nav site-nav" aria-label="Навигация по сайту">
+          <a href="index.html">Все куси</a>
+          <a href="popki.html">Попки</a>
+          <a href="schedule.html">Расписание</a>
+          <a href="romance.html">Романс</a>
+          <a class="active" href="gallery.html">Галерея</a>
+          <a class="achievements-nav-link" href="achievements.html" title="Нужно войти через Twitch">Достижения</a>
+        </nav>
+      </div>
+
+      <div class="hero-card gallery-hero-card">
+        <div class="hero-icon">🖼️</div>
+        <div class="hero-copy">
+          <h1>Галерея</h1>
+          <p class="sub">Загружай картинки в общую галерею. После загрузки картинка сразу появляется на странице.</p>
+          <div class="hero-tags">
+            <span class="tag">Twitch login</span>
+            <span class="tag">Галерея</span>
+          </div>
+        </div>
+
+        <section class="auth-panel hero-auth" id="authPanel">
+          <div class="auth-left">
+            <div class="auth-kicker">Twitch вход</div>
+            <div class="auth-title" id="authTitle">Найди себя в топе</div>
+            <div class="auth-sub" id="authStatus">После входа подсвечу твой ник и покажу место.</div>
+          </div>
+          <div class="auth-actions">
+            <button id="loginTwitch" type="button">Войти через Twitch</button>
+            <button id="logoutTwitch" class="ghost-btn" type="button" hidden>Выйти</button>
+          </div>
+        </section>
+      </div>
+    </header>
+
+
+    <div class="gallery-toolbar">
+      <button id="galleryOpenUploadBtn" class="btn primary gallery-open-upload" type="button" hidden>＋ Загрузить картинку</button>
+    </div>
+
+    <section class="panel gallery-list-panel">
+
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">pictures</span>
+          <h2>Картинки</h2>
+          <p id="galleryAdminHint" class="sub">Обычные пользователи видят только опубликованные картинки.</p>
+        </div>
+        <button id="galleryRefreshBtn" class="btn ghost" type="button">Обновить</button>
+      </div>
+
+      <div id="galleryStatus" class="gallery-status">Загружаю галерею...</div>
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </section>
+  </main>
+
+
+  <aside id="galleryUploadDrawer" class="gallery-upload-drawer" hidden aria-hidden="true">
+    <div class="gallery-drawer-backdrop" id="galleryDrawerBackdrop"></div>
+
+    <section class="gallery-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="galleryDrawerTitle">
+      <div class="gallery-drawer-head">
+        <div>
+          <span class="eyebrow">upload</span>
+          <h2 id="galleryDrawerTitle">Загрузить картинку</h2>
+          <p class="sub">JPG, PNG или WEBP до 5 MB. Картинка появится сразу после загрузки.</p>
+        </div>
+        <button id="galleryCloseUploadBtn" class="gallery-drawer-close" type="button" aria-label="Закрыть">×</button>
+      </div>
+
+      <form id="galleryUploadForm" class="gallery-upload-form drawer-form">
+        <label class="gallery-file-drop" for="galleryFile">
+          <input id="galleryFile" type="file" accept="image/png,image/jpeg,image/webp" />
+          <span class="gallery-file-icon">＋</span>
+          <b id="galleryFileName">Выбрать картинку</b>
+          <small>Файл до 5 MB.</small>
+        </label>
+
+        <label class="gallery-caption-label">
+          <span>Подпись</span>
+          <input id="galleryCaption" type="text" maxlength="120" placeholder="Короткая подпись, можно пусто" />
+        </label>
+
+        <button id="galleryUploadBtn" class="btn primary" type="submit">Загрузить</button>
+      </form>
+
+      <p id="galleryUploadStatus" class="gallery-status"></p>
+    </section>
+  </aside>
+
+  <div id="galleryLightbox" class="gallery-lightbox" hidden>
+    <button id="galleryLightboxClose" class="gallery-lightbox-close" type="button">×</button>
+    <img id="galleryLightboxImg" alt="" />
+  </div>
+
+  <script src="script.js?v=1781295503"></script>
+  <script src="gallery.js?v=1781295503"></script>
+</body>
+</html>

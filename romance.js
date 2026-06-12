@@ -14,6 +14,23 @@ const openers = [
 
 let state = loadState();
 
+
+
+function normalizeLilaneiCounterFromServer(data) {
+  if (!data) return null;
+
+  const limit = Number(data.limit || 5);
+  const used = Number(data.used == null ? data.daily_count || 0 : data.used);
+  const left = Number(data.left == null ? Math.max(0, limit - used) : data.left);
+
+  return {
+    used: used,
+    left: Math.max(0, Math.min(limit, left)),
+    limit: limit,
+    date: data.date || data.count_date || ''
+  };
+}
+
 function defaultState() {
   return {
     respect: 0,
@@ -118,7 +135,7 @@ function lilaneiJsonp(url, timeoutMs = 7000) {
 function lilaneiEndpointReadyForState() {
   return Boolean(
     LILANEI_ENDPOINT &&
-    !LILANEI_ENDPOINT.includes("__LILANEI_AI_ENDPOINT__") &&
+    !LILANEI_ENDPOINT.includes(("__" + "LILANEI_AI_ENDPOINT" + "__")) &&
     !LILANEI_ENDPOINT.includes("PASTE_GOOGLE_APPS_SCRIPT") &&
     /^https?:\/\//i.test(LILANEI_ENDPOINT)
   );
@@ -474,7 +491,7 @@ function updateAuthPanel() {
 
 function setupAuthButtons() {
   $("loginTwitch")?.addEventListener("click", () => {
-    if (!TWITCH_CLIENT_ID || TWITCH_CLIENT_ID.includes("__TWITCH_CLIENT_ID__")) {
+    if (!TWITCH_CLIENT_ID || TWITCH_CLIENT_ID.includes(("__" + "TWITCH_CLIENT_ID" + "__"))) {
       alert("Вход через Twitch пока не настроен.");
       return;
     }
@@ -761,15 +778,11 @@ function initPhoto() {
   if (!img) return;
 
   const photos = [
-    "assets/lilanei8.png",
-    "assets/lilanei9.png",
-    "assets/lilanei10.png",
-    "assets/lilanei11.png",
-    "assets/lilanei12.png",
-    "assets/lilanei13.png",
-    "assets/lilanei14.png",
-    "assets/lilanei15.png",
-    "assets/lilanei16.png"
+    "assets/lilanei.png",
+    "assets/lilanei2.png",
+    "assets/lilanei3.png",
+    "assets/lilanei4.png",
+    "assets/lilanei5.png"
   ];
 
   const fallback = "assets/lilanei_placeholder.svg";
