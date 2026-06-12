@@ -312,7 +312,7 @@ async function uploadGalleryImage(event) {
     setUploadStatus("Читаю файл...");
     const dataUrl = await readFileAsDataUrl(file);
 
-    setUploadStatus("Отправляю в Cloudinary...");
+    setUploadStatus("Отправляю в Галерею...");
     const data = await galleryPost({
       action: "gallery_upload",
       user: {
