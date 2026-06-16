@@ -11,42 +11,42 @@
     {
       "date": 9,
       "day": "ВТ",
-      "note": "",
-      "status": "video",
-      "time": "19:00 МСК",
-      "title": "NTE + видосы"
+       "note": "",
+      "status": "offline",
+      "time": "",
+      "title": "offline"
     },
     {
       "date": 10,
       "day": "СР",
       "note": "",
-      "status": "video",
-      "time": "19:00 МСК",
-      "title": "Gothic 1 Remake"
+      "status": "offline",
+      "time": "",
+      "title": "offline"
     },
     {
       "date": 11,
       "day": "ЧТ",
-      "note": "",
-      "status": "video",
-      "time": "19:00 МСК",
-      "title": "007 First Light"
+       "note": "",
+      "status": "offline",
+      "time": "",
+      "title": "offline"
     },
     {
       "date": 12,
       "day": "ПТ",
       "note": "",
-      "status": "video",
-      "time": "19:00 МСК",
-      "title": "007 First Light"
+      "status": "offline",
+      "time": "",
+      "title": "offline"
     },
     {
       "date": 13,
       "day": "СБ",
       "note": "",
-      "status": "video",
-      "time": "19:00 МСК",
-      "title": "NTE + видосы"
+      "status": "offline",
+      "time": "",
+      "title": "offline"
     },
     {
       "date": 14,
