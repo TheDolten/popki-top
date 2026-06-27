@@ -1,7 +1,7 @@
 {
   "days": [
     {
-      "date": 15,
+      "date": 22,
       "day": "ПН",
       "note": "",
       "status": "offline",
@@ -9,7 +9,7 @@
       "title": "offline"
     },
     {
-      "date": 16,
+      "date": 23,
       "day": "ВТ",
        "note": "",
       "status": "offline",
@@ -17,7 +17,7 @@
       "title": "offline"
     },
     {
-      "date": 17,
+      "date": 24,
       "day": "СР",
       "note": "",
       "status": "offline",
@@ -25,7 +25,7 @@
       "title": "offline"
     },
     {
-      "date": 18,
+      "date": 25,
       "day": "ЧТ",
        "note": "",
       "status": "offline",
@@ -33,7 +33,7 @@
       "title": "offline"
     },
     {
-      "date": 19,
+      "date": 26,
       "day": "ПТ",
       "note": "",
       "status": "offline",
@@ -41,15 +41,15 @@
       "title": "offline"
     },
     {
-      "date": 20,
+      "date": 27,
       "day": "СБ",
       "note": "",
-      "status": "offline",
+      "status": "online",
       "time": "",
-      "title": "offline"
+      "title": "Стримчик"
     },
     {
-      "date": 21,
+      "date": 28,
       "day": "ВС",
       "note": "",
       "status": "offline",
