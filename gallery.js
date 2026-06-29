@@ -184,6 +184,7 @@ function createGalleryCard(item) {
 
   body.appendChild(caption);
   body.appendChild(meta);
+  body.appendChild(createGalleryLikeButton(item));
 
   if (admin) {
     const status = document.createElement("div");
@@ -226,6 +227,81 @@ function adminActionButton(text, onClick, danger = false) {
   btn.textContent = text;
   btn.addEventListener("click", onClick);
   return btn;
+}
+
+function createGalleryLikeButton(item) {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "gallery-like-btn";
+  btn.dataset.id = item.id;
+  btn.title = "Лайкнуть картинку";
+
+  const icon = document.createElement("span");
+  icon.className = "gallery-like-icon";
+  icon.textContent = "♥";
+
+  const count = document.createElement("span");
+  count.className = "gallery-like-count";
+  count.textContent = String(item.likes_count || 0);
+
+  btn.appendChild(icon);
+  btn.appendChild(count);
+
+  if (item.liked_by_me) btn.classList.add("liked");
+
+  btn.addEventListener("click", () => toggleGalleryLike(item, btn));
+  return btn;
+}
+
+function updateGalleryLikeButtonUi(btn, item) {
+  if (!btn) return;
+  btn.classList.toggle("liked", Boolean(item.liked_by_me));
+  const countEl = btn.querySelector(".gallery-like-count");
+  if (countEl) countEl.textContent = String(item.likes_count || 0);
+}
+
+async function toggleGalleryLike(item, btn) {
+  const user = getGalleryUser();
+  if (!user?.login) {
+    setGalleryStatus("Войди через Twitch, чтобы ставить лайки.", true);
+    return;
+  }
+
+  if (btn.disabled) return;
+  btn.disabled = true;
+
+  const wasLiked = Boolean(item.liked_by_me);
+  const prevCount = Number(item.likes_count || 0);
+
+  // Сразу обновляем UI, не дожидаясь ответа сервера.
+  item.liked_by_me = !wasLiked;
+  item.likes_count = wasLiked ? Math.max(0, prevCount - 1) : prevCount + 1;
+  updateGalleryLikeButtonUi(btn, item);
+
+  try {
+    const data = await galleryPost({
+      action: "gallery_like",
+      user: {
+        login: user.login,
+        display_name: user.display_name || user.login,
+        profile_image_url: user.profile_image_url || ""
+      },
+      id: item.id
+    });
+
+    item.liked_by_me = Boolean(data.liked);
+    item.likes_count = Number(data.likes_count || 0);
+    updateGalleryLikeButtonUi(btn, item);
+  } catch (err) {
+    console.error(err);
+    // Откатываем изменения, если запрос не удался.
+    item.liked_by_me = wasLiked;
+    item.likes_count = prevCount;
+    updateGalleryLikeButtonUi(btn, item);
+    setGalleryStatus("Не удалось поставить лайк: " + String(err.message || err), true);
+  } finally {
+    btn.disabled = false;
+  }
 }
 
 function renderGallery() {
@@ -312,7 +388,7 @@ async function uploadGalleryImage(event) {
     setUploadStatus("Читаю файл...");
     const dataUrl = await readFileAsDataUrl(file);
 
-    setUploadStatus("Отправляю в Галерею...");
+    setUploadStatus("Отправляю в Cloudinary...");
     const data = await galleryPost({
       action: "gallery_upload",
       user: {
