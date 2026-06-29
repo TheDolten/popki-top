@@ -1,7 +1,7 @@
 {
   "days": [
     {
-      "date": 22,
+      "date": 29,
       "day": "ПН",
       "note": "",
       "status": "offline",
@@ -9,47 +9,47 @@
       "title": "offline"
     },
     {
-      "date": 23,
+      "date": 30,
       "day": "ВТ",
-       "note": "",
-      "status": "offline",
-      "time": "",
-      "title": "offline"
+      "note": "",
+      "status": "video",
+      "time": "19:00 МСК",
+      "title": "видосеки"
     },
     {
-      "date": 24,
+      "date": 1,
       "day": "СР",
       "note": "",
-      "status": "offline",
-      "time": "",
-      "title": "offline"
+      "status": "video",
+      "time": "19:00 МСК",
+      "title": "4 свабди"
     },
     {
-      "date": 25,
+      "date": 2,
       "day": "ЧТ",
-       "note": "",
+      "note": "",
       "status": "offline",
       "time": "",
       "title": "offline"
     },
     {
-      "date": 26,
+      "date": 3,
       "day": "ПТ",
       "note": "",
-      "status": "offline",
-      "time": "",
-      "title": "offline"
+      "status": "video",
+      "time": "19:00 МСК",
+      "title": "киноаук+фильм"
     },
     {
-      "date": 27,
+      "date": 4,
       "day": "СБ",
       "note": "",
-      "status": "online",
-      "time": "",
-      "title": "Стримчик"
+      "status": "video",
+      "time": "19:00 МСК",
+      "title": "второй фильм с аvка"
     },
     {
-      "date": 28,
+      "date": 5,
       "day": "ВС",
       "note": "",
       "status": "offline",
@@ -73,8 +73,8 @@
   ],
   "meta": {
     "default_time": "19:00 МСК",
-    "month": "06.2026",
+    "month": "07.2026",
     "title": "Расписание на неделю",
-    "updated": "2026-06-15"
+    "updated": "2026-06-29"
   }
 }

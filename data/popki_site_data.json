@@ -4,8 +4,8 @@
     "mode": "popki",
     "source": "lilanei",
     "source_url": "https://www.twitch.tv/lilanei",
-    "total": 111,
-    "groups": 80,
+    "total": 113,
+    "groups": 81,
     "sort": "По количеству"
   },
   "top_chosen": [
@@ -103,6 +103,10 @@
     },
     {
       "user": "amonyash_",
+      "count": 1
+    },
+    {
+      "user": "Chaos_heretic",
       "count": 1
     },
     {
@@ -233,7 +237,7 @@
   "popki": [
     {
       "title": "Лучшая попа",
-      "count": 11,
+      "count": 12,
       "chosen_users": [
         {
           "user": "8hot_face",
@@ -241,6 +245,10 @@
         },
         {
           "user": "BipolarGluttony",
+          "count": 1
+        },
+        {
+          "user": "Chaos_heretic",
           "count": 1
         },
         {
@@ -426,6 +434,20 @@
           "kus_text": "лучшую попу",
           "mode": "popki",
           "source": "https://www.twitch.tv/videos/2790169655"
+        },
+        {
+          "time": "0:25:09",
+          "seconds": 1509,
+          "chooser": "l3uga",
+          "chosen_user": "Chaos_heretic",
+          "command": "!кусь лучшую попу чата",
+          "bot_time": "0:25:09",
+          "bot_reply": "КУСЬ и у Chaos_heretic ( . Y . ) стали больше!",
+          "adjective": "лучшую",
+          "popka_form": "попу",
+          "kus_text": "лучшую попу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2806676804"
         }
       ]
     },
@@ -1324,6 +1346,32 @@
           "kus_text": "вредную жопку",
           "mode": "popki",
           "source": "https://www.twitch.tv/videos/2782972664"
+        }
+      ]
+    },
+    {
+      "title": "Вредная жэпа",
+      "count": 1,
+      "chosen_users": [
+        {
+          "user": "не определено",
+          "count": 1
+        }
+      ],
+      "items": [
+        {
+          "time": "0:32:14",
+          "seconds": 1934,
+          "chooser": "whitefoxplayer",
+          "chosen_user": "не определено",
+          "command": "!кусь вредную жэпу",
+          "bot_time": null,
+          "bot_reply": null,
+          "adjective": "вредную",
+          "popka_form": "жэпу",
+          "kus_text": "вредную жэпу",
+          "mode": "popki",
+          "source": "https://www.twitch.tv/videos/2806676804"
         }
       ]
     },
